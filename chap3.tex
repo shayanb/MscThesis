@@ -1,0 +1,426 @@
+
+\chapter{Emperical Study of Bitcoin Point of Sale}
+
+%==================== Introduction ======================
+
+\section{Introduction}
+
+
+
+%==================== Requirement ======================
+\section {Requirments}
+
+We used SCRAM (Scenario-based Requirements Analysis Method)\ref{REScenario} as our framework to gather the requirements of this system.
+SCRAM defines four phases of requirement engineering and has been shown to be a great RE framework.
+
+%-------------------------- Figure: Simple domain familirisation --------------------------
+%FIXME: wrapfigure package ! size
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.25\textwidth]{fig/RE_Scenario_Phase1}
+  \caption{Phase 1 - Normal Use Case}
+\label{fig:phase1}
+\end{figure}
+
+\fixme{Elaborate more on the SCRAM phases with a short description of each from REScenaro paper}\\
+
+%-------------------------- Initial requirements capture and domain familiarisation. --------------------------
+\textit{Phase 1: Initial requirements capture and domain familiarisation.} We asked the cafe owner, two employees and two customers for a scenario involving Bitcoin payment in the cafe to create the common "normal use case". The differences between the scenarios were insignificant thus the exceptions to this normal use case are not valid. %e.g. one exception was power failure, and in this case because even the current accepted payment methods such as Visa would not work we 
+
+
+
+As the cafe already have other payment systems in place, there is no need to go through the cafe's business plan or any other specification to check for conflicts. The only difference is implementation of another payment system at cashier \ref{fig:phase1}.
+However, there are requirements in the PoS system that needs to be met, such as realtime bitcoin to fiat money exchange rate, obvious alert of successful or failed payments.
+
+%-------------------------- Storyboarding and design visioning --------------------------
+
+\textit{Phase 2: Storyboarding and design visioning.}
+Based on the information gathered from Phase 1 and further analysis such as user survey on the design, we can develop the storyboard, see figure \ref{fig:storyboard}. More technical requirements will be explained later [section XX].
+
+%FIXME: wrapfigure package ! size
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{fig/RE_Scenario_Interface}
+  \caption{Storyboard - User Interface first sketch}
+\label{fig:storyboard}
+\end{figure}
+
+
+%-------------------------- Requirements exploration. --------------------------
+\textit{Phase 3: Requirements exploration.}
+We developed a concept demonstrator, capable of doing a simple bitcoin payment. The bitcoin exchange rate and amount of transaction were hard coded and the transaction would be executed manually. We asked the employees to run a mock purchase with the demonstrator to see how they would interact with the system and got the feedback. As the bitcoin concepts might be ambiguous for the user, there should not be any interactions for them with bitcoin concepts and terminology. After the transaction was done, the owner pointed that there is the need for a central logging system that could be checked each night for the daily transactions.
+\fixme{add a scenario for this, contextual scenario-> what happens that: scenario script-> system does this}
+
+%-------------------------- Prototyping and requirements validation. --------------------------
+\textit{Phase 4: Prototyping and requirements validation.}
+We used the feedbacks gathered from phase 3 to make the first prototype. This had the bitcoin exchange rate retrieval automatically and the employee only had to input the dollar amount in the PoS, this made it possible to keep the bitcoin terminology out of the scope of the training for the employees. However on the first prototype, to show the success payments, the system was showing the transaction in the blockchain, using web-based APIs. This was not clear for a novice user about the state of the system. On the second round of prototyping we designed an interface to show that if the transaction has been broadcasted to the bitcoin network.\\
+\fixme{add a short scenario when it was obvious that the system needed to have an interface for the blockchain confirmation}
+
+
+
+\subsection{Decision Framework}
+We propose a framework specialized for Bitcoin point of sale systems to score the system with a set of requirements based on usability, deployability, privacy and security. These are not a final set of requirements for a general purpose system, however in the case of Bitcoin payments for a small business these will suffice.
+We start by using our scenario based requirement engineering approach and adding the required non-functional requirements (\eg payee's privacy, data encryption). Then we will use these requirements to score each systems described in this section and gather the result in Table ~\ref{tab:reqs}. For simplifying the figure we use three score indicators,  (\full) for a complete score on the requirement, (\prt) if the requirements has not met completely and empty space if it is not satisfying the need.\ \fixme{For some of the requirements that this scoring system would not work (\eg cost to run) we will explain the scoring system - BETTER WORDS}
+
+%-------------------------- Usability --------------------------
+\subsubsection{Usability} There are different aspects of usability that should be considered. One is how the PoS is accessible for the employees and the other is technical matters of the implementation.
+\begin{itemize}
+
+\item \textbf{User Friendly: }The payment process should not be technical or complex for a cafe employee, or just need a simple training for the employee to be able to accept Bitcoin. Also, There should be a clear, mutual understanding when the payment is finalized
+
+\item \textbf{Time-Efficient: }the process of payment should not take significant amount of time more than the common payment systems such as Visa payments.
+
+\item \textbf{Fair Exchange Rate: }there should be a easy and fair approach for the payer and payee to have a deal on fiat currency to bitcoin exchange rate.
+
+\item \textbf{Availability: }all employees should be able to do the bitcoin payment process without the need to know any credentials
+
+\end{itemize}
+%-------------------------- Deployability --------------------------
+\subsubsection{Deployability} We use this category to state the requirements regarding the implementation of the system and branching. In the case of small businesses, the ability to manage multiple branch systems might not be a really important aspect. That said, we will score the systems for future work and hence to have a more complete framework.
+\begin{itemize}
+
+\item \textbf{Cost to Run: }PoS should be implemented in a way that is accessible with one of the currently owned devices of the cafe such as the cashier computer, the PoS terminal\footnote{The common PoS that accepts Visa/Debit Cards} or mobile devices. The should not be the need of buying new hardware or an expensive software. For this requirement, we would score a (\full) score to a free of monetary cost system, and a (\prt) score to a moderate amount of spendings.
+
+\item \textbf{Branching} The ability to install the point of sale on multiple branches or modify the existing systems.
+
+\end{itemize}
+ 
+%-------------------------- Privacy --------------------------
+\subsubsection{Privacy} Privacy is important in the payment system in the sense that no information should be leaked from any of the payers nor payee to the other party.
+\begin{itemize}
+
+\item \textbf{No Information leakage: }There should not be any sensitive information available to the customer when she wants to pay with Bitcoin.
+
+\item \textbf{Payee's Privacy: }The payer should not be able to see how much the payee has received prior or after her payment but just her own amount of payment.
+
+\item \textbf{Payer's Privacy: }The payee should not be able to see how much the payer owns. This is one of the challenges that has not been fully solved, it is the payer's responsibility to manage her funds and addresses in a sense that there is no privacy leak.
+
+\item \textbf{Authenticiation: }The ability to see the payments list only available for the manager.
+
+\end{itemize}
+%-------------------------- Security --------------------------
+\subsubsection{Security} Security might not be the cafe owners priority as he might not have a deep understanding of this concept in payment systems nor Bitcoin sphere. Anyhow it is one of the most important aspects in any financial payment systems and also usable bitcoin applications. Security of the system represents more than just the PoS code, it includes the environment that PoS is being used, the people using the software and the operating environment of the software \cite{securityreq}.
+\begin{itemize}
+
+\item \textbf{No 3rd-Party Trust: }There should be as less 3rd party trust as possible to accept and hold the bitcoins
+
+\item \textbf{Data Ecnryption: }In the case of any attacks on the service there should be security measures that makes sure the attacker will not be able to transfer the bitcoins
+
+\item \textbf{No Software dependency: }The system should use as less dependencies as possible to minimize the attack vector on the server. This also falls under deployability category as more dependencies could lead to the need of having a more complex system for implementation. %no bitcoind or command access , just php and mysql
+
+\end{itemize}
+
+%==================== Design ======================
+\section{Design}
+I will first go through the available options and why we chose to develop a custom PoS for this purpose.
+\subsection{Available Bitcoin Payment Approaches}
+There exist multiple payment systems that most of the suit them online market and not a physical point of sale \footnote{\url{https://en.bitcoin.it/wiki/How_to_accept_Bitcoin,_for_small_businesses}}. We list all the available approaches to accept Bitcoin payments for a physical business, and not as an e-commerce business.
+
+%-------------------------- QR on Cash register --------------------------
+\subsubsection{One Bitcoin address - QR Code} 
+One of the introduced ways for small businesses to accept bitcoin is to hold one bitcoin address and print out the QR code of that address near the cash register. In this way, the customer could scan the QR code and input the bitcoin value and pay the business with the equivalent bitcoin value. \\
+\\\textbf{Usability} It is not user friendly as it puts the employee in a position that she needs to know how bitcoin transactions work and she needs to prepare,receive and checks the payment manually. This makes the time spent on the payment longer than normal payment systems, same goes for the fair exchange rate, She should come to an agreed exchange price with the customer and this needs a deeper understanding of bitcoin and finance. Thus a technical training is required for each employee responsible for handling bitcoin payments.
+\\\textbf{Deployability} The cost to run this method is almost zero, in monetary and time value. However, as mentioned in usability section, the time spent on each transaction fails for regular use. In case there are multiple branches, more print outs suffice to have multiple point of sales.
+\\\textbf{Privacy} This method provides no privacy for the seller. As all the bitcoin transactions are publicly available in a ledger (Blockchain), anyone with the knowledge of the receiving bitcoin address could see all the received payments, thus anyone could have access to the reporting page that is the payments received by the posted address.
+\\\textbf{Security} Other than the system holding the private key, not much of security concern is applicable to this approach. The private key should be kept in a secure place, preferably a cold storage unless the funds should be transferred to another address (\eg to exchange for cash).
+%-------------------------- Hardware Terminal --------------------------
+\subsubsection{Hardware Terminals}
+There are multiple hardware terminals available for accepting bitcoin, however due to the high cost to run (\eg coinkite\footnote{\url{https://coinkite.com/store/products/all}} PoS are for sale at starting price of 970USD), they have not been used in most of the small businesses and have not been reviewed a lot. Also the fast changing technology made most of the terminal provider companies to move to mobile or web-based solutions.
+\\\textbf{Usability}
+The interfaces of each of the provided terminals are different, the most popular ones mimic the look and behaviour of a normal point of sale terminal used by credit card companies. However adding a new device to the payment routine, would make it less user friendly and rises the need for a training for the employees. The time and availability of the payment through a hardware terminal should be the same as the credit card payments if not any lower. The customer, nor the payee have any control over the exchange rate and it is provided by the PoS terminal operator.
+\\\textbf{Deployability}
+Due to the high costs these devices have, they would score low on our framework. Also in case there are multiple branches of the business, there should be one devices bought for each branch, this makes the costs even higher.
+\\\textbf{Privacy}
+Accepting bitcoin with a hardware terminal should persevere the privacy the same as the regular credit card terminals, however the payees privacy depends on the implementation of the Bitcoin payment system. 
+\\\textbf{Security}
+The payee has no control over the private keys nor holds the funds, thus he needs to trust a third-party company that provided the terminals to keep the funds safe, and will receive the payments upon the agreed time frame with the probably small transaction fees. As for other aspects of the security, we assume the back-end implementation keeps the private keys encrypted and secure. \fixme{Also because there is a need for a new hardware, software dependency is eligible. }
+
+%FIXME: add more details? that being said, in short, ...
+
+%-------------------------- Online Merchant Services--------------------------
+\subsubsection{Online Merchant Services}
+Most of these services are focused for online businesses and don't have implicit implementation for a physical payment system. 
+One of the most famous ones, by the time of writing, is Bitpay\footnote{\url{https://bitpay.com}} that takes 0\% fees unlike some others competing companies, but they all have their own advantages.
+\\ \textbf{Usability}
+Implementing a Bitpay payment is straightforward and easy to implement. There are not many jargons or technical options for the employee. They have their own exchange rate that the business owner could set to exchange to cash as soon as he receives payments, this will remove the possible effects that Bitcoin price volatility could have on the payments.
+\\ \textbf{Deployability}
+The only thing required by this approach, is a smart phone or a small computer that users could interact with and browse to bitpay payment page, preferably with a touchscreen for easier price input and user interaction, as the interface is designed for touchscreen devices (Mobile interface)
+\\ \textbf{Privacy}
+Bitpay has taken the privacy too serious. As they generate a new address for each transaction, the payees privacy is safe, however there has been reports on account suspensions because the payments were coming from a flagged bitcoin addresses, in the sense that there was malicious activities on that bitcoin address such as money laundry or buying drugs from online site. In this case the privacy, as the sense that we are evaluating, is being held but maybe not in all the aspects user want in a payment system.
+\\ \textbf{Security}
+Every aspect of the payment system is implemented by Bitpay, they offered one of the most secure payment systems so far and there has been no big hacks reported. However, user has no control over his private keys and all the keys are being stored on Bitpay servers, this means complete trust to a third party.
+
+
+
+%-------------------------- self hosting PoS--------------------------
+\subsubsection{self hosting wallet}
+Another option is to run a customized wallet as the point of sale service. There are multiple options for this case and it depends on the features needed for managing the bitcoin addresses. it's still possible to use a 3rd party for some of the functionalities like address generation or PoS interface. For the sake of simplicity I cover two popular methods, one using Mycelium Gear and the other a full custom self-hosting wallet using available open source softwares.
+
+
+\subsubsection{Mycelium Gear}
+Mycelium Gear \footnote{\url{https://gear.mycelium.com/}} is a service offered by Mycelium group that offers a widget as for an interface to the user and a service that would use the BIP32 public key provided on the Admin panel to generate new addresses securely. This means that they don't hold any private keys, but still uses the same path for address generation as their Mycelium Mobile wallet uses \fixme{more detials about this}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.25\textwidth]{fig/Mycelium_gear}
+  \caption{Mycelium Gear Widget}
+\label{fig:mycelium-widget}
+\end{figure}
+
+
+\\ \textbf{Usability}
+Mycelium Gear is designed in a way to suit e-commerce businesses needs and needs to be customized to suit a physical business PoS. There are no fees related to using this service, the only usability issue is that the BIP32 path that is generated by the PoS widget sometimes is different that the ones being checked by the mobile wallet client, so there might be some payments missing from the available credits in the application that is actually hard to retrieve if the path is unknown.
+
+\\ \textbf{Deployability}
+This method would be simple to implement but somehow more complicate to customize as there's not that much access to the code to be able to customize for business needs. Although the cost-to-run depending on the implementation could be almost zero. The only depoloyability downside is that the payee is forced to use Mycelium Mobile wallet to manage his payments.
+
+\\ \textbf{Privacy}
+As Mycelium Gear uses BIP32 to generate a new address for each transaction request the payees privacy is held. However, there is no user management for the report page, If the customer closes the successful payment page, the employee would not be able to check if the payment was received or not unless he has the administrator password to check the transaction list.
+
+\\ \textbf{Security}
+Nothing related to the PoS holds any private information or keys that might be in danger of getting hacked, so there's no trust in any 3rd party in this sense. Although all the private keys would be in the Mycelium Mobile wallet that is not prone to mobile malwares or hardware failure. Also this would be the weak point that if the hacker steals the phone, he has full access to all the available funds and also the future payments if stays unnoticed.
+
+\subsubsection{Custom PoS}
+Depending on the requirements, it's possible to use integration of some open source softwares to build a fully custom self-managed Bitcoin PoS. The details of this custom wallet would be discussed in section \fixme{technical details for the custom PoS}.
+
+\\ \textbf{Usability}
+As this is a fully customized PoS we could use the scenario based requirement engineering method to implement a system that meets the business needs.
+
+\\ \textbf{Deployability}
+cost-to-run this system depends on the requirements and how it is implemented. There might be some time needed to implement the prototype and change the bugs on the next round of requirement engineering when we get the feedback of the business owner and employees.
+
+\\ \textbf{Privacy}
+We could implement the system with all the privacy measurements that needs to be satisfy for the business owner. New address generation for each transaction would be basic need to have a good private PoS.
+
+\\ \textbf{Security}
+Same as Privacy, It's possible to keep in mind all the security features when implementing this system. One of the basic needs is that the private keys should not be easily accessible, either to be kept offline or encrypted if they are stored on the online server and also there should not be any trust in any 3rd party as it's not needed on such a system.
+
+\subsubsection{Desicion result}
+As you can see on table \ref{tab:method-comp} there is no perfect solution out of the box for a small business to start accepting bitcoins. After discussing the advantages and disadvantages of each method with the business owner, we decided to implement our own custom PoS using available open source tools. This way it would be easy to incrementally change the PoS system with the customer and employees feedback to meet the needs of the business.
+
+\begin{table*}[ht!]
+
+\renewcommand{\arraystretch}{1.3}
+
+\centering
+
+\begin{tabular*}{0.9\textwidth}{@{\extracolsep{\fill}} llccccccccccccc}
+
+\textit{Category} &
+\headrow{User Friendly} & 
+\headrow{Time-Efficient} &  
+\headrow{Fair Exchange Rate} &
+\headrow{Availability} &
+\headrow{Cost to Run} &
+\headrow{Branching} & 
+\headrow{Payee's Privacy} &
+\headrow{Payer's Privacy} &
+\headrow{Authenticiation} &
+\headrow{No 3rd-Party Trust} & 
+\headrow{Data Ecnryption} & 
+\headrow{No Software Dependency} & 
+\headrow{ } & % Something about format decay
+\headrow{ } \\ \hline 
+
+QRCode 	 					&	&	&\prt	&\full	&\full	&\prt	&	&\prt	&	&\full	&	&\full&&\\
+Hardware Terminal 				&\prt	&\full	&\prt	&\full	&	&	&\full	&\prt	&\full	&	&\full	&	&&\\
+Online Merchant Services			&\prt	&\full&\prt	&\prt	&\prt	&\full	&\full	&\prt	&\prt	&	&\prt	&\full	&&\\ 
+Mycelium Gear				&\prt	&\full	&\prt	&\prt	&\prt	&\full	&\full	&\prt	&\prt	&\prt	&	&\prt	&&\\ 
+Custom PoS			&\full	&\full	&\full	&\full	&\prt	&\prt	&\full	&\prt	&\full	&\full	&\full	&\prt	&&\\  \hline 
+
+
+\\
+																					
+\end{tabular*}
+
+\caption{A comparison of Point of Sale gateways. \full~ indicates the category of client is awarded the benefit in the corresponding column. \prt~partially awards the benefit. Details provided inline.}
+\label{tab:method-comp}
+\end{table*}
+  
+
+
+%==================== Implementation ======================
+\section{Implementation}
+There were multiple approaches for implementing this PoS. We first have to see what programming language we want to use and under what environment. One of the lower cost methods would be to use a computer on the cafe's network as the webserver but the maintenance and support would have been really hard as the network might go down or overwhelmed with customer's devices that would not function properly. Next low cost solution is to use a shared hosting to host the wallet server and design a web based payment interface for the employees and also a reporting page for the business owner to track the bitcoin payments. This made our decision easier to chose a programming language, the most common programming languages supported by most hosted shared is PHP\footnote{PHP originally stood for Personal Home Page, it now stands for PHP: Hypertext Preprocessor\url{https://secure.php.net/manual/en/history.php.php}}. 
+\\ \textbf{PHP} is a server-side scripting language designed for web development and can be mixed with HTML to have more tools for interface design, also can be used with MySQL\footnote{Structured Query Language} as database backend.
+
+\subsection{Implementation measurements}
+After multiple rounds of surveying employees and customers to understand their needs and also researching around the subject, here is the break down of the results.
+\subsubsection{Usability} 
+\begin{itemize}
+
+\item \textbf{User Friendly: } The interface should be minimal and simple, with the ability to show the exchange price of Bitcoin to fiat currency (in this case both CAD and USD), input box for the price in dollars, estimation of bitcoin amount of the price and a note section to jot down the details of the transaction.
+As for the user facing interface, it should be simple, showing all the required information such as bitcoin amount and the exchange rate, the QRCode for the deposit bitcoin address. Both interfaces should show when the transaction is complete.
+
+\item \textbf{Time-Efficient: } It should not take more than normal payment systems to initiate the payment, a web based interface would have this advantage that it can be loaded from any device in a quite good speed, depending on the internet speed.
+
+\item \textbf{Fair Exchange Rate: } After doing our research on this we found the website called bitcoinaverage\footnote{"BitcoinAverage.com is the first aggregated bitcon price index that was initially launched in August 2013 with a goal to aggregate rates from all available Bitcoin exchanges around the world and provide a weighted average bitcoin price." \url{https://bitcoinaverage.com}} that offers a good combination of all the exchange prices to come up with an average daily price to be used as the fair exchange rate.
+
+\item \textbf{Availability: } The payment interface should be opened to public in the sense that it could be loaded in any device. 
+
+\end{itemize}
+%-------------------------- Deployability --------------------------
+\subsubsection{Deployability}
+\begin{itemize}
+
+\item \textbf{Cost to Run: } The only costs associated with this implementation would be the annual cost of the shared hosting that nowadays is under 100 dollars for an unlimited web hosting. For the sake of this research, there would be no other implementation and development costs. Also with the talk to the owner we would record all the sales with the input price in bitcoins as well as dollars and the business will be payed with the exact dollar amount as if he was using cash for these payments.
+
+\item \textbf{Branching} For now there's no plan to have more branches for this business, but depending on the implementation, to have another branch it would be as easy as running another instance of the software.
+
+\end{itemize}
+ 
+%-------------------------- Privacy --------------------------
+\subsubsection{Privacy} 
+\begin{itemize}
+
+\item \textbf{No Information leakage: } The payment interface should not reveal any information about the backend nor the business.
+
+\item \textbf{Payee's Privacy: } There should be a new address generated for each transaction request so no one could see how much the business had received in Bitcoin prior or after each transaction.
+
+\item \textbf{Payer's Privacy: } This would be the payers Bitcoin wallet client responsibility and it would be out of the scope of this PoS system.
+
+\item \textbf{Authenticiation: } There should be an reporting and administration interface designed that is protected by password and only accessible to the business owner.
+
+\end{itemize}
+%-------------------------- Security --------------------------
+\subsubsection{Security} 
+\begin{itemize}
+
+\item \textbf{No 3rd-Party Trust: } There should not be any sensitive usage of 3rd parties in the system so that the trust is needed. It should work as a stand alone system.
+
+\item \textbf{Data Ecnryption: } All the private keys should be encrypted and then stored on the server. 
+
+\item \textbf{No Software dependency: } There should not be any software dependency on the payment page for the business. The software dependencies on the server side should all be included in the package as open source software.
+
+\end{itemize}
+
+
+%---------------------------------------------------- Opensource libraries and softwares ----------------------------------------------------
+
+\subsection{Opensource libraries and softwares}
+There are multiple approaches to implementing the PoS, after the requirement engineering phase we chose PHP as our main programming language to code this project, this scales than the options to a few opensource projects.
+
+\subsubsection{Bitcoin libraries}
+\begin{itemize}
+
+\item \textbf{Bitcoin SCI: }Bitcoin Shopping Card Interface
+\item \textbf{PHP Elliptic Curve library\footnote{\url{http://matejdanter.com}}: } Used as a dependency to Bitcoin SCI to generate bitcoin addresses.
+\item \textbf{bitcoin-prices\footnote{\url{https://github.com/miohtama/bitcoin-prices}}: } Display bitcoin prices in human-friendly manner in fiat currency using bitcoinaverage.com market data
+
+\end{itemize}
+
+After searching the internet, we decided to use "Bitcoin SCI: process bitcoin transactions with PHP" as the software to use as our bitcoin core. It is originally designed to be integrated in e-commerce websites but it could be easily modified to meet our needs. 
+
+
+\textbf{Bitcoin SCI } (Bitcoin Shopping Cart Interface \footnote{\url{http://bitfreak.info/?page=tools&t=bitsci}}: is a set of libraries and tools that enables the user to process bitcoin transactions with only PHP. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.25\textwidth]{fig/bitsci_screen}
+  \caption{Bitcoin SCI (Bitcoin Shopping Cart Interface)}
+\label{fig:bitcoin-sci}
+\end{figure}
+
+
+This is not a complete project to process payments, the first decision was to use this package for building the prototype and then if we failed to modify the package to meet out needs, use another approach, however we could make it suit the needs and Bitcoin SCI was used in the end product. There are some other PHP Bitcoin packages but Bitcoin SCI seemed more promising to have the potential for our purpose.
+
+A break down of the tools Bitcoin SCI gives us are as follow:
+\begin{itemize}
+\item \textbf{Bitcoin Address generation}: } Bitcoin SCI uses PHP Elliptic Curve library to generate new secure bitcoin addresses (set of public and private keys)
+\item \textbf{Private key encryption: } using phpseclib library, all the private informaton (Bitcoin private keys, transaction details) are stored encrypted
+\item \textbf{Payment Confirmation: } It uses APIs from a blockchain explorer site \footnote{blockexplorer.com} to confim a receiving payment.
+\item \textbf{Input Interface} even though this package was meant to be used as an e-commerce payment system, it has the basic tools and methods to build the price input page
+\end{itemize}
+
+However it lacks some other features that should be added:
+\begin{itemize}
+
+\item \textbf{Database: } In order to have management and report page, saving the transaction details into a database is a must.
+\item \textbf{Fair Bitcoin Exchange rate: } It uses a predefined source to get the price of bitcoin and it's not possible to set different currencies as the input
+\item \textbf{User-Friendly interface: } All the interfaces are poorly designed and needs to be modified to suit the PoS system.
+\item \textbf {Report Page: } We need a report page with authentication in place.
+\item \textbf {Input Validation: } Other than security perspective of input validation, this is needed because of the way we want the PoS to work, it should alert the employee if she has done something wrong before going to the next page and adding a failed transaction to the database.
+\item \textbf {Cash out option: } As all the private keys are stored encrypted in the server we need a way to cash out the available bitcoins and send them to another bitcoin address. It's possible to retrieve the private keys of each bitcoin address separately from the tool, but it's not scalable to multiple weekly transactions.
+\end{itemize}
+
+\textbf{bitcoin-prices} This library allows us to use bitcoinaverage.com prices as our main source of price conversion, and it gives nice tools for interface design, such as the ability to switch between different currencies by just clicking on the price. This allows us to reach a fair exchange rate that is also shown in different currencies in case it was needed.
+
+\subsubsection{Encryption libraries}
+\begin{itemize}
+\item \textbf{phpseclib\footnote{\url{http://phpseclib.sourceforge.net}}: } used for private key encryptions.
+\end{itemize}
+
+We used this library mainly because it was already included in the Bitcoin SCI package as a dependency, but later on when we added the database functionality, we needed a library for encryption purposes that they were all included in this library.
+
+\subsubsection{Interface libraries}
+\begin{itemize}
+\item \textbf{Sweet Alert \footnote{\url{http://t4t5.github.io/sweetalert}}: }  A Beautiful replacement for javascript's "Alert", 
+\end{itemize}
+
+This is a nice Javascript library that we used to make the interface more user-friendly. Also in the case of data validation, we needed a simple and nice way to inform the employee that she did a mistake on the form and the mistake should be fixed, for this case Javascript is the best option in the sense that it could validate the inputs on the browser before sending it to the server.
+
+
+%-------------------------- Prototyping --------------------------
+\subsection{Prototyping}
+
+
+
+
+\subsubsection{PoS main functionalities}
+getting the host
+
+setting up the development environment
+
+testing out the bitcoin sci?
+
+prototyping the database
+
+prototyping the interface
+
+getting feedback from the employees and the business owner
+
+fixing the issues mentioned (multi currency price as montreal is a touristic city and lots of their customers are coming from the United States, it should show USD and CAD at least.
+
+doing the first transaction to buy a coffee in montreal! and actually eastern canada
+
+confirmation time??
+
+
+\subsubsection{Private reporting page}
+
+based on all feedback!
+
+show all the transactions with the exact price sold in CAD
+
+ability to remove canceled transaciton
+
+ability to recheck if there was any payment in any of the generated addresses (that is equal to a half done transaction)
+
+ability to export the used private keys (decrypt with the RSA 1024 key
+
+add pictures!!!!
+
+
+%-------------------------- Training --------------------------
+\subsection{Training}
+
+the manual made
+
+
+%FIXME:  seperate the initial requirements and the ones that was done while designing the system (mostly security)
+
+
+%FIXME:  add rounds of implimentation and execution, first round interface issues, BTC/USD rate added, TEMP Address tables added
+
+
+%security model of reports: 1) reporst to see all the transactions, 2)superadmin view, ability to change the databse and add the non-confirmed transactions into the final table.
+
+%FIXME: future work: fast verification
+
+
+
+\end{document}
+
+
+
+
