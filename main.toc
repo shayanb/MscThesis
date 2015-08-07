@@ -1,0 +1,37 @@
+\contentsline {chapter}{List of Figures}{1}{Doc-Start}
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Bitcoin}{2}{section.1.1}
+\contentsline {subsubsection}{Bitcoind}{2}{section*.3}
+\contentsline {subsubsection}{Bitcoin Addresses}{3}{section*.4}
+\contentsline {subsubsection}{BIP32 xpub/xprv}{3}{section*.5}
+\contentsline {subsubsection}{confirmation}{3}{section*.6}
+\contentsline {chapter}{\numberline {2}First Look at the Bitcoin Key Management}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{4}{section.2.1}
+\contentsline {section}{\numberline {2.2}Background}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Bitcoin}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Usability of Key Management}{9}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Bitcoin Key Management Approaches}{10}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Keys in Local Storage}{10}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Password-protected (Encrypted) Wallets}{13}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Offline Storage of Keys}{14}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Air-gapped Key Storage}{16}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Password-derived Keys}{17}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}Hosted Wallets}{19}{subsection.2.3.6}
+\contentsline {section}{\numberline {2.4}Evaluation Framework}{21}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Evaluation Criteria}{21}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Discussion}{23}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}Usability Evaluation of Bitcoin Clients}{24}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Methodology}{24}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Evaluated Clients}{28}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}Results}{29}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Keys in Local Storage (Bitcoin Core\xspace )}{29}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Password-protected Wallets (MultiBit\xspace )}{32}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}Air-gapped Key Storage (Armory\xspace )}{35}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}Offline Storage (Bitaddress\xspace )}{38}{subsection.2.6.4}
+\contentsline {subsection}{\numberline {2.6.5}Password-Derived Keys (Brainwallet\xspace )}{40}{subsection.2.6.5}
+\contentsline {subsection}{\numberline {2.6.6}Hosted Wallets (Blockchain.info\xspace )}{42}{subsection.2.6.6}
+\contentsline {section}{\numberline {2.7}Discussion}{43}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Metaphors}{43}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Abstractions}{45}{subsection.2.7.2}
+\contentsline {subsection}{\numberline {2.7.3}Technical Language and Content}{46}{subsection.2.7.3}
+\contentsline {section}{\numberline {2.8}Conclusion}{48}{section.2.8}
