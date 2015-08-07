@@ -114,7 +114,7 @@ Password-protected wallets may mislead the user to believe that the password its
 To further protect Bitcoin private keys from malware-based threats, wallets can be stored offline on some form of portable media, such as a USB thumbdrive. Keeping keys offline enables the use of traditional physical security techniques (\eg storing the drive in a fire-proof safe) to protect the wallet. However, offline storage has the drawback of making the wallet inaccessible for immediate use by software, preventing users from spending funds unless the offline storage media is nearby. As expected, offline storage can be used for backup, but all copies of the wallet must be kept offline for the full benefits of theft-protection to be realized. Prior to offline storage (wallet creation) and after storage (future transactions), the wallet will be exposed on a computational device, potentially to malware. 
 
 \begin{figure}[pt]
-  \includegraphics[width=.48\textwidth]{fig/paperwallet.png}
+  \includegraphics[width=.50\textwidth]{fig/paperwallet.png}
   %\caption{Bitcoin paper wallet generated using \url{https://bitcoinpaperwallet.com}. The printout is designed to be folded such that the private key (right) remains hidden while the public component (left) remains visible.}
   \label{fig:paperwallet}
 \end{figure}
@@ -169,7 +169,7 @@ Other than server side encryption and security measures, It uses client side enc
 % = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 
-\begin{table*}[ht!]
+\begin{table*} %[ht!]
 
 \renewcommand{\arraystretch}{1.3}
 
@@ -497,19 +497,19 @@ The abstractions made in Bitcoin clients are sometimes beneficial for users, suc
 \begin{figure}[htb]
         \centering
         \subfloat[\bitcoinclient]{
-        \includegraphics[width=.48\textwidth]{btcore-sync}
+        \includegraphics[scale=0.5]{fig/btcore-sync.png}
         \label{fig:btcore-sync}
         }
                 
         \subfloat[\multibit]{
-        \includegraphics[width=.45\textwidth]{multibit-sync}
+        \includegraphics[scale=0.5]{fig/multibit-sync.png}
         \label{fig:multibit-sync}
         }
         
-%        \subfloat[\armory]{
-%        \includegraphics[width=.45\textwidth]{armory-sync}
-%        \label{fig:armory-sync}
-%        }
+        \subfloat[\armory]{
+        \includegraphics[scale=0.5]{fig/armory-sync.png}
+        \label{fig:armory-sync}
+        }
         \caption{Screenshots of technical language displayed by two different clients. }\label{fig:techlang}
 \end{figure}
 %
@@ -533,5 +533,4 @@ we found that developers in the Bitcoin ecosystem are making innovative attempts
 Further investigation is needed to better understand and address these issues. A user study would give insight into exactly how these problems are affecting users and it would be interesting to investigate how expert users are (apparently successfully) handling these challenges. Bitcoin presents a new opportunity for public key cryptography to become mainstream, and our evaluation is a first step towards achieving usable key management in decentralized cryptocurrencies. 
 
 
-\end{document}
 
