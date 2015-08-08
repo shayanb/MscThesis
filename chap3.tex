@@ -5,7 +5,10 @@
 
 \section{Introduction}
 
-COMPLETE HERE!
+One of the aspects of Bitcoin is that there is no identity backing up the currency but everyone who uses it. As a Bitcoin enthusiast one of the goals is to have more places to accept Bitcoin, however so far this has been an issue for the business owners to implement a simple, yet fully functional Point of Sale (PoS) to be able to accept Bitcoin as a payment method.
+In this chapter I discuss my approach to come up with a solution and implement the Bitcoin PoS in a Cafe in Montreal\footnote{ Cafe Aunja \url{http://aunja.com}} as the business owner was interested to implement this method of payment.
+
+In order to do so I started by going through the requirements of a payment system in this business, and then browsed through the available options and if they meet our requirements. \fixme{maybe more details here?}
 
 %==================== Requirement ======================
 \section {Requirments}
@@ -26,7 +29,6 @@ SCRAM defines four phases of requirement engineering and has been shown to be a 
 
 %-------------------------- Initial requirements capture and domain familiarisation. --------------------------
 \textit{Phase 1: Initial requirements capture and domain familiarisation.} We asked the cafe owner, two employees and two customers for a scenario involving Bitcoin payment in the cafe to create the common "normal use case". The differences between the scenarios were insignificant thus the exceptions to this normal use case are not valid. %e.g. one exception was power failure, and in this case because even the current accepted payment methods such as Visa would not work we 
-
 
 
 As the cafe already have other payment systems in place, there is no need to go through the cafe's business plan or any other specification to check for conflicts. The only difference is implementation of another payment system at cashier \ref{fig:phase1}.
@@ -54,9 +56,6 @@ We developed a concept demonstrator, capable of doing a simple bitcoin payment. 
 %-------------------------- Prototyping and requirements validation. --------------------------
 \textit{Phase 4: Prototyping and requirements validation.}
 We used the feedbacks gathered from phase 3 to make the first prototype. This had the bitcoin exchange rate retrieval automatically and the employee only had to input the dollar amount in the PoS, this made it possible to keep the bitcoin terminology out of the scope of the training for the employees. However on the first prototype, to show the success payments, the system was showing the transaction in the blockchain, using web-based APIs. This was not clear for a novice user about the state of the system. On the second round of prototyping we designed an interface to show that if the transaction has been broadcasted to the bitcoin network.\\
-\fixme{add a short scenario when it was obvious that the system needed to have an interface for the blockchain confirmation}
-
-
 
 \subsection{Decision Framework}
 We propose a framework specialized for Bitcoin point of sale systems to score the system with a set of requirements based on usability, deployability, privacy and security. These are not a final set of requirements for a general purpose system, however in the case of Bitcoin payments for a small business these will suffice.
@@ -149,7 +148,6 @@ The only thing required by this approach, is a smart phone or a small computer t
 Bitpay has taken the privacy too serious. As they generate a new address for each transaction, the payees privacy is safe, however there has been reports on account suspensions because the payments were coming from a flagged bitcoin addresses, in the sense that there was malicious activities on that bitcoin address such as money laundry or buying drugs from online site. In this case the privacy, as the sense that we are evaluating, is being held but maybe not in all the aspects user want in a payment system.
 \\ \textbf{Security}
 Every aspect of the payment system is implemented by Bitpay, they offered one of the most secure payment systems so far and there has been no big hacks reported. However, user has no control over his private keys and all the keys are being stored on Bitpay servers, this means complete trust to a third party.
-
 
 
 %-------------------------- self hosting PoS--------------------------
@@ -436,6 +434,21 @@ Other than in person training that I did with every employee, I made a manual (F
 \end{figure}
 
 
+
+\section{Operation}
+Cafe Aunja started accepting Bitcoin with this customized PoS on Oct 23, 2014, and was the first cafe in eastern Canada that accepts Bitcoin. During the first month, there was more than 10 bitcoin payments and it has been working ever since.
+
+\subsection{lessons learned}
+One of the missing features that should be implemented in such a system is a fast verification method, in the sense that for each payment customer need to wait for average of 10 minutes for the transaction to get confirmed. To remedy this issue, I solved this issue that the payment would be flagged as successful as soon as the transaction is broadcasted to Bitcoin network also known as 0-confirmation. This could work for a PoS in a cafe as the volume of each transaction is small and it's not risky to take 0-confirmation transactions, However this is still a open problem to remedy the risk for higher value transactions and prevent double spend attacks ~\cite{karame2012two} ~\cite{bamert2013have}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{fig/cafeaunja.png}
+  \caption{Cafe Aunja Started to accept bitcoin on Oct 23, 2014 }
+\label{fig:cafeaunja}
+\end{figure}
+
+
 %FIXME:  seperate the initial requirements and the ones that was done while designing the system (mostly security)
 
 
@@ -445,7 +458,6 @@ Other than in person training that I did with every employee, I made a manual (F
 %security model of reports: 1) reporst to see all the transactions, 2)superadmin view, ability to change the databse and add the non-confirmed transactions into the final table.
 
 %FIXME: future work: fast verification
-
 
 Now to test the system on production, it was time for the first ever coffee in eastern Canada to be bought with Bitcoin. 
 
