@@ -9,21 +9,61 @@
 
 
 \section{Bitcoin}
-Bitcoin is the first decentralized virtual currency a.k.a Cryptocurrency. Blah blah
-\begin{itemize}
-\item Public key known as bitcoin address
-\item public keys could be should as QR codes to be scannable with mobile devices
-\item private key kept secure, needed to spend or transfer the bitcoins
+Bitcoin is the first decentralized virtual currency and by far has adopted the most number of users ~\cite{Nak08}. it is based on cryptographic functions to remove the need of a central bank and regulates the generation of new units. Bitcoin, as a protocol and as a currency, is a really vast subject that most would fall out of the scope of this thesis. In this thesis, I will talk about Bitcoin as the currency and the functionality of the protocol that is needed in order to hold and use Bitcoin as a currency.
+
+This introduction is not an introduction to Bitcoin, but the details of Bitcoin that is needed in this research, Some details has been simplified to prevent going outside the scope of this thesis. Every aspect of Bitcoin that is missing from this introduction has explained through this thesis when the preliminary information of the usage is known to the reader.
 
 
-\subsubsection{Bitcoind}
-what is and why
-heavy client
-would be explain more on chapter two (bitcoin-qt)
+\subsection{Bitcoin Address}
+Bitcoin address is a random string of 26-35 alphanumeric characters that starts with "1" or "3", that contains digits, uppercase and lowercase letters with the exception of "O", "I" (Uppercase i) , "l" (Lower case L) and the number 0 to prevent visual ambiguity. Bitcoin addresses are commonly shared via QR-Code as it's easier to read with QR-code mobile scanners and it is also implemented in almost all Bitcoin wallets (see figure ~\ref{fig:bitcoinqr}).
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{fig/bitcoinqr.png}
+  \caption{QR-Code representing the bitcoin address  "1shaYanre36PBhspFL9zG7nt6tfDhxQ4u"}
+\label{fig:bitcoinqr}
+\end{figure}
+
+\subsubsection{Public Key}
+ In other words, Bitcoin address is 160-bit hash of the public portion of the public and private ECDSA\footnote{Elliptic Curve Digital Signature Algorithm} keypair (see Figure ~\ref{fig:pubkeytoaddr}).
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{fig/PubKeyToAddr.png}
+  \caption{ECDSA Public key to Bitcoin Address}
+	\source{\url{https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses}}
+\label{fig:pubkeytoaddr}
+\end{figure}
 
 
-\subsubsection{Bitcoin Addresses}
-\subsubsection{BIP32 xpub/xprv}
+\subsubsection{Private Key}
+Private key can be any 256 bit number from 0x1 to 0xFFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFE BAAE DCE6 AF48 A03B BFD2 5E8C D036 4140. Basically any number in this range would be valid as the input for secp256k1\footnote{Standards for Efficient Cryptography (SEC) \url{https://en.bitcoin.it/wiki/Secp256k1}} ECDSA standard. This is the secret part of the bitcoin address that should be kept secure and there are already different methods of securing the private key as discussed in Chapter 2. Anyone with the private key has the ability to sign a transaction and spend the bitcoins that are signed with the relevant public key (or bitcoin address). 
+Same as Bitcoin addresses and Public keys, Private keys have a shorter format called wallet import format (wif) that is used commonly by most Bitcoin wallets, it contains error checking bits and also have some information about the public key associated to the private key. An example of a private key in wif format would be "5Kb8kLf9zgWQnogidDA76MzPL6TsZZY36hWXMssSzNydYXYB9KF" that would result in "1CC3X2gu58d6wXUWMffpuzN9JAfTUWu4Kj" as the associated bitcoin address.
+
+\fixme{maybe more details on address generation?}
+
+
+\subsubsection{BIP32}
+As Satoshi Nakamoto ~\cite{Nak08} also points out, it's better to generate a new address for each transaction and receive the changes in a new change address( The concept of change addresses would be explained more in chapter 2) to use the pseudonymity of bitcoin. This brought a challenge to Bitcoin wallet client designs as keeping track of all the addresses in the wallet file and also the ability to back up the private keys (More on Chapter 2). 
+Bitcoin is an open source project, and to make improvements to the protocol there are Bitcoin Improvement Proposals (BIP) introduced by mostly developers to be implemented in the core code. One important one is BIP32 known as Hierarchical Deterministic Wallets or HD wallets ~\cte{bip32}. It introduce the ability to generate a tree of addresses from a single seed, this could be shown as 0/1 as in branch 0 of the root and branch 1 of the next branch. BIP32 simplifies the backing up process as there is just a seed to be backed up and it's easier to keep track of the addresses, a visualization of how BIP32 is design can be seen in figure ~\ref{fig:bip32}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{fig/bip32derivation.png}
+  \caption{BIP32 - Hierarchical Deterministic Wallets}
+	\source{\url{https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki}}
+\label{fig:bip32}
+\end{figure}
+
+
+\subsection{Bitcoin Wallet}
+This term has been misused in bitcoin sphere as both the file that contains the private keys and also the software client used to do mange bitcoin transactions, this concept has been more discussed in Chapter 2. For the sake of simplicity, we use the term Bitcoin wallet client as in the software used to sign bitcoin transactions with the private key held in Bitcoin wallet file and manage the bitcoin transactions.
+The first and official Bitcoin wallet client is Bitcoin QT (Bitcoind as the daemon) that will be explained more on Chapter 2.
+
+
+
+
+
 \subsubsection{confirmation}
 zero conf transactions
 fast payment verification

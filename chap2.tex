@@ -3,10 +3,14 @@
 
 \chapter{First Look at the Bitcoin Key Management}
 
+\setchapterpreamble{This chapter is adapted from published work Supervised by Dr. Jeremy Clark and co-authored by David Barrera and Elizabeth Stobert ~\cite{eskandari2015first}}
 % = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-\section{Introduction}
-In all of the excitement surrounding Bitcoin~\cite{Nak08}, it is easy to forget that the decentralized currency assumes a solution to the longstanding problem of usable public key cryptography for user authentication. Studies of the usability of key management~\cite{GM05,GMSN+05,SBKH06,GFF06} have shown that there are numerous usability issues that prevent public key cryptography from being effectively leveraged by end users. Managing, controlling, and using cryptographic keys are complex tasks, and no clear solution has been proposed.  
+\section{Introductory Remarks}
+
+\fixme{move these to intorduction! }
+
+In all of the excitement surrounding Bitcoin, it is easy to forget that the decentralized currency assumes a solution to the longstanding problem of usable public key cryptography for user authentication. Studies of the usability of key management~\cite{GM05,GMSN+05,SBKH06,GFF06} have shown that there are numerous usability issues that prevent public key cryptography from being effectively leveraged by end users. Managing, controlling, and using cryptographic keys are complex tasks, and no clear solution has been proposed.  
 
 Despite the known complexity in creating and managing cryptographic keys, the Bitcoin network and software clients use such keys extensively for many operations. For example, digital signatures, which require the Bitcoin software to read private keys into memory, are used to assert ownership over a specific set of Bitcoins. Thus, managing the same coins on multiple devices (\eg a desktop and a phone) requires the corresponding private keys to be copied to and made accessible on these devices. 
 
