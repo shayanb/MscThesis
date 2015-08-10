@@ -61,7 +61,6 @@ This term has been misused in bitcoin sphere as both the file that contains the 
 The first and official Bitcoin wallet client is Bitcoin QT (Bitcoind as the daemon) that will be explained more on Chapter 2.
 
 
-
 \subsection{Confirmation}
 When a bitcoin transaction is broadcasted to the network, it should get included in a block by Bitcoin miners. Bitcoin miners are the computers that are using their hashing power to verify each and every transaction within the bitcoin network and include them in a block. Each block would be added to the blockchain with a hash referencing its previous block and everyone in the network should have the consensus that the hash value for the block and the previous one is correct. As soon as the transaction is broadcasted it has 0-confirmation, that means it has not been added to any block, right after it gets included in a block it has 1 confirmation and this increases by each block that gets added to the blockchain.
 
@@ -74,4 +73,7 @@ When a bitcoin transaction is broadcasted to the network, it should get included
 \end{figure}
 
 This is really important to understand that it is possible for a 0-confirmation transaction to stay unconfirmed for a while, depending on how much miner's fee is included in the transaction, miner's tend to chose the transactions with a higher miner's fee to be included in the new block first.
+
+
+
 
