@@ -17,7 +17,7 @@ This introduction is not an introduction to Bitcoin, but the details of Bitcoin 
 \subsection{Bitcoin Address}
 Bitcoin address is a random string of 26-35 alphanumeric characters that starts with "1" or "3", that contains digits, uppercase and lowercase letters with the exception of "O", "I" (Uppercase i) , "l" (Lower case L) and the number 0 to prevent visual ambiguity. Bitcoin addresses are commonly shared via QR-Code as it's easier to read with QR-code mobile scanners and it is also implemented in almost all Bitcoin wallets (see figure ~\ref{fig:bitcoinqr}).
 
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[scale=0.8]{fig/bitcoinqr.png}
   \caption{QR-Code representing the bitcoin address  "1shaYanre36PBhspFL9zG7nt6tfDhxQ4u"}
@@ -27,7 +27,7 @@ Bitcoin address is a random string of 26-35 alphanumeric characters that starts 
 \subsubsection{Public Key}
  In other words, Bitcoin address is 160-bit hash of the public portion of the public and private ECDSA\footnote{Elliptic Curve Digital Signature Algorithm} keypair (see Figure ~\ref{fig:pubkeytoaddr}).
 
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[scale=1]{fig/PubKeyToAddr.png}
   \caption{ECDSA Public key to Bitcoin Address}
@@ -47,7 +47,7 @@ Same as Bitcoin addresses and Public keys, Private keys have a shorter format ca
 As Satoshi Nakamoto ~\cite{Nak08} also points out, it's better to generate a new address for each transaction and receive the changes in a new change address( The concept of change addresses would be explained more in chapter 2) to use the pseudonymity of bitcoin. This brought a challenge to Bitcoin wallet client designs as keeping track of all the addresses in the wallet file and also the ability to back up the private keys (More on Chapter 2). 
 Bitcoin is an open source project, and to make improvements to the protocol there are Bitcoin Improvement Proposals (BIP) introduced by mostly developers to be implemented in the core code. One important one is BIP32 known as Hierarchical Deterministic Wallets or HD wallets ~\cte{bip32}. It introduce the ability to generate a tree of addresses from a single seed, this could be shown as 0/1 as in branch 0 of the root and branch 1 of the next branch. BIP32 simplifies the backing up process as there is just a seed to be backed up and it's easier to keep track of the addresses, a visualization of how BIP32 is design can be seen in figure ~\ref{fig:bip32}.
 
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[width=\linewidth]{fig/bip32derivation.png}
   \caption{BIP32 - Hierarchical Deterministic Wallets}
@@ -62,11 +62,16 @@ The first and official Bitcoin wallet client is Bitcoin QT (Bitcoind as the daem
 
 
 
+\subsection{Confirmation}
+When a bitcoin transaction is broadcasted to the network, it should get included in a block by Bitcoin miners. Bitcoin miners are the computers that are using their hashing power to verify each and every transaction within the bitcoin network and include them in a block. Each block would be added to the blockchain with a hash referencing its previous block and everyone in the network should have the consensus that the hash value for the block and the previous one is correct. As soon as the transaction is broadcasted it has 0-confirmation, that means it has not been added to any block, right after it gets included in a block it has 1 confirmation and this increases by each block that gets added to the blockchain.
 
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{fig/bitcoinblocks.png}
+  \caption{Bitcoin Blocks in the blockchain}
+	\source{~\cite[Nak08]}
+\label{fig:bitcoinblocks}
+\end{figure}
 
-\subsubsection{confirmation}
-zero conf transactions
-fast payment verification
+This is really important to understand that it is possible for a 0-confirmation transaction to stay unconfirmed for a while, depending on how much miner's fee is included in the transaction, miner's tend to chose the transactions with a higher miner's fee to be included in the new block first.
 
-
-\end{itemize}
