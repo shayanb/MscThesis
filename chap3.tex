@@ -19,7 +19,7 @@ We used SCRAM (Scenario-based Requirements Analysis Method)~\cite{REScenario} as
 SCRAM defines four phases of requirement engineering and has been shown to be a great requirement engineering framework.
 
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[scale=0.7]{fig/REscenario.png}
   \caption{Role of scenarios and their relationship to requirements specifications and prototypes}
@@ -48,7 +48,7 @@ This method consists of four phases:
 As the cafe already have other payment systems in place, there is no need to go through the cafe's business plan or any other specification to check for conflicts. The only difference is implementation of another payment system at cashier \ref{fig:phase1}.
 However, there are requirements in the PoS system that needs to be met, such as realtime bitcoin to fiat money exchange rate and obvious alert of successful or failed payments.
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{fig/RE_Scenario_Phase1}
   \caption{Phase 1 - Normal Use Case}
@@ -61,7 +61,7 @@ However, there are requirements in the PoS system that needs to be met, such as 
 Based on the information gathered from Phase 1 and further analysis such as user survey on the design, we can develop the storyboard, see figure \ref{fig:storyboard}. More technical requirements will be explained later [section XX].
 
 %FIXME: wrapfigure package ! size
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{fig/RE_Scenario_Interface}
   \caption{Storyboard - User Interface first sketch}
@@ -190,7 +190,7 @@ Another option is to run a customized wallet as the point of sale service. There
 \subsection{Mycelium Gear}
 Mycelium Gear \footnote{\url{https://gear.mycelium.com/}} is a service offered by Mycelium group that offers a widget as an interface to the user and a service that would use the BIP32 public key provided on the Admin panel to generate new addresses securely. This means that they don't hold any private keys, but still uses the same path for address generation as their Mycelium Mobile wallet uses \fixme{more detials about this}.
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{fig/Mycelium_gear.png}
   \caption{Mycelium Gear Widget}
@@ -346,7 +346,7 @@ After searching the internet, we decided to use "Bitcoin SCI: process bitcoin tr
 
 \textbf{Bitcoin SCI } (Bitcoin Shopping Cart Interface \footnote{\url{http://bitfreak.info/?page=tools&t=bitsci}}: is a set of libraries and tools that enables the user to process bitcoin transactions with only PHP. 
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{fig/bitsci_screen}
   \caption{Bitcoin SCI (Bitcoin Shopping Cart Interface)}
@@ -404,14 +404,14 @@ Then I started working with Bitcoin SCI to add the database functionality and de
 
 I designed three tables (first prototype had two) for the purpose of this PoS. One table is for the Bitcoin key pairs to be stored and will be used to decrypt and export the private keys when required (see Figure ~\ref{fig:wifkeys}. The other table holds the information regarding each transaction (Figure ~\ref{fig:tx_history}, later on to prevent spam requests and test cases from making the table unnecessary big, I designed a temporary transaction table to hold the information of the transactions before the payment is validated, as soon as the payment is flagged as valid the relevant information would be moved to the main table and will be removed from the temporary table.
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{fig/wifkeys_table.png}
   \caption{Structure for wifkeys table that holds the bitcoin key pairs}
 \label{fig:wifkeys}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{fig/tx_history_table.png}
   \caption{Structure for transaction history table}
@@ -422,7 +422,7 @@ Bitcoin SCI uses a file-based method to store the keys and transaction details, 
 
 Other tasks were involved in integrating the above mentioned open source projects into each other to have a complete solution package.
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{fig/First_View.png}
   \caption{PoS - First View}
@@ -431,7 +431,7 @@ Other tasks were involved in integrating the above mentioned open source project
 
 One of the features that were added on the second round of prototyping was the ability to show the Bitcoin price in USD other than the default CAD, this was added with the usage of bitcoin-prices library. The other was to add the "Notes" field to be able to add invoice ID or the items that the customer bought. It was possible to implement a drop down menu with all the cafe's menu options to be added to the list but as we discussed this solution with the cafe owner, he mentioned that the items in the menu might not stay the same during the year and also there might be price changes, so that approach was not suitable for this business, although it might be a good option for an e-commerce site.
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{fig/Payment.png}
   \caption{PoS - Payment}
@@ -441,7 +441,7 @@ One of the features that were added on the second round of prototyping was the a
 \subsubsection{Private reporting page}
 One other aspect of the requirements was a reporting page, this was based on the feedbacks from the cafe's owner and his preferences.
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=\linewidth]{fig/report_page.png}
   \caption{Report Page}
@@ -452,7 +452,7 @@ One of the important fields later on added to the report page was the "Sale Doll
 
 Other added feature was the ability to check on the blockchain for each transaction, If the cafe owner clicks on any of the bitcoin addresses related to each sale, he would be redirected to a blockchain explorer site and he can see if the transaction went through or not.
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=\linewidth]{fig/canceled_sale.png}
   \caption{A canceled sale - this means that the request was made on the PoS interface to generate an address, but the customer never sent the bitcoins. Probably a test or customer changed his mind and paid via another payment method}
@@ -478,7 +478,7 @@ This PoS has been made open source and available to public\footnote{\url{https:/
 I tried to make the interface as simple as possible for the employees. There are no jargons or technical requirements to use the PoS, but anyhow some details specific to Bitcoin transactions has to be taught to the employees to be able to recover from human errors while a transaction is processing.
 Other than in person training that I did with every employee, I made a manual (Figure~\ref{fig:payment_manual}) and attached it to the cashier's counter for future reference by all cafe employees.
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=\linewidth]{fig/Payment_manual.pdf}
   \caption{PoS - Step by step manual for Bitcoin payments}
@@ -495,7 +495,7 @@ One of the missing features that should be implemented in such a system is a fas
 
 Now to test the system on production, it was time for the first ever coffee in eastern Canada to be bought with Bitcoin (Figure ~\ref{fig:firsttransaction}).
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=\linewidth]{fig/first_cafe_transaction.png}
   \caption{Database details of the first Coffee bought with Bitcoin in the cafe}
@@ -504,7 +504,7 @@ Now to test the system on production, it was time for the first ever coffee in e
 
 
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{fig/cafeaunja.png}
   \caption{Cafe Aunja Started to accept bitcoin on Oct 23, 2014 }

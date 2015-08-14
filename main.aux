@@ -18,109 +18,203 @@
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \providecommand \oddpage@label [2]{}
 \@writefile{toc}{\contentsline {chapter}{List of Figures}{1}{Doc-Start}}
+\citation{Nak08}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Bitcoin}{2}{section.1.1}}
-\@writefile{toc}{\contentsline {subsubsection}{Bitcoind}{2}{section*.3}}
-\@writefile{toc}{\contentsline {subsubsection}{Bitcoin Addresses}{3}{section*.4}}
-\@writefile{toc}{\contentsline {subsubsection}{BIP32 xpub/xprv}{3}{section*.5}}
-\@writefile{toc}{\contentsline {subsubsection}{confirmation}{3}{section*.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces QR-Code representing the bitcoin address "1shaYanre36PBhspFL9zG7nt6tfDhxQ4u"}}{3}{figure.1.1}}
+\newlabel{fig:bitcoinqr}{{1.1}{3}{QR-Code representing the bitcoin address "1shaYanre36PBhspFL9zG7nt6tfDhxQ4u"}{figure.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Bitcoin Address}{3}{subsection.1.1.1}}
+\@writefile{toc}{\contentsline {subsubsection}{Public Key}{3}{section*.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces ECDSA Public key to Bitcoin Address}}{4}{figure.1.2}}
+\newlabel{fig:pubkeytoaddr}{{1.2}{4}{ECDSA Public key to Bitcoin Address}{figure.1.2}{}}
 \citation{Nak08}
+\@writefile{toc}{\contentsline {subsubsection}{Private Key}{5}{section*.4}}
+\@writefile{toc}{\contentsline {subsubsection}{BIP32}{5}{section*.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.2}Bitcoin Wallet}{6}{subsection.1.1.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces BIP32 - Hierarchical Deterministic Wallets}}{7}{figure.1.3}}
+\newlabel{fig:bip32}{{1.3}{7}{BIP32 - Hierarchical Deterministic Wallets}{figure.1.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Bitcoin Blocks in the blockchain}}{8}{figure.1.4}}
+\newlabel{fig:bitcoinblocks}{{1.4}{8}{Bitcoin Blocks in the blockchain}{figure.1.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.3}Confirmation}{8}{subsection.1.1.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Structure of this thesis}{9}{section.1.2}}
+\citation{eskandari2015first}
 \citation{GM05,GMSN+05,SBKH06,GFF06}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}First Look at the Bitcoin Key Management}{4}{chapter.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}First Look at the Bitcoin Key Management}{10}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Introduction}{4}{section.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Introductory Remarks}{10}{section.2.1}}
 \citation{FH12}
 \citation{MGGR13,BNMC+14}
 \citation{WRLP94}
 \citation{Nak08}
 \citation{Cha82}
 \citation{ecdsa}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Background}{7}{section.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Bitcoin}{7}{subsection.2.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Background}{13}{section.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Bitcoin}{13}{subsection.2.2.1}}
 \citation{SPVbugs}
 \citation{Herley.2012}
 \citation{DCBW12}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Usability of Key Management}{15}{subsection.2.2.2}}
 \citation{WT99}
 \citation{GM05,GMSN+05,SBKH06,GFF06}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Usability of Key Management}{9}{subsection.2.2.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Bitcoin Key Management Approaches}{10}{section.2.3}}
-\newlabel{sec:approaches}{{2.3}{10}{Bitcoin Key Management Approaches}{section.2.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Keys in Local Storage}{10}{subsection.2.3.1}}
-\newlabel{sec:localstorage}{{2.3.1}{10}{Keys in Local Storage}{subsection.2.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Bitcoin Key Management Approaches}{16}{section.2.3}}
+\newlabel{sec:approaches}{{2.3}{16}{Bitcoin Key Management Approaches}{section.2.3}{}}
 \citation{coinbit}
 \citation{BKM05}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Password-protected (Encrypted) Wallets}{13}{subsection.2.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Offline Storage of Keys}{14}{subsection.2.3.3}}
-\newlabel{sec:offline storage}{{2.3.3}{14}{Offline Storage of Keys}{subsection.2.3.3}{}}
-\newlabel{fig:paperwallet}{{2.3.3}{15}{Offline Storage of Keys}{subsection.2.3.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.4}Air-gapped Key Storage}{16}{subsection.2.3.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Keys in Local Storage}{17}{subsection.2.3.1}}
+\newlabel{sec:localstorage}{{2.3.1}{17}{Keys in Local Storage}{subsection.2.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Password-protected (Encrypted) Wallets}{19}{subsection.2.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Offline Storage of Keys}{20}{subsection.2.3.3}}
+\newlabel{sec:offline storage}{{2.3.3}{20}{Offline Storage of Keys}{subsection.2.3.3}{}}
+\newlabel{fig:paperwallet}{{2.3.3}{21}{Offline Storage of Keys}{subsection.2.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.4}Air-gapped Key Storage}{22}{subsection.2.3.4}}
 \citation{pbkdf2}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.5}Password-derived Keys}{23}{subsection.2.3.5}}
 \citation{bip32}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.5}Password-derived Keys}{17}{subsection.2.3.5}}
 \citation{oechslin2003making}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.6}Hosted Wallets}{19}{subsection.2.3.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.6}Hosted Wallets}{25}{subsection.2.3.6}}
 \citation{BHOS12}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Evaluation Framework}{21}{section.2.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Evaluation Criteria}{21}{subsection.2.4.1}}
-\newlabel{Malware Resistant}{{2.4.1}{21}{Evaluation Criteria}{subsection.2.4.1}{}}
-\newlabel{Key Kept Offline}{{2.4.1}{21}{Evaluation Criteria}{subsection.2.4.1}{}}
-\newlabel{No Trusted Third Party}{{2.4.1}{21}{Evaluation Criteria}{subsection.2.4.1}{}}
-\newlabel{Resistant to Physical Theft}{{2.4.1}{22}{Evaluation Criteria}{subsection.2.4.1}{}}
-\newlabel{Resistant to Physical Observation}{{2.4.1}{22}{Evaluation Criteria}{subsection.2.4.1}{}}
-\newlabel{Resilient to Password Loss}{{2.4.1}{22}{Evaluation Criteria}{subsection.2.4.1}{}}
-\newlabel{Compatible with Change Keys}{{2.4.1}{22}{Evaluation Criteria}{subsection.2.4.1}{}}
-\newlabel{Immediate Access}{{2.4.1}{22}{Evaluation Criteria}{subsection.2.4.1}{}}
-\newlabel{No New Software}{{2.4.1}{23}{Evaluation Criteria}{subsection.2.4.1}{}}
-\newlabel{Portable}{{2.4.1}{23}{Evaluation Criteria}{subsection.2.4.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Discussion}{23}{subsection.2.4.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Evaluation Framework}{27}{section.2.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Evaluation Criteria}{27}{subsection.2.4.1}}
+\newlabel{Malware Resistant}{{2.4.1}{27}{Evaluation Criteria}{subsection.2.4.1}{}}
+\newlabel{Key Kept Offline}{{2.4.1}{27}{Evaluation Criteria}{subsection.2.4.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces A comparison of key management techniques for Bitcoin (contrasted with traditional financial services). $\bullet $\nobreakspace  {} indicates the category of client is awarded the benefit in the corresponding column. $\circ $\nobreakspace  {}partially awards the benefit. Details provided inline.}}{28}{table.2.1}}
+\newlabel{tab:prims}{{2.1}{28}{A comparison of key management techniques for Bitcoin (contrasted with traditional financial services). \full ~ indicates the category of client is awarded the benefit in the corresponding column. \prt ~partially awards the benefit. Details provided inline}{table.2.1}{}}
+\newlabel{No Trusted Third Party}{{2.4.1}{29}{Evaluation Criteria}{subsection.2.4.1}{}}
+\newlabel{Resistant to Physical Theft}{{2.4.1}{29}{Evaluation Criteria}{subsection.2.4.1}{}}
+\newlabel{Resistant to Physical Observation}{{2.4.1}{29}{Evaluation Criteria}{subsection.2.4.1}{}}
+\newlabel{Resilient to Password Loss}{{2.4.1}{29}{Evaluation Criteria}{subsection.2.4.1}{}}
+\newlabel{Compatible with Change Keys}{{2.4.1}{29}{Evaluation Criteria}{subsection.2.4.1}{}}
+\newlabel{Immediate Access}{{2.4.1}{30}{Evaluation Criteria}{subsection.2.4.1}{}}
+\newlabel{No New Software}{{2.4.1}{30}{Evaluation Criteria}{subsection.2.4.1}{}}
+\newlabel{Portable}{{2.4.1}{30}{Evaluation Criteria}{subsection.2.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Discussion}{30}{subsection.2.4.2}}
 \citation{Barber2012}
 \citation{WRLP94}
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Usability Evaluation of Bitcoin Clients}{24}{section.2.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}Methodology}{24}{subsection.2.5.1}}
 \citation{WRLP94}
 \citation{WT99}
 \citation{COA07}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Usability Evaluation of Bitcoin Clients}{32}{section.2.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}Methodology}{32}{subsection.2.5.1}}
 \citation{HeuristicEvaluation}
+\newlabel{sec:ct-1}{{2.5.1}{33}{Methodology}{subsection.2.5.1}{}}
+\newlabel{sec:ct-2}{{2.5.1}{33}{Methodology}{subsection.2.5.1}{}}
+\newlabel{sec:ct-3}{{2.5.1}{33}{Methodology}{subsection.2.5.1}{}}
 \citation{COA07}
 \citation{COA07}
-\newlabel{sec:ct-1}{{2.5.1}{26}{Methodology}{subsection.2.5.1}{}}
-\newlabel{sec:ct-2}{{2.5.1}{26}{Methodology}{subsection.2.5.1}{}}
-\newlabel{sec:ct-3}{{2.5.1}{26}{Methodology}{subsection.2.5.1}{}}
-\newlabel{sec:ct-4}{{2.5.1}{26}{Methodology}{subsection.2.5.1}{}}
+\newlabel{sec:ct-4}{{2.5.1}{34}{Methodology}{subsection.2.5.1}{}}
 \citation{bitcoinqt}
 \citation{multibit}
 \citation{bitaddress}
 \citation{bitcoinarmory}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.2}Evaluated Clients}{35}{subsection.2.5.2}}
 \citation{brainwallet}
 \citation{blockchain}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.2}Evaluated Clients}{28}{subsection.2.5.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.6}Results}{29}{section.2.6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.1}Keys in Local Storage (Bitcoin Core\xspace  )}{29}{subsection.2.6.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.2}Password-protected Wallets (MultiBit\xspace  )}{32}{subsection.2.6.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.3}Air-gapped Key Storage (Armory\xspace  )}{35}{subsection.2.6.3}}
-\newlabel{air gap}{{2.6.3}{35}{Air-gapped Key Storage (\armory )}{subsection.2.6.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.4}Offline Storage (Bitaddress\xspace  )}{38}{subsection.2.6.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.5}Password-Derived Keys (Brainwallet\xspace  )}{40}{subsection.2.6.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.6}Hosted Wallets (Blockchain.info\xspace  )}{42}{subsection.2.6.6}}
-\newlabel{hosted}{{2.6.6}{42}{Hosted Wallets (\block )}{subsection.2.6.6}{}}
-\newlabel{hosted transaction}{{2.6.6}{42}{Hosted Wallets (\block )}{subsection.2.6.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}Results}{36}{section.2.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.1}Keys in Local Storage (Bitcoin Core\xspace  )}{36}{subsection.2.6.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.2}Password-protected Wallets (MultiBit\xspace  )}{40}{subsection.2.6.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.3}Air-gapped Key Storage (Armory\xspace  )}{42}{subsection.2.6.3}}
+\newlabel{air gap}{{2.6.3}{42}{Air-gapped Key Storage (\armory )}{subsection.2.6.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.4}Offline Storage (Bitaddress\xspace  )}{46}{subsection.2.6.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.5}Password-Derived Keys (Brainwallet\xspace  )}{48}{subsection.2.6.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.6}Hosted Wallets (Blockchain.info\xspace  )}{49}{subsection.2.6.6}}
+\newlabel{hosted}{{2.6.6}{49}{Hosted Wallets (\block )}{subsection.2.6.6}{}}
 \citation{metaphorpaper}
-\@writefile{toc}{\contentsline {section}{\numberline {2.7}Discussion}{43}{section.2.7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.7.1}Metaphors}{43}{subsection.2.7.1}}
+\newlabel{hosted transaction}{{2.6.6}{50}{Hosted Wallets (\block )}{subsection.2.6.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.7}Discussion}{51}{section.2.7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7.1}Metaphors}{51}{subsection.2.7.1}}
 \citation{SSLSobey}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.7.2}Abstractions}{45}{subsection.2.7.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.7.3}Technical Language and Content}{46}{subsection.2.7.3}}
-\newlabel{fig:btcore-sync}{{2.1a}{46}{Subfigure 2 2.1a}{subfigure.2.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7.2}Abstractions}{53}{subsection.2.7.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7.3}Technical Language and Content}{54}{subsection.2.7.3}}
+\newlabel{fig:btcore-sync}{{2.1a}{54}{Subfigure 2 2.1a}{subfigure.2.1.1}{}}
 \newlabel{sub@fig:btcore-sync}{{(a)}{a}{Subfigure 2 2.1a\relax }{subfigure.2.1.1}{}}
-\newlabel{fig:multibit-sync}{{2.1b}{46}{Subfigure 2 2.1b}{subfigure.2.1.2}{}}
+\newlabel{fig:multibit-sync}{{2.1b}{54}{Subfigure 2 2.1b}{subfigure.2.1.2}{}}
 \newlabel{sub@fig:multibit-sync}{{(b)}{b}{Subfigure 2 2.1b\relax }{subfigure.2.1.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Screenshots of technical language displayed by two different clients. }}{46}{figure.2.1}}
-\newlabel{fig:techlang}{{2.1}{46}{Screenshots of technical language displayed by two different clients}{figure.2.1}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Bitcoin Core\xspace }}}{46}{subfigure.1.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {MultiBit\xspace }}}{46}{subfigure.1.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.8}Conclusion}{48}{section.2.8}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces A comparison of key management techniques for Bitcoin (contrasted with traditional financial services). $\bullet $\nobreakspace  {} indicates the category of client is awarded the benefit in the corresponding column. $\circ $\nobreakspace  {}partially awards the benefit. Details provided inline.}}{50}{table.2.1}}
-\newlabel{tab:prims}{{2.1}{50}{A comparison of key management techniques for Bitcoin (contrasted with traditional financial services). \full ~ indicates the category of client is awarded the benefit in the corresponding column. \prt ~partially awards the benefit. Details provided inline}{table.2.1}{}}
+\newlabel{fig:armory-sync}{{2.1c}{54}{Subfigure 2 2.1c}{subfigure.2.1.3}{}}
+\newlabel{sub@fig:armory-sync}{{(c)}{c}{Subfigure 2 2.1c\relax }{subfigure.2.1.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Screenshots of technical language displayed by two different clients. }}{54}{figure.2.1}}
+\newlabel{fig:techlang}{{2.1}{54}{Screenshots of technical language displayed by two different clients}{figure.2.1}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Bitcoin Core\xspace }}}{54}{subfigure.1.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {MultiBit\xspace }}}{54}{subfigure.1.2}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Armory\xspace }}}{54}{subfigure.1.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.8}Conclusion}{56}{section.2.8}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Emperical Study of Bitcoin Point of Sale}{57}{chapter.3}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Introductory Remarks}{57}{section.3.1}}
+\citation{REScenario}
+\citation{REScenario}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Requirments Engineering}{58}{section.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}SCRAM}{58}{subsection.3.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Decision Framework}{61}{section.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Usability}{61}{subsection.3.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Deployability}{62}{subsection.3.3.2}}
+\citation{androulaki2013evaluating}
+\citation{securityreq}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Privacy}{63}{subsection.3.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Security}{64}{subsection.3.3.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Related works}{64}{section.3.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}One Bitcoin address - QR Code}{65}{subsection.3.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Hardware Terminals}{66}{subsection.3.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Online Merchant Services}{67}{subsection.3.4.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.4}self hosting wallet}{69}{subsection.3.4.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.5}Mycelium Gear}{69}{subsection.3.4.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.6}Custom PoS}{70}{subsection.3.4.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.7}Desicion result}{71}{subsection.3.4.7}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces A comparison of Point of Sale gateways. $\bullet $\nobreakspace  {} indicates the category of client is awarded the benefit in the corresponding column. $\circ $\nobreakspace  {}partially awards the benefit. Details provided inline.}}{72}{table.3.1}}
+\newlabel{tab:method-comp}{{3.1}{72}{A comparison of Point of Sale gateways. \full ~ indicates the category of client is awarded the benefit in the corresponding column. \prt ~partially awards the benefit. Details provided inline}{table.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Design and Implementation}{72}{section.3.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Implementation measurements}{73}{subsection.3.5.1}}
+\@writefile{toc}{\contentsline {subsubsection}{Usability}{73}{section*.6}}
+\@writefile{toc}{\contentsline {subsubsection}{Deployability}{74}{section*.7}}
+\@writefile{toc}{\contentsline {subsubsection}{Privacy}{75}{section*.8}}
+\@writefile{toc}{\contentsline {subsubsection}{Security}{75}{section*.9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Opensource libraries and softwares}{76}{subsection.3.5.2}}
+\@writefile{toc}{\contentsline {subsubsection}{Bitcoin libraries}{76}{section*.10}}
+\@writefile{toc}{\contentsline {subsubsection}{Encryption libraries}{79}{section*.11}}
+\@writefile{toc}{\contentsline {subsubsection}{Interface libraries}{79}{section*.12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Prototyping}{80}{subsection.3.5.3}}
+\@writefile{toc}{\contentsline {subsubsection}{PoS main functionalities}{80}{section*.13}}
+\@writefile{toc}{\contentsline {subsubsection}{Private reporting page}{81}{section*.14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.4}Training}{82}{subsection.3.5.4}}
+\citation{karame2012two}
+\citation{bamert2013have}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Operation}{83}{section.3.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}lessons learned}{83}{subsection.3.6.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Role of scenarios and their relationship to requirements specifications and prototypes}}{84}{figure.3.1}}
+\newlabel{fig:REscenario}{{3.1}{84}{Role of scenarios and their relationship to requirements specifications and prototypes}{figure.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Phase 1 - Normal Use Case}}{85}{figure.3.2}}
+\newlabel{fig:phase1}{{3.2}{85}{Phase 1 - Normal Use Case}{figure.3.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Storyboard - User Interface first sketch}}{85}{figure.3.3}}
+\newlabel{fig:storyboard}{{3.3}{85}{Storyboard - User Interface first sketch}{figure.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Mycelium Gear Widget}}{86}{figure.3.4}}
+\newlabel{fig:mycelium-widget}{{3.4}{86}{Mycelium Gear Widget}{figure.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Bitcoin SCI (Bitcoin Shopping Cart Interface)}}{86}{figure.3.5}}
+\newlabel{fig:bitcoin-sci}{{3.5}{86}{Bitcoin SCI (Bitcoin Shopping Cart Interface)}{figure.3.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Structure for wifkeys table that holds the bitcoin key pairs}}{86}{figure.3.6}}
+\newlabel{fig:wifkeys}{{3.6}{86}{Structure for wifkeys table that holds the bitcoin key pairs}{figure.3.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Structure for transaction history table}}{87}{figure.3.7}}
+\newlabel{fig:tx_history}{{3.7}{87}{Structure for transaction history table}{figure.3.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces PoS - First View}}{87}{figure.3.8}}
+\newlabel{fig:First_View}{{3.8}{87}{PoS - First View}{figure.3.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces PoS - Payment}}{88}{figure.3.9}}
+\newlabel{fig:payment}{{3.9}{88}{PoS - Payment}{figure.3.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Report Page}}{88}{figure.3.10}}
+\newlabel{fig:report_page}{{3.10}{88}{Report Page}{figure.3.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces A canceled sale - this means that the request was made on the PoS interface to generate an address, but the customer never sent the bitcoins. Probably a test or customer changed his mind and paid via another payment method}}{89}{figure.3.11}}
+\newlabel{fig:canceled_sale}{{3.11}{89}{A canceled sale - this means that the request was made on the PoS interface to generate an address, but the customer never sent the bitcoins. Probably a test or customer changed his mind and paid via another payment method}{figure.3.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces A Complete Sale - This shows that 0.01833541 BTC (approximately 5.5 CAD on the time of sale) was deposited in the address generated by the PoS}}{89}{figure.3.12}}
+\newlabel{fig:report_page}{{3.12}{89}{A Complete Sale - This shows that 0.01833541 BTC (approximately 5.5 CAD on the time of sale) was deposited in the address generated by the PoS}{figure.3.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces PoS - Step by step manual for Bitcoin payments}}{90}{figure.3.13}}
+\newlabel{fig:payment_manual}{{3.13}{90}{PoS - Step by step manual for Bitcoin payments}{figure.3.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Database details of the first Coffee bought with Bitcoin in the cafe}}{91}{figure.3.14}}
+\newlabel{fig:firsttransaction}{{3.14}{91}{Database details of the first Coffee bought with Bitcoin in the cafe}{figure.3.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Cafe Aunja Started to accept bitcoin on Oct 23, 2014 }}{91}{figure.3.15}}
+\newlabel{fig:cafeaunja}{{3.15}{91}{Cafe Aunja Started to accept bitcoin on Oct 23, 2014}{figure.3.15}{}}
+\bibdata{bib,thesis}
+\bibstyle{alpha}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion}{92}{chapter.4}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}

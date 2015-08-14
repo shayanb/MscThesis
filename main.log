@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  7 AUG 2015 13:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  14 AUG 2015 14:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -345,7 +345,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \@input{format.aux}
 \openout2 = `format.aux'.
 
-(./format.tex) (./main.aux)
+(./format.tex) (./main.aux
+
+LaTeX Warning: Label `fig:report_page' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -362,8 +366,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
-
-(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count121
 \scratchdimen=\dimen138
@@ -419,14 +422,18 @@ LaTeX Info: Redefining \nameref on input line 28.
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 LaTeX Font Info:    Try loading font information for U+stmry on input line 80.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)pdfTeX warning
- (ext4): destination with the same identifier (name{page.1}) has been already u
-sed, duplicate ignored
+(/usr/local/texlive/2013/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 70--95
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.95 
-      [1]pdfTeX warning (ext4): destination with the same identifier (name{page
-.2}) has been already used, duplicate ignored
+l.97   \end{titlepage}
+                       [1]pdfTeX warning (ext4): destination with the same iden
+tifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.97   \end{titlepage}
@@ -434,19 +441,27 @@ l.97   \end{titlepage}
 the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.20 ...2.4}Evaluation Framework}{21}{section.2.4}
+l.19 ...ine Storage of Keys}{20}{subsection.2.3.3}
                                                    [1
 
-])
+]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.41 ...y of Bitcoin Point of Sale}{57}{chapter.3}
+                                                   [2] [3])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.48 \listoffigures
-                    [2] (./main.lof)
+ [4] (./main.lof
+Overfull \hbox (63.23123pt too wide) in paragraph at lines 2--2
+ [][] [][]\OT1/cmr/m/n/12 QR-Code rep-re-sent-ing the bit-coin ad-dress "1shaYa
+nre36PBhspFL9zG7nt6tfDhxQ4u"[] [][]  
+ []
+
+[5
+
+])
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
@@ -455,289 +470,665 @@ page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.8 \chapter
-            {Introduction} [1
-
-]
+            {Introduction} [1]
 Chapter 1.
+
+LaTeX Warning: Citation `Nak08' on page 2 undefined on input line 12.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.32 \end{itemize}
-                   [2
+l.19 
+      [2
 
-]) (./chap2.tex [3]
+] <fig/bitcoinqr.png, id=406, 216.81pt x 218.8175pt>
+File: fig/bitcoinqr.png Graphic file (type png)
+
+<use fig/bitcoinqr.png>
+Package pdftex.def Info: fig/bitcoinqr.png used on input line 22.
+(pdftex.def)             Requested size: 173.44823pt x 175.05423pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]\OT1/cmr/m/n/12 Figure 1.1: []QR-Code rep-re-sent-ing the bit-coin ad-dress
+ []
+
+<fig/PubKeyToAddr.png, id=409, 243.65314pt x 369.81592pt>
+File: fig/PubKeyToAddr.png Graphic file (type png)
+
+<use fig/PubKeyToAddr.png>
+Package pdftex.def Info: fig/PubKeyToAddr.png used on input line 32.
+(pdftex.def)             Requested size: 243.65253pt x 369.81502pt.
+
+./chap1.tex:34: Undefined control sequence.
+l.34 	\source
+             {\url{https://en.bitcoin.it/wiki/Technical_background_of_versio...
+
+? 
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.42 
+      [3 <./fig/bitcoinqr.png>]pdfTeX warning (ext4): destination with the same
+ identifier (name{page.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.42 
+      [4 <./fig/PubKeyToAddr.png>]
+
+LaTeX Warning: Citation `Nak08' on page 5 undefined on input line 47.
+
+./chap1.tex:48: Undefined control sequence.
+l.48 ... Deterministic Wallets or HD wallets ~\cte
+                                                  {bip32}. It introduce the ...
+
+? 
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.49 
+      [5] <fig/bip32derivation.png, id=437, 107.86568pt x 66.47221pt>
+File: fig/bip32derivation.png Graphic file (type png)
+
+<use fig/bip32derivation.png>
+Package pdftex.def Info: fig/bip32derivation.png used on input line 52.
+(pdftex.def)             Requested size: 432.4818pt x 266.56978pt.
+
+./chap1.tex:54: Undefined control sequence.
+l.54 	\source
+             {\url{https://github.com/bitcoin/bips/blob/master/bip-0032.medi...
+
+? 
+[6] [7 <./fig/bip32derivation.png>]
+<fig/bitcoinblocks.png, id=447, 623.32875pt x 350.30875pt>
+File: fig/bitcoinblocks.png Graphic file (type png)
+
+<use fig/bitcoinblocks.png>
+Package pdftex.def Info: fig/bitcoinblocks.png used on input line 69.
+(pdftex.def)             Requested size: 432.4818pt x 243.05496pt.
+
+./chap1.tex:71: Undefined control sequence.
+l.71 	\source
+             {~\cite[Nak08]}
+? 
+./chap1.tex:71: Argument of \@citex has an extra }.
+<inserted text> 
+                \par 
+l.71 	\source{~\cite[Nak08]}
+                            
+? 
+Runaway argument?
+./chap1.tex:71: Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.71 	\source{~\cite[Nak08]}
+                            
+? 
+[8 <./fig/bitcoinblocks.png>]) (./chap2.tex [9]
 Chapter 2.
+./chap2.tex:6: Undefined control sequence.
+l.6 \setchapterpreamble
+                       {This chapter is adapted from published work Supervis...
 
-LaTeX Warning: Citation `Nak08' on page 4 undefined on input line 9.
+? 
 
-
-LaTeX Warning: Citation `GM05' on page 4 undefined on input line 9.
-
-
-LaTeX Warning: Citation `GMSN+05' on page 4 undefined on input line 9.
-
-
-LaTeX Warning: Citation `SBKH06' on page 4 undefined on input line 9.
+LaTeX Warning: Citation `eskandari2015first' on page 10 undefined on input line
+ 6.
 
 
-LaTeX Warning: Citation `GFF06' on page 4 undefined on input line 9.
+LaTeX Warning: Citation `GM05' on page 10 undefined on input line 13.
 
-[4
+
+LaTeX Warning: Citation `GMSN+05' on page 10 undefined on input line 13.
+
+
+LaTeX Warning: Citation `SBKH06' on page 10 undefined on input line 13.
+
+
+LaTeX Warning: Citation `GFF06' on page 10 undefined on input line 13.
+
+[10
 
 ]
 
-LaTeX Warning: Citation `FH12' on page 5 undefined on input line 15.
+LaTeX Warning: Citation `FH12' on page 11 undefined on input line 19.
 
 
-LaTeX Warning: Citation `MGGR13' on page 5 undefined on input line 15.
+LaTeX Warning: Citation `MGGR13' on page 11 undefined on input line 19.
 
 
-LaTeX Warning: Citation `BNMC+14' on page 5 undefined on input line 15.
+LaTeX Warning: Citation `BNMC+14' on page 11 undefined on input line 19.
 
-[5]
+[11]
 
-LaTeX Warning: Citation `WRLP94' on page 6 undefined on input line 21.
+LaTeX Warning: Citation `WRLP94' on page 12 undefined on input line 25.
 
-[6]
+[12]
 
-LaTeX Warning: Citation `Nak08' on page 7 undefined on input line 51.
-
-
-LaTeX Warning: Citation `Cha82' on page 7 undefined on input line 51.
+LaTeX Warning: Citation `Nak08' on page 13 undefined on input line 55.
 
 
-LaTeX Warning: Citation `ecdsa' on page 7 undefined on input line 51.
-
-[7]
-
-LaTeX Warning: Citation `SPVbugs' on page 8 undefined on input line 55.
-
-[8]
-
-LaTeX Warning: Citation `Herley.2012' on page 9 undefined on input line 64.
+LaTeX Warning: Citation `Cha82' on page 13 undefined on input line 55.
 
 
-LaTeX Warning: Citation `DCBW12' on page 9 undefined on input line 64.
+LaTeX Warning: Citation `ecdsa' on page 13 undefined on input line 55.
+
+[13]
+
+LaTeX Warning: Citation `SPVbugs' on page 14 undefined on input line 59.
+
+[14]
+
+LaTeX Warning: Citation `Herley.2012' on page 15 undefined on input line 68.
 
 
-LaTeX Warning: Citation `WT99' on page 9 undefined on input line 69.
+LaTeX Warning: Citation `DCBW12' on page 15 undefined on input line 68.
+
+[15]
+
+LaTeX Warning: Citation `WT99' on page 16 undefined on input line 73.
 
 
-LaTeX Warning: Citation `GM05' on page 9 undefined on input line 69.
+LaTeX Warning: Citation `GM05' on page 16 undefined on input line 73.
 
 
-LaTeX Warning: Citation `GMSN+05' on page 9 undefined on input line 69.
+LaTeX Warning: Citation `GMSN+05' on page 16 undefined on input line 73.
 
 
-LaTeX Warning: Citation `SBKH06' on page 9 undefined on input line 69.
+LaTeX Warning: Citation `SBKH06' on page 16 undefined on input line 73.
 
 
-LaTeX Warning: Citation `GFF06' on page 9 undefined on input line 69.
+LaTeX Warning: Citation `GFF06' on page 16 undefined on input line 73.
 
-[9] [10]
+[16]
 
-LaTeX Warning: Citation `coinbit' on page 11 undefined on input line 86.
+LaTeX Warning: Citation `coinbit' on page 17 undefined on input line 90.
 
 
-LaTeX Warning: Citation `BKM05' on page 11 undefined on input line 89.
+LaTeX Warning: Citation `BKM05' on page 17 undefined on input line 93.
 
-[11] [12]
-Overfull \hbox (12.9997pt too wide) in paragraph at lines 106--107
+[17] [18]
+Overfull \hbox (12.9997pt too wide) in paragraph at lines 110--111
 []\OT1/cmr/m/n/12 Password-protected wal-lets share the ad-van-tages and dis-ad
 -van-tages of non-encrypted
  []
 
-[13] <fig/paperwallet.png, id=281, 594.89621pt x 216.04117pt>
+[19] [20] <fig/paperwallet.png, id=527, 594.89621pt x 216.04117pt>
 File: fig/paperwallet.png Graphic file (type png)
 
 <use fig/paperwallet.png>
-Package pdftex.def Info: fig/paperwallet.png used on input line 117.
-(pdftex.def)             Requested size: 207.5894pt x 75.38806pt.
- [14] [15 <./fig/paperwallet.png>] [16]
+Package pdftex.def Info: fig/paperwallet.png used on input line 121.
+(pdftex.def)             Requested size: 216.24089pt x 78.52965pt.
+ [21 <./fig/paperwallet.png>] [22]
 
-LaTeX Warning: Citation `pbkdf2' on page 17 undefined on input line 143.
+LaTeX Warning: Citation `pbkdf2' on page 23 undefined on input line 147.
+
+[23]
+
+LaTeX Warning: Citation `bip32' on page 24 undefined on input line 149.
 
 
-LaTeX Warning: Citation `bip32' on page 17 undefined on input line 145.
+LaTeX Warning: Citation `oechslin2003making' on page 24 undefined on input line
+ 153.
 
-[17]
-
-LaTeX Warning: Citation `oechslin2003making' on page 18 undefined on input line
- 149.
-
-[18] [19]
-Overfull \hbox (52.94055pt too wide) in alignment at lines 178--207
+[24] [25]
+Overfull \hbox (52.94055pt too wide) in alignment at lines 182--211
 [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
  []
 
 
-LaTeX Warning: Float too large for page by 10.66594pt on input line 211.
+LaTeX Warning: Float too large for page by 10.66594pt on input line 215.
+
+[26]
+
+LaTeX Warning: Citation `BHOS12' on page 27 undefined on input line 220.
+
+[27] [28] [29] [30]
+
+LaTeX Warning: Citation `Barber2012' on page 31 undefined on input line 272.
 
 
-LaTeX Warning: Citation `BHOS12' on page 20 undefined on input line 216.
+LaTeX Warning: Citation `WRLP94' on page 31 undefined on input line 284.
 
-[20] [21] [22] [23]
+[31]
 
-LaTeX Warning: Citation `Barber2012' on page 24 undefined on input line 268.
-
-
-LaTeX Warning: Citation `WRLP94' on page 24 undefined on input line 280.
-
-[24]
-
-LaTeX Warning: Citation `WRLP94' on page 25 undefined on input line 287.
+LaTeX Warning: Citation `WRLP94' on page 32 undefined on input line 291.
 
 
-LaTeX Warning: Citation `WT99' on page 25 undefined on input line 287.
+LaTeX Warning: Citation `WT99' on page 32 undefined on input line 291.
 
 
-LaTeX Warning: Citation `COA07' on page 25 undefined on input line 287.
+LaTeX Warning: Citation `COA07' on page 32 undefined on input line 291.
+
+[32]
+
+LaTeX Warning: Citation `HeuristicEvaluation' on page 33 undefined on input lin
+e 293.
+
+[33]
+
+LaTeX Warning: Citation `COA07' on page 34 undefined on input line 304.
 
 
-LaTeX Warning: Citation `HeuristicEvaluation' on page 25 undefined on input lin
-e 289.
+LaTeX Warning: Citation `COA07' on page 34 undefined on input line 304.
 
-[25]
+[34]
 
-LaTeX Warning: Citation `COA07' on page 26 undefined on input line 300.
-
-
-LaTeX Warning: Citation `COA07' on page 26 undefined on input line 300.
-
-[26] [27]
-
-LaTeX Warning: Citation `bitcoinqt' on page 28 undefined on input line 324.
+LaTeX Warning: Citation `bitcoinqt' on page 35 undefined on input line 328.
 
 
-LaTeX Warning: Citation `multibit' on page 28 undefined on input line 326.
+LaTeX Warning: Citation `multibit' on page 35 undefined on input line 330.
 
 
-LaTeX Warning: Citation `bitaddress' on page 28 undefined on input line 328.
+LaTeX Warning: Citation `bitaddress' on page 35 undefined on input line 332.
 
 
-LaTeX Warning: Citation `bitcoinarmory' on page 28 undefined on input line 330.
+LaTeX Warning: Citation `bitcoinarmory' on page 35 undefined on input line 334.
 
 
+[35]
 
-LaTeX Warning: Citation `brainwallet' on page 28 undefined on input line 332.
+LaTeX Warning: Citation `brainwallet' on page 36 undefined on input line 336.
 
 
-LaTeX Warning: Citation `blockchain' on page 28 undefined on input line 334.
+LaTeX Warning: Citation `blockchain' on page 36 undefined on input line 338.
 
-[28] [29] [30] [31]
+[36] [37] [38]
 
-LaTeX Warning: Reference `Nak08' on page 32 undefined on input line 373.
+LaTeX Warning: Reference `Nak08' on page 39 undefined on input line 377.
 
-[32] [33] [34] [35] [36] [37] [38] [39]
-Overfull \hbox (11.3372pt too wide) in paragraph at lines 436--437
+[39] [40] [41] [42] [43] [44] [45] [46] [47]
+Overfull \hbox (11.3372pt too wide) in paragraph at lines 440--441
 \OT1/cmr/m/n/12 The most pop-u-lar and com-plete im-ple-men-ta-tion of a de-ter
 -min-is-tic wal-let with password-
  []
 
-[40] [41] [42]
+[48] [49]
 
-LaTeX Warning: Citation `metaphorpaper' on page 43 undefined on input line 476.
+LaTeX Warning: Citation `metaphorpaper' on page 50 undefined on input line 480.
 
 
-[43] [44]
+[50] [51]
 
-LaTeX Warning: Citation `SSLSobey' on page 45 undefined on input line 490.
+LaTeX Warning: Citation `SSLSobey' on page 52 undefined on input line 494.
 
-[45]
+[52] [53] <fig/btcore-sync.png, id=708, 394.47375pt x 19.57312pt>
+File: fig/btcore-sync.png Graphic file (type png)
 
-./chap2.tex:502: LaTeX Error: File `btcore-sync' not found.
+<use fig/btcore-sync.png>
+Package pdftex.def Info: fig/btcore-sync.png used on input line 506.
+(pdftex.def)             Requested size: 197.23639pt x 9.78653pt.
+
+<fig/multibit-sync.png, id=709, 298.11375pt x 37.64063pt>
+File: fig/multibit-sync.png Graphic file (type png)
+
+<use fig/multibit-sync.png>
+Package pdftex.def Info: fig/multibit-sync.png used on input line 511.
+(pdftex.def)             Requested size: 149.0565pt x 18.82025pt.
+
+<fig/armory-sync.png, id=710, 192.72pt x 37.64063pt>
+File: fig/armory-sync.png Graphic file (type png)
+ <use fig/armory-sync.png>
+Package pdftex.def Info: fig/armory-sync.png used on input line 516.
+(pdftex.def)             Requested size: 96.35976pt x 18.82025pt.
+
+[54 <./fig/btcore-sync.png> <./fig/multibit-sync.png> <./fig/armory-sync.png>]
+[55]) (./chap3.tex [56]
+Chapter 3.
+[57
+
+]
+
+LaTeX Warning: Citation `REScenario' on page 58 undefined on input line 18.
+
+<fig/REscenario.png, id=735, 724.7075pt x 613.29124pt>
+File: fig/REscenario.png Graphic file (type png)
+
+<use fig/REscenario.png>
+Package pdftex.def Info: fig/REscenario.png used on input line 24.
+(pdftex.def)             Requested size: 507.2918pt x 429.30093pt.
+
+Overfull \hbox (74.81pt too wide) in paragraph at lines 24--25
+ [][] 
+ []
+
+./chap3.tex:26: Undefined control sequence.
+l.26 \source
+            {~\cite{REScenario}}
+? 
+
+LaTeX Warning: Citation `REScenario' on page 58 undefined on input line 26.
+
+[58] <fig/RE_Scenario_Phase1.png, id=742, 131.49126pt x 261.97874pt>
+File: fig/RE_Scenario_Phase1.png Graphic file (type png)
+
+<use fig/RE_Scenario_Phase1.png>
+Package pdftex.def Info: fig/RE_Scenario_Phase1.png used on input line 53.
+(pdftex.def)             Requested size: 65.74545pt x 130.98904pt.
+ [59]
+<fig/RE_Scenario_Interface.png, id=748, 345.29pt x 582.175pt>
+File: fig/RE_Scenario_Interface.png Graphic file (type png)
+
+<use fig/RE_Scenario_Interface.png>
+Package pdftex.def Info: fig/RE_Scenario_Interface.png used on input line 66.
+(pdftex.def)             Requested size: 172.64456pt x 291.08679pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
+
+ []
+
+[60] [61] [62]
+
+LaTeX Warning: Citation `androulaki2013evaluating' on page 63 undefined on inpu
+t line 116.
+
+
+LaTeX Warning: Citation `securityreq' on page 63 undefined on input line 122.
+
+[63] [64]
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+
+./chap3.tex:143: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.502         }
-               
+l.143 \\\textbf
+               {Usability} It is not user friendly as it puts the employee i...
+
 ? 
 
-Overfull \hbox (4.94456pt too wide) in paragraph at lines 502--502
-[]\OT1/cmr/m/n/10 (a)
- []
-
-
-Overfull \hbox (9.25012pt too wide) in paragraph at lines 502--502
-|\OT1/cmr/m/n/10 Bit-
- []
-
-
-Overfull \hbox (9.94456pt too wide) in paragraph at lines 502--502
-\OT1/cmr/m/n/10 coin
- []
-
-
-Overfull \hbox (12.7501pt too wide) in paragraph at lines 502--502
-\OT1/cmr/m/n/10 Core| 
- []
-
-
-./chap2.tex:507: LaTeX Error: File `multibit-sync' not found.
+./chap3.tex:145: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.507         }
-               
+l.145 \\\textbf
+               {Deployability} The cost to implement this method is almost z...
+
 ? 
 
-Overfull \hbox (5.50012pt too wide) in paragraph at lines 507--507
-[]\OT1/cmr/m/n/10 (b)
+./chap3.tex:147: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.147 \\\textbf
+               {Privacy} This method provides no privacy for the seller. As ...
+
+? 
+[65]
+
+./chap3.tex:149: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.149 \\\textbf
+               {Security} Other than the system holding the private key, not...
+
+? 
+
+./chap3.tex:155: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.155 \\\textbf
+               {Usability}
+? 
+[66]
+
+./chap3.tex:158: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.158 \\\textbf
+               {Deployability}
+? 
+
+./chap3.tex:161: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.161 \\\textbf
+               {Privacy}
+? 
+
+./chap3.tex:164: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.164 \\\textbf
+               {Security}
+? 
+[67]
+
+./chap3.tex:172: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.172 \\ \textbf
+                {Usability}
+? 
+
+./chap3.tex:175: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.175 \\ \textbf
+                {Deployability}
+? 
+
+./chap3.tex:178: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.178 \\ \textbf
+                {Privacy}
+? 
+
+./chap3.tex:181: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.181 \\ \textbf
+                {Security}
+? 
+[68] <fig/Mycelium_gear.png, id=813, 314.17375pt x 211.79124pt>
+File: fig/Mycelium_gear.png Graphic file (type png)
+
+<use fig/Mycelium_gear.png>
+Package pdftex.def Info: fig/Mycelium_gear.png used on input line 195.
+(pdftex.def)             Requested size: 157.08649pt x 105.89536pt.
+ [69] [70] [71] [72] [73] [74] [75] [76]
+<fig/bitsci_screen.jpg, id=872, 301.125pt x 473.77pt>
+File: fig/bitsci_screen.jpg Graphic file (type jpg)
+
+<use fig/bitsci_screen.jpg>
+Package pdftex.def Info: fig/bitsci_screen.jpg used on input line 351.
+(pdftex.def)             Requested size: 150.56212pt x 236.88441pt.
+ [77] [78] [79]
+<fig/wifkeys_table.png, id=900, 605.26125pt x 230.8625pt>
+File: fig/wifkeys_table.png Graphic file (type png)
+
+<use fig/wifkeys_table.png>
+Package pdftex.def Info: fig/wifkeys_table.png used on input line 409.
+(pdftex.def)             Requested size: 302.62987pt x 115.43095pt.
+
+<fig/tx_history_table.png, id=901, 722.7pt x 275.0275pt>
+File: fig/tx_history_table.png Graphic file (type png)
+
+<use fig/tx_history_table.png>
+Package pdftex.def Info: fig/tx_history_table.png used on input line 416.
+(pdftex.def)             Requested size: 361.3491pt x 137.51341pt.
+
+./chap3.tex:421: Missing $ inserted.
+<inserted text> 
+                $
+l.421 ...I kept that in place and stored the file_
+                                                  hash detail of each entity...
+
+? 
+./chap3.tex:422: Missing $ inserted.
+<inserted text> 
+                $
+l.422 
+      
+? 
+
+Overfull \hbox (70.49916pt too wide) in paragraph at lines 421--422
+\OT1/cmr/m/n/12 backup method I kept that in place and stored the file$[]\OML/c
+mm/m/it/12 ashdetailofeachentityforfuturereferences:$ 
  []
 
+[80] <fig/First_View.png, id=908, 492.84125pt x 516.93124pt>
+File: fig/First_View.png Graphic file (type png)
 
-Overfull \hbox (19.66681pt too wide) in paragraph at lines 507--507
-|\OT1/cmr/m/n/10 Multi-
- []
+<use fig/First_View.png>
+Package pdftex.def Info: fig/First_View.png used on input line 427.
+(pdftex.def)             Requested size: 246.42001pt x 258.46498pt.
+ <fig/Payment.png, id=909, 231.62535pt x 585.74835pt>
+File: fig/Payment.png Graphic file (type png)
+
+<use fig/Payment.png>
+Package pdftex.def Info: fig/Payment.png used on input line 436.
+(pdftex.def)             Requested size: 115.81238pt x 292.87346pt.
+
+<fig/report_page.png, id=910, 1430.34375pt x 249.93375pt>
+File: fig/report_page.png Graphic file (type png)
+
+<use fig/report_page.png>
+Package pdftex.def Info: fig/report_page.png used on input line 446.
+(pdftex.def)             Requested size: 432.4818pt x 75.57182pt.
+ [81]
+<fig/canceled_sale.png, id=920, 1228.59pt x 350.30875pt>
+File: fig/canceled_sale.png Graphic file (type png)
+
+<use fig/canceled_sale.png>
+Package pdftex.def Info: fig/canceled_sale.png used on input line 457.
+(pdftex.def)             Requested size: 432.4818pt x 123.31548pt.
+
+<fig/complete_sale.png, id=921, 1213.53375pt x 459.7175pt>
+File: fig/complete_sale.png Graphic file (type png)
+
+<use fig/complete_sale.png>
+Package pdftex.def Info: fig/complete_sale.png used on input line 465.
+(pdftex.def)             Requested size: 432.4818pt x 163.83568pt.
+ [82]
+<fig/Payment_manual.pdf, id=933, 597.23125pt x 845.1575pt>
+File: fig/Payment_manual.pdf Graphic file (type pdf)
+
+<use fig/Payment_manual.pdf>
+Package pdftex.def Info: fig/Payment_manual.pdf used on input line 483.
+(pdftex.def)             Requested size: 432.4818pt x 612.02066pt.
 
 
-Overfull \hbox (5.9168pt too wide) in paragraph at lines 507--507
-\OT1/cmr/m/n/10 Bit| 
- []
+LaTeX Warning: Float too large for page by 27.39336pt on input line 486.
 
-[46] [47] [48]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 536.
- [49] [50]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 536.
+
+LaTeX Warning: Citation `karame2012two' on page 83 undefined on input line 494.
+
+
+
+LaTeX Warning: Citation `bamert2013have' on page 83 undefined on input line 494
+.
+
+<fig/first_cafe_transaction.png, id=935, 1048.91875pt x 98.3675pt>
+File: fig/first_cafe_transaction.png Graphic file (type png)
+
+<use fig/first_cafe_transaction.png>
+Package pdftex.def Info: fig/first_cafe_transaction.png used on input line 500.
+
+(pdftex.def)             Requested size: 432.4818pt x 40.55757pt.
+
+<fig/cafeaunja.png, id=936, 642.4pt x 640.3925pt>
+File: fig/cafeaunja.png Graphic file (type png)
+ <use fig/cafeaunja.png>
+Package pdftex.def Info: fig/cafeaunja.png used on input line 509.
+(pdftex.def)             Requested size: 321.19922pt x 320.19547pt.
+)
+(./chap4.tex [83] [84 <./fig/REscenario.png>] [85 <./fig/RE_Scenario_Phase1.png
+> <./fig/RE_Scenario_Interface.png>] [86 <./fig/Mycelium_gear.png> <./fig/bitsc
+i_screen.jpg> <./fig/wifkeys_table.png>] [87 <./fig/tx_history_table.png> <./fi
+g/First_View.png>] [88 <./fig/Payment.png> <./fig/report_page.png>] [89 <./fig/
+canceled_sale.png> <./fig/complete_sale.png>] [90 <./fig/Payment_manual.pdf>]
+[91 <./fig/first_cafe_transaction.png> <./fig/cafeaunja.png>]
+Chapter 4.
+) (./main.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
+ [92
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 536.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 536.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 59.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F32BBA76961A369EB278015D7AEC531B;2365.
+(rerunfilecheck)             Checksum: 09D70241BA093416139AA35B5B157DAB;4342.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 536.
- ) ) 
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
+ ) 
 Here is how much of TeX's memory you used:
- 7803 strings out of 493315
- 116126 string characters out of 6137904
- 211688 words of memory out of 5000000
- 11003 multiletter control sequences out of 15000+600000
+ 8099 strings out of 493315
+ 121047 string characters out of 6137904
+ 212584 words of memory out of 5000000
+ 11147 multiletter control sequences out of 15000+600000
  12190 words of font info for 46 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 40i,11n,85p,1746b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.p
-fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pf
-b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
-/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
-cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local
-/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/
-texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (56 pages, 448952 bytes).
+ 40i,11n,85p,1746b,453s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
+exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
+live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texl
+ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (101 pages, 3010621 bytes).
 PDF statistics:
- 549 PDF objects out of 1000 (max. 8388607)
- 473 compressed objects within 5 object streams
- 113 named destinations out of 1000 (max. 500000)
- 270 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1145 PDF objects out of 1200 (max. 8388607)
+ 974 compressed objects within 10 object streams
+ 237 named destinations out of 1000 (max. 500000)
+ 612 words of extra memory for PDF output out of 10000 (max. 10000000)
 
