@@ -21,9 +21,8 @@ SCRAM defines four phases of requirement engineering and has been shown to be a 
 
 \begin{figure}[htb!p]
 \centering
-\includegraphics[scale=0.7]{fig/REscenario.png}
-  \caption{Role of scenarios and their relationship to requirements specifications and prototypes}
-\source{~\cite{REScenario}}
+\includegraphics[width=\linewidth]{fig/REscenario.png}
+  \caption{Role of scenarios and their relationship to requirements specifications and prototypes ~\cite{REScenario}}
 \label{fig:REscenario}
 \end{figure}
 
@@ -140,28 +139,28 @@ There exist multiple payment systems that most of the suit the online markets (\
 \subsection{One Bitcoin address - QR Code} 
 One of the introduced ways for small businesses to accept bitcoin is to hold one bitcoin address and print out the QR code of that address near the cash register. In this way, the customer could scan the QR code and input the dollar value on his bitcoin wallet and pay the business with the equivalent bitcoins. \\
 
-\\\textbf{Usability} It is not user friendly as it puts the employee in a position that she needs to know how bitcoin transactions work and she needs to prepare,receive and checks the payment manually. This makes the time spent on the payment longer than normal payment systems, same goes for the fair exchange rate, She should come to an agreed exchange price with the customer and this needs a deeper understanding of bitcoin and finance. Thus a technical training is required for each employee responsible for handling bitcoin payments.
+\textbf{Usability} It is not user friendly as it puts the employee in a position that she needs to know how bitcoin transactions work and she needs to prepare,receive and checks the payment manually. This makes the time spent on the payment longer than normal payment systems, same goes for the fair exchange rate, She should come to an agreed exchange price with the customer and this needs a deeper understanding of bitcoin and finance. Thus a technical training is required for each employee responsible for handling bitcoin payments.
 
 \\\textbf{Deployability} The cost to implement this method is almost zero, in monetary and time value. However, as mentioned in usability section, the time spent on each transaction fails for regular use. In case there are multiple branches, more print outs suffice to have multiple point of sales.
 
-\\\textbf{Privacy} This method provides no privacy for the seller. As all the bitcoin transactions are publicly available in the Blockchain, anyone with the knowledge of the receiving bitcoin address could see all the received payments, thus anyone could have access to the reporting page that is the payments received by the printed address.
+\textbf{Privacy} This method provides no privacy for the seller. As all the bitcoin transactions are publicly available in the Blockchain, anyone with the knowledge of the receiving bitcoin address could see all the received payments, thus anyone could have access to the reporting page that is the payments received by the printed address.
 
-\\\textbf{Security} Other than the system holding the private key, not much of security concern is applicable to this approach. The private key should be kept in a secure place, preferably a cold storage unless the funds should be transferred to another address (\eg to exchange for cash).
+\textbf{Security} Other than the system holding the private key, not much of security concern is applicable to this approach. The private key should be kept in a secure place, preferably a cold storage unless the funds should be transferred to another address (\eg to exchange for cash).
 
 %-------------------------- Hardware Terminal --------------------------
 \subsection{Hardware Terminals}
 There are multiple hardware terminals available for accepting bitcoin, however due to the high cost to run (\eg coinkite\footnote{\url{https://coinkite.com/store/products/all}} PoS are for sale at starting price of 970USD), they have not been used in most of the small businesses and have not been reviewed a lot. Also the fast changing technology made most of the terminal provider companies to move to mobile or web-based solutions.
 
-\\\textbf{Usability}
+\textbf{Usability}
 The interfaces of each of the provided terminals are different, the most popular ones mimic the look and behaviour of a normal point of sale terminal used by credit card companies. However adding a new device to the payment routine, would make it less user friendly and rises the need for a training for the employees. The time and availability of the payment through a hardware terminal should be the same as the credit card payments if not any lower. The customer, nor the payee have any control over the exchange rate and it is provided by the PoS terminal operator.
 
-\\\textbf{Deployability}
+\textbf{Deployability}
 Due to the high costs these devices have, they would score low on our framework. Also in case there are multiple branches of the business, there should be one devices bought for each branch, this makes the costs even higher.
 
-\\\textbf{Privacy}
+\textbf{Privacy}
 Accepting bitcoin with a hardware terminal should persevere the privacy the same as the regular credit card terminals, however the payees privacy depends on the implementation of the Bitcoin payment system. 
 
-\\\textbf{Security}
+\textbf{Security}
 The payee has no control over the private keys nor holds the funds, thus he needs to trust a third-party company that provided the terminals to keep the funds safe, and will receive the payments upon the agreed time frame with the probably small transaction fees. As for other aspects of the security, we assume the back-end implementation keeps the private keys encrypted and secure. There are security risks involved in adding a new hardware or software to the cashier's computer that will fall out of the scope of this chapter.
 
 %-------------------------- Online Merchant Services--------------------------
@@ -169,16 +168,16 @@ The payee has no control over the private keys nor holds the funds, thus he need
 Most of these services are focused for online businesses and don't have implicit implementation for a physical payment system. 
 One of the most famous ones, by the time of writing, is Bitpay\footnote{\url{https://bitpay.com}} that takes 0\% fees unlike some others competing companies, but they all have their own advantages. One other similar company is Coinbase\footnote{\url{http://coinbase.com}} that charges 1\% on exchanging bitcoins to fiat currency.
 
-\\ \textbf{Usability}
+ \textbf{Usability}
 Implementing a Bitpay payment is straightforward and easy to implement. There are not many jargons or technical options for the employee. They have their own exchange rate that the business owner could set to exchange to cash as soon as he receives payments, this will remove the possible effects that Bitcoin price volatility could have on the payments.
 
-\\ \textbf{Deployability}
+ \textbf{Deployability}
 The only thing required by this approach, is a smart phone or a small computer that users could interact with and browse to bitpay payment page, preferably with a touchscreen for easier price input and user interaction, as the interface is designed for touchscreen devices (Mobile interface)
 
-\\ \textbf{Privacy}
+ \textbf{Privacy}
 Bitpay has taken the privacy too serious. As they generate a new address for each transaction, the payees privacy is safe, however there has been reports on account suspensions because the payments were coming from a flagged bitcoin addresses (\eg blackmarkets\footnote{Darknet Blackmarkets\url{https://en.wikipedia.org/wiki/Darknet_market}} or localbitcoins \footnote{Peer to peer bitcoin trading site \url{http://localbitcoins.com}}), in the sense that there was malicious activities on that bitcoin address such as money laundry or buying drugs from online site. In this case the privacy, as the sense that we are evaluating, is being held but maybe not in he aspects needed in a payment system.
 
-\\ \textbf{Security}
+ \textbf{Security}
 Every aspect of the payment system is implemented by Bitpay, they offered one of the most secure payment systems so far and there has been no big hacks reported. However, user has no control over his private keys and all the keys are being stored on Bitpay servers, this means complete trust to a third party.
 
 
