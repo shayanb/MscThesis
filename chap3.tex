@@ -5,6 +5,9 @@
 
 \section{Introductory Remarks}
 
+On previous chapter we evaluated all the existing Bitcoin wallet clients for the user, in this chapter we would survey and evaluate the existing Bitcoin payments for the business to accept bitcoin and use SCRAM requirement engineering method to develop the best suitable Point of Sale (PoS) for a small business.
+
+
 One interesting aspect of bitcoin is that there is no identity backing up the currency but everyone who uses it. As a Bitcoin enthusiast one of the goals is to have more places to accept Bitcoin, however so far this has been an issue for the business owners to implement a simple, yet fully functional Point of Sale (PoS) to be able to accept Bitcoin as a method of payment.
 In this chapter I discuss my approach to come up with a solution and implement the Bitcoin PoS in a Cafe in Montreal\footnote{ Cafe Aunja \url{http://aunja.com}}.
 
@@ -12,7 +15,10 @@ In order to do so I started by going through the requirements of a payment syste
 
 %==================== Requirement ======================
 \section {Requirments Engineering}
-Probably the base way to analyze the requirements of a small business is to model real world descriptions and stories in scenarios. Scenarios are basically examples of real world experiences that we could use to model what is needed in the system. 
+Requirement engineering is the process of defining, documenting and maintaining requirements and is a subfield of software and system engineering, the term was first used in 1979 ~\cite{alford1979software} and then became a general term in with the publication of an IEEE Computer Society tutorial ~\cite{dorfman1990system}.
+Requirements Engineering is the first phase of waterfall software development process ~\cite{rocye1970managing}. Depending on the type of the system being developed, the methods differ.
+
+Probably the base way to analyze the requirements of a small business is to model real world descriptions and stories in scenarios. Scenarios are basically examples of real world experiences that we could use to model what is needed in the system. That is why we chose a scenario-based requirements engineering method named SCRAM.
 
 \subsection{SCRAM}
 We used SCRAM (Scenario-based Requirements Analysis Method)~\cite{REScenario} as our framework to gather the requirements of this system.
@@ -130,7 +136,7 @@ We start by using our scenario based requirement engineering approach and adding
 \end{itemize}
 
 %==================== Design ======================
-\section{Related works}
+\section{Evolution of PoS proposals}
 I will first go through the available options and why we chose to develop a custom PoS for this purpose.
 
 There exist multiple payment systems that most of the suit the online markets (\eg e-commerece) and not a physical point of sale \footnote{\url{https://en.bitcoin.it/wiki/How_to_accept_Bitcoin,_for_small_businesses}}. We list all the available approaches to accept Bitcoin payments for a physical business, and not as an e-commerce business.
@@ -141,7 +147,7 @@ One of the introduced ways for small businesses to accept bitcoin is to hold one
 
 \textbf{Usability} It is not user friendly as it puts the employee in a position that she needs to know how bitcoin transactions work and she needs to prepare,receive and checks the payment manually. This makes the time spent on the payment longer than normal payment systems, same goes for the fair exchange rate, She should come to an agreed exchange price with the customer and this needs a deeper understanding of bitcoin and finance. Thus a technical training is required for each employee responsible for handling bitcoin payments.
 
-\\\textbf{Deployability} The cost to implement this method is almost zero, in monetary and time value. However, as mentioned in usability section, the time spent on each transaction fails for regular use. In case there are multiple branches, more print outs suffice to have multiple point of sales.
+\textbf{Deployability} The cost to implement this method is almost zero, in monetary and time value. However, as mentioned in usability section, the time spent on each transaction fails for regular use. In case there are multiple branches, more print outs suffice to have multiple point of sales.
 
 \textbf{Privacy} This method provides no privacy for the seller. As all the bitcoin transactions are publicly available in the Blockchain, anyone with the knowledge of the receiving bitcoin address could see all the received payments, thus anyone could have access to the reporting page that is the payments received by the printed address.
 
@@ -401,7 +407,7 @@ Here is a short description of the implemented functionalities:
 The PoS was hosted on a shared hosting service named Host Monster \footnote{\url{http://hostmonster.com}}, They offer low cost annual plans that offer PHP and MySQL, that are the requirements that we need.
 Then I started working with Bitcoin SCI to add the database functionality and defined tables for transaction requests and payments on MySQL.
 
-I designed three tables (first prototype had two) for the purpose of this PoS. One table is for the Bitcoin key pairs to be stored and will be used to decrypt and export the private keys when required (see Figure ~\ref{fig:wifkeys}. The other table holds the information regarding each transaction (Figure ~\ref{fig:tx_history}, later on to prevent spam requests and test cases from making the table unnecessary big, I designed a temporary transaction table to hold the information of the transactions before the payment is validated, as soon as the payment is flagged as valid the relevant information would be moved to the main table and will be removed from the temporary table.
+I designed three tables (first prototype had two) for the purpose of this PoS. One table is for the Bitcoin key pairs to be stored and will be used to decrypt and export the private keys when required (see Figure ~\ref{fig:wifkeys}. The other table holds the information regarding each transaction (Figure ~\ref{fig:txhistory}, later on to prevent spam requests and test cases from making the table unnecessary big, I designed a temporary transaction table to hold the information of the transactions before the payment is validated, as soon as the payment is flagged as valid the relevant information would be moved to the main table and will be removed from the temporary table.
 
 \begin{figure}[htb!p]
 \centering
@@ -414,10 +420,10 @@ I designed three tables (first prototype had two) for the purpose of this PoS. O
 \centering
 \includegraphics[scale=0.5]{fig/tx_history_table.png}
   \caption{Structure for transaction history table}
-\label{fig:tx_history}
+\label{fig:txhistory}
 \end{figure}
 
-Bitcoin SCI uses a file-based method to store the keys and transaction details, as a backup method I kept that in place and stored the file_hash detail of each entity for future references.
+Bitcoin SCI uses a file-based method to store the keys and transaction details, as a backup method I kept that in place and stored the file\_hash detail of each entity for future references.
 
 Other tasks were involved in integrating the above mentioned open source projects into each other to have a complete solution package.
 
@@ -486,11 +492,15 @@ Other than in person training that I did with every employee, I made a manual (F
 
 
 
-\section{Operation}
+\section{Real-world Deployement}
 Cafe Aunja started accepting Bitcoin with this customized PoS on Oct 23, 2014, and was the first cafe in eastern Canada that accepts Bitcoin. During the first month, there was more than 10 bitcoin payments and it has been working ever since.
 
 \subsection{lessons learned}
 One of the missing features that should be implemented in such a system is a fast verification method, in the sense that for each payment customer need to wait for average of 10 minutes for the transaction to get confirmed. To remedy this, I solved this issue that the payment would be flagged as successful as soon as the transaction is broadcasted to Bitcoin network also known as 0-confirmation transaction. This could work for a PoS in a cafe as the volume of each transaction is small and it's not risky to take 0-confirmation transactions, However this is still a open problem to remedy the risk for higher value transactions and prevent double spend attacks ~\cite{karame2012two} ~\cite{bamert2013have}.
+
+Bitcoin and Bitcoin transactions are still a unfamiliar concept for most people, we encountered countless number of questions from customers to explain what Bitcoin is and how it works and fascinating enough they got more interested to know more about Bitcoin when they observed a payment done with the Bitcoin PoS, mostly because they would not reveal any personal information with each payment.
+
+Another interesting lesson, is the concept of locked price, that is the price of bitcoin for each sale is locked to the exact exchange rate on the time of the transaction. This means if the customer paid 0.01 bitcoin for a coffee that was 3 dollars in the time of the purchase, the business owner will be paid the exact same amount of 3 dollars and it should not make him any difference if the bitcoin price has been increasing or decreasing from the time of the purchase to the time he choses to cash out the receiving bitcoins. This makes the acceptance of bitcoin payments for the business risk free.
 
 Now to test the system on production, it was time for the first ever coffee in eastern Canada to be bought with Bitcoin (Figure ~\ref{fig:firsttransaction}).
 
@@ -503,7 +513,7 @@ Now to test the system on production, it was time for the first ever coffee in e
 
 
 
-\begin{figure}[htb!p]
+\begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{fig/cafeaunja.png}
   \caption{Cafe Aunja Started to accept bitcoin on Oct 23, 2014 }
