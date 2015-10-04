@@ -1,0 +1,32 @@
+Notation:
+[#] comment on content on page #
+Highlight on PDF = something grammatically wrong (if you unsure, you can ask)
+
+[2] “Obvious” is a strong word
+[3] The company filed for bankruptcy not Chaum (he had left by then)
+[4] I’d say unregulated use instead of illegal use for e-gold
+[4] Expand on the idea that Bitcoin is its own currency, not a digital version of an existing currency like the USD (ecash) or commodity like Gold (e-gold)
+[4] any *published* work on the usability
+[5] as long as -> to the extent that it fits...
+[5] first ever -> first published
+[6] eastern canada: unclear what this means, just say Quebec even if it is broader
+[6] robust system: system for what? Be more specific
+[7] hold, use and accept -> holding, using and accepting
+[8] every transaction -> every standard transaction (also add a footnote saying that from now on, the word transaction refers to a standard transaction unless otherwise specified) (you can also define standard transaction if you want in no more than a sentence or two)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
