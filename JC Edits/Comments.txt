@@ -32,12 +32,15 @@ Expand all contractions (it’s -> it is, etc)
 [33] Rotate the chart so it fills the page in landscape
 [56] Make sure you understand section 3.7 as well as you would if you had written it. Or alternatively, you could add a footnote that notes the section is largely the work of your co-authors but is included for completeness. The point is, the committee can ask you detailed questions about this and you are expected to be able to answer them.
 [62] Don’t like the title, it is too vague. “Bitcoin Point of Sale Terminals: evaluation and deployment”
+[62] bitcoin and use -> Bitcoin. We will use the SCRAM [citation!]
 [62] “Point of sale” needs a word like “terminal” at the end. Define PoS to be “point of sale terminal” then use PoS everywhere is the easiest fix.
- 
+[62] “best suitable” this is vague and nothing is the “best” -> say something more specific, one that receives full points in our evaluation method or something like
+[62] One interesting aspect: I don’t understand this sentence 
+[63] Give your system a name and then refer to it by that name. It will make everything easier.
+[63] “going through” -> eliciting; “browsed” -> researched; “and if” -> to see if; meet -> met
 
 
-
-
+[63] Stopping here for now…
 
 
 
