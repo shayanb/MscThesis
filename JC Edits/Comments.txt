@@ -1,6 +1,7 @@
 Notation:
 [#] comment on content on page #
 Highlight on PDF = something grammatically wrong (if you unsure, you can ask)
+Expand all contractions (it’s -> it is, etc)
 
 [2] “Obvious” is a strong word
 [3] The company filed for bankruptcy not Chaum (he had left by then)
@@ -13,9 +14,19 @@ Highlight on PDF = something grammatically wrong (if you unsure, you can ask)
 [6] robust system: system for what? Be more specific
 [7] hold, use and accept -> holding, using and accepting
 [8] every transaction -> every standard transaction (also add a footnote saying that from now on, the word transaction refers to a standard transaction unless otherwise specified) (you can also define standard transaction if you want in no more than a sentence or two)
-
-
-
+[8] I think details of the conensus model are relevant to the PoS terminal because you need to think about double spending and confirmation times, which cannot be done without understanding the model.
+[9] SPV also has integrity risks: semi-trusted nodes can omit reports of relevant transactions (but cannot forge transactions or convince a user that a transaction was added when it was not)
+[11] Don’t use other peoples images. Create your own!
+[12] Satoshi -> As bitcoin creator Satoshi…
+[13] Create your own figures
+[13] BIP32 also allows a dumb terminal that does not know the private key to generate new Bitcoin addresses (for use in PoS terminals)
+[14] misused -> conflated
+[14] Isn’t Bitcoin QT now called Bitcoin Core?
+[14] miners are computational devices, not necessarily computers (ASICs, FPGAs, GPUs aren’t computers)
+[14] should have -> should form… also explain *why*
+[14] don’t use words like “really”
+[15] Yes, explain double spend. Also explain why miners go along with valid blocks instead of forking. For details on this, you can look at the Princeton course on Bitcoin (which includes some textbook chapters)
+[16] Usability in title?
 
 
 
