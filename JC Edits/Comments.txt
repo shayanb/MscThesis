@@ -27,6 +27,13 @@ Expand all contractions (it’s -> it is, etc)
 [14] don’t use words like “really”
 [15] Yes, explain double spend. Also explain why miners go along with valid blocks instead of forking. For details on this, you can look at the Princeton course on Bitcoin (which includes some textbook chapters)
 [16] Usability in title?
+[16] Don’t use Dr. in names (otherwise you’ll have to use it every time you refer to one: David Barrera, David Chaum, etc)
+[16—61] I skipped this as it is the paper, which I have obviously already read. Is it the full version of the paper? If this is the case, in the introduction of the chapter, say that this chapter is a longer version than the published paper. Also, is there anything outside of the conclusions that you changed? If so, let me know and I’ll read it in detail.
+[33] Rotate the chart so it fills the page in landscape
+[56] Make sure you understand section 3.7 as well as you would if you had written it. Or alternatively, you could add a footnote that notes the section is largely the work of your co-authors but is included for completeness. The point is, the committee can ask you detailed questions about this and you are expected to be able to answer them.
+[62] Don’t like the title, it is too vague. “Bitcoin Point of Sale Terminals: evaluation and deployment”
+[62] “Point of sale” needs a word like “terminal” at the end. Define PoS to be “point of sale terminal” then use PoS everywhere is the easiest fix.
+ 
 
 
 
@@ -34,8 +41,8 @@ Expand all contractions (it’s -> it is, etc)
 
 
 
-
-
+[98] What does universal framework mean?
+[98] they are necessary first steps.
 
 
 
