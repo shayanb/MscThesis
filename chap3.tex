@@ -5,12 +5,12 @@
 
 \section{Introductory Remarks}
 
-In previous chapter we evaluated all the existing Bitcoin wallet clients for the user, in this chapter we would survey and evaluate the existing Bitcoin payments for the business to accept Bitcoin and use SCRAM~\cite{REScenario}  requirement engineering method to develop the best suitable Point of Sale (PoS) for a small business.
+In previous chapter we evaluated all the existing Bitcoin wallet clients for the user. In this chapter we survey and evaluate the existing Bitcoin payments for a business to accept Bitcoin and use SCRAM~\cite{REScenario}  requirement engineering method to develop the most suitable Point of Sale (PoS) for a small business based on our evaluation framework.
 
-One interesting aspect of Bitcoin is that there is no identity backing up the currency but everyone who uses it. As a Bitcoin enthusiast one of the goals is to have more places to accept Bitcoin, however so far this has been an issue for the business owners to implement a simple, yet fully functional Point of Sale (PoS) to be able to accept Bitcoin as a method of payment.
-In this chapter I discuss my approach to come up with a solution and implement the Bitcoin PoS in a Cafe in Montreal\footnote{ Cafe Aunja \url{http://aunja.com}}.
+One aspect of Bitcoin is that there is no specific entity backing up the currency but whoever that is using it gives value to Bitcoin. As a Bitcoin enthusiast one of the goals is to have more places to accept Bitcoin, however this has been an issue for the business owners to implement a simple, yet fully functional Point of Sale (PoS) to be able to accept Bitcoin as a method of payment.
+In this chapter, I discuss my approach to come up with a solution and implement the Bitcoin PoS in a Cafe in Montreal\footnote{ Cafe Aunja \url{http://aunja.com}}.
 
-In order to do so I started by going through the requirements of a payment system in a small business, and then browsed through the available options and if they meet our requirements. Then I came up with a framework to compare these PoS with different aspects in Security, Privacy, Usability and Deployability categories. In the end, we implemented a customized PoS for this small business that could be used in any other similar businesses as the payment method to accept Bitcoin.
+In order to do so, I started by eliciting the requirements of a payment system for a small business, and then researched the available options to see if they meet our requirements. Then I came up with a framework to compare these PoS with different aspects in Security, Privacy, Usability and Deployability categories. In the end, we implemented a Aunja PoS for this small business that could be used in any other similar businesses as the payment method to accept Bitcoin.
 
 %==================== Requirement ======================
 \section {Requirments Engineering}
@@ -171,16 +171,16 @@ The payee has no control over the private keys nor holds the funds, thus he need
 %-------------------------- Online Merchant Services--------------------------
 \subsection{Online Merchant Services}
 Most of these services are focused for online businesses and don't have implicit implementation for a physical payment system. 
-One of the most famous ones, by the time of writing, is Bitpay\footnote{\url{https://bitpay.com}} that takes 0\% fees unlike some others competing companies, but they all have their own advantages. One other similar company is Coinbase\footnote{\url{http://coinbase.com}} that charges 1\% on exchanging bitcoins to fiat currency.
+One of the most famous ones, by the time of writing, is Bitpay\footnote{\url{https://bitpay.com}} that takes 0\% fees unlike some others competing companies, but they all have their own advantages. One other similar company is Coinbase\footnote{\url{http://coinbase.com}} that charges 1\% on exchanging Bitcoins to fiat currency.
 
  \textbf{Usability}
 Implementing a Bitpay payment is straightforward and easy to implement. There are not many jargons or technical options for the employee. They have their own exchange rate that the business owner could set to exchange to cash as soon as he receives payments, this will remove the possible effects that Bitcoin price volatility could have on the payments.
 
  \textbf{Deployability}
-The only thing required by this approach, is a smart phone or a small computer that users could interact with and browse to bitpay payment page, preferably with a touchscreen for easier price input and user interaction, as the interface is designed for touchscreen devices (Mobile interface)
+The only thing required by this approach, is a smart phone or a small computer that users could interact with and browse to Bitpay payment page, preferably with a touchscreen for easier price input and user interaction, as the interface is designed for touchscreen devices (Mobile interface)
 
  \textbf{Privacy}
-Bitpay has taken the privacy too serious. As they generate a new address for each transaction, the payees privacy is safe, however there has been reports on account suspensions because the payments were coming from a flagged bitcoin addresses (\eg blackmarkets\footnote{Darknet Blackmarkets\url{https://en.wikipedia.org/wiki/Darknet_market}} or localbitcoins \footnote{Peer to peer bitcoin trading site \url{http://localbitcoins.com}}), in the sense that there was malicious activities on that bitcoin address such as money laundry or buying drugs from online site. In this case the privacy, as the sense that we are evaluating, is being held but maybe not in he aspects needed in a payment system.
+Bitpay has taken the privacy too serious. As they generate a new address for each transaction, the payees privacy is safe, however there has been reports on account suspensions because the payments were coming from a flagged Bitcoin addresses (\eg black markets\footnote{Darknet Blackmarkets\url{https://en.wikipedia.org/wiki/Darknet_market}} or Localbitcoins \footnote{Peer to peer bitcoin trading site \url{http://localbitcoins.com}}), in the sense that there was malicious activities on that Bitcoin address such as money laundry or buying drugs from online site. In this case the privacy, as the sense that we are evaluating, is being held but maybe not in he aspects needed in a payment system.
 
  \textbf{Security}
 Every aspect of the payment system is implemented by Bitpay, they offered one of the most secure payment systems so far and there has been no big hacks reported. However, user has no control over his private keys and all the keys are being stored on Bitpay servers, this means complete trust to a third party.
@@ -188,7 +188,7 @@ Every aspect of the payment system is implemented by Bitpay, they offered one of
 
 %-------------------------- self hosting PoS--------------------------
 \subsection{self hosting wallet}
-Another option is to run a customized wallet as the point of sale service. There are multiple options for this case and it depends on the features needed for managing the bitcoin addresses. it's still possible to use a 3rd party for some of the functionalities like address generation or PoS interface. For the sake of simplicity I cover two popular methods, one using Mycelium Gear and the other a full custom self-hosting wallet using available open source softwares.
+Another option is to run a customized wallet as the point of sale service. There are multiple options for this case and it depends on the features needed for managing the Bitcoin addresses. it's still possible to use a 3rd party for some of the functionalities like address generation or PoS interface. For the sake of simplicity I cover two popular methods, one using Mycelium Gear and the other a full custom self-hosting wallet using available open source softwares.
 
 
 \subsection{Mycelium Gear}
@@ -260,7 +260,7 @@ QRCode 	 					&	&	&\prt	&\full	&\full	&\prt	&	&\prt	&	&\full	&	&\full&&\\
 Hardware Terminal 				&\prt	&\full	&\prt	&\full	&	&	&\full	&\prt	&\full	&	&\full	&	&&\\
 Online Merchant Services			&\prt	&\full&\prt	&\prt	&\prt	&\full	&\full	&\prt	&\prt	&	&\prt	&\full	&&\\ 
 Mycelium Gear				&\prt	&\full	&\prt	&\prt	&\prt	&\full	&\full	&\prt	&\prt	&\prt	&	&\prt	&&\\ 
-Custom PoS			&\full	&\full	&\full	&\full	&\prt	&\prt	&\full	&\prt	&\full	&\full	&\full	&\prt	&&\\  \hline 
+Aunja PoS			&\full	&\full	&\full	&\full	&\prt	&\prt	&\full	&\prt	&\full	&\full	&\full	&\prt	&&\\  \hline 
 
 
 \\
@@ -276,7 +276,7 @@ Custom PoS			&\full	&\full	&\full	&\full	&\prt	&\prt	&\full	&\prt	&\full	&\full	
 %==================== Implementation ======================
 \section{Design and Implementation}
 
-There were multiple approaches for implementing this PoS. We first have to see what programming language we want to use and under which environment. One of the lower cost methods would be to use a computer on the cafe's network as the webserver but the maintenance and support would be really hard as the network might go down or overwhelmed with customer's devices and would not function properly, up time is one of the most important aspects for a payment system. Next low cost solution is to use a shared hosting to host the wallet server and design a web based payment interface for the employees and also a reporting page for the business owner to track the bitcoin payments. This made our decision easier to chose a programming language, the most common programming languages supported by most hosted shared is PHP\footnote{PHP originally stood for Personal Home Page, it now stands for PHP: Hypertext Preprocessor\url{https://secure.php.net/manual/en/history.php.php}}. 
+There were multiple approaches for implementing Aunja PoS. We first have to see what programming language we want to use and under which environment. One of the lower cost methods would be to use a computer on the cafe's network as the webserver but the maintenance and support would be really hard as the network might go down or overwhelmed with customer's devices and would not function properly, up time is one of the most important aspects for a payment system. Next low cost solution is to use a shared hosting to host the wallet server and design a web based payment interface for the employees and also a reporting page for the business owner to track the bitcoin payments. This made our decision easier to chose a programming language, the most common programming languages supported by most hosted shared is PHP\footnote{PHP originally stood for Personal Home Page, it now stands for PHP: Hypertext Preprocessor\url{https://secure.php.net/manual/en/history.php.php}}. 
 \\ \textbf{PHP} is a server-side scripting language designed for web development and can be mixed with HTML to have more tools for interface design, also can be used with MySQL\footnote{Structured Query Language} as database backend.
 
 \subsection{Implementation measurements}
@@ -429,7 +429,7 @@ Other tasks were involved in integrating the above mentioned open source project
 \begin{figure}[htb!p]
 \centering
 \includegraphics[scale=0.5]{fig/First_View.png}
-  \caption{PoS - First View}
+  \caption{Aunja PoS - First View}
 \label{fig:First_View}
 \end{figure}
 
@@ -438,7 +438,7 @@ One of the features that were added on the second round of prototyping was the a
 \begin{figure}[htb!p]
 \centering
 \includegraphics[scale=0.5]{fig/Payment.png}
-  \caption{PoS - Payment}
+  \caption{Aunja PoS - Payment}
 \label{fig:payment}
 \end{figure}
 
@@ -459,7 +459,7 @@ Other added feature was the ability to check on the blockchain for each transact
 \begin{figure}[htb!p]
 \centering
 \includegraphics[width=\linewidth]{fig/canceled_sale.png}
-  \caption{A canceled sale - this means that the request was made on the PoS interface to generate an address, but the customer never sent the bitcoins. Probably a test or customer changed his mind and paid via another payment method}
+  \caption{A canceled sale - this means that the request was made on the Aunja PoS interface to generate an address, but the customer never sent the bitcoins. Probably a test or customer changed his mind and paid via another payment method}
 \label{fig:canceled_sale}
 \end{figure}
 
@@ -467,19 +467,19 @@ Other added feature was the ability to check on the blockchain for each transact
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{fig/complete_sale.png}
-  \caption{A Complete Sale - This shows that 0.01833541 BTC (approximately 5.5 CAD on the time of sale) was deposited in the address generated by the PoS} 
+  \caption{A Complete Sale - This shows that 0.01833541 BTC (approximately 5.5 CAD on the time of sale) was deposited in the address generated by the Aunja PoS} 
 \label{fig:report_page}
 \end{figure}
 
 
 Another feature request was the ability to decrypt and export the private keys of those addresses that has some balance. This has been done for the admin page that is out of the scope of this chapter. 
 
-This PoS has been made open source and available to public\footnote{\url{https://github.com/shayanb/Bitcoin-PoS-PHP}} under GNU General Public License v2 and has already been used in other small businesses to accept bitcoin.
+Aunja PoS has been made open source and available to public\footnote{\url{https://github.com/shayanb/Bitcoin-PoS-PHP}} under GNU General Public License v2 and has already been used in other small businesses to accept Bitcoin.
 
 %-------------------------- Training --------------------------
 \subsection{Training}
 
-I tried to make the interface as simple as possible for the employees. There are no jargons or technical requirements to use the PoS, but anyhow some details specific to Bitcoin transactions has to be taught to the employees to be able to recover from human errors while a transaction is processing.
+I tried to make the interface as simple as possible for the employees. There are no jargons or technical requirements to use Aunja PoS, but anyhow some details specific to Bitcoin transactions has to be taught to the employees to be able to recover from human errors while a transaction is processing.
 Other than in person training that I did with every employee, I made a manual (Figure~\ref{fig:payment_manual}) and attached it to the cashier's counter for future reference by all cafe employees.
 
 \begin{figure}[htb!p]
@@ -492,14 +492,14 @@ Other than in person training that I did with every employee, I made a manual (F
 
 
 \section{Real-world Deployement}
-Cafe Aunja started accepting Bitcoin with this customized PoS on Oct 23, 2014, and was the first cafe in eastern Canada that accepts Bitcoin. During the first month, there was more than 10 bitcoin payments and it has been working ever since.
+Cafe Aunja started accepting Bitcoin with Aunja PoS on Oct 23, 2014, and was the first cafe in eastern Canada that accepts Bitcoin. During the first month, there was more than 10 Bitcoin payments and it has been working ever since.
 
 \subsection{lessons learned}
 One of the missing features that should be implemented in such a system is a fast verification method, in the sense that for each payment customer need to wait for average of 10 minutes for the transaction to get confirmed. To remedy this, I solved this issue that the payment would be flagged as successful as soon as the transaction is broadcasted to Bitcoin network also known as 0-confirmation transaction. This could work for a PoS in a cafe as the volume of each transaction is small and it's not risky to take 0-confirmation transactions, However this is still a open problem to remedy the risk for higher value transactions and prevent double spend attacks ~\cite{karame2012two} ~\cite{bamert2013have}.
 
 Bitcoin and Bitcoin transactions are still a unfamiliar concept for most people, we encountered countless number of questions from customers to explain what Bitcoin is and how it works and fascinating enough they got more interested to know more about Bitcoin when they observed a payment done with the Bitcoin PoS, mostly because they would not reveal any personal information with each payment.
 
-Another interesting lesson, is the concept of locked price, that is the price of bitcoin for each sale is locked to the exact exchange rate on the time of the transaction. This means if the customer paid 0.01 bitcoin for a coffee that was 3 dollars in the time of the purchase, the business owner will be paid the exact same amount of 3 dollars and it should not make him any difference if the bitcoin price has been increasing or decreasing from the time of the purchase to the time he choses to cash out the receiving bitcoins. This makes the acceptance of bitcoin payments for the business risk free.
+Another interesting lesson, is the concept of locked price, that is the price of Bitcoin for each sale is locked to the exact exchange rate on the time of the transaction. This means if the customer paid 0.01 Bitcoin for a coffee that was 3 dollars in the time of the purchase, the business owner will be paid the exact same amount of 3 dollars and it should not make him any difference if the Bitcoin price has been increasing or decreasing from the time of the purchase to the time he choses to cash out the receiving Bitcoins. This makes the acceptance of Bitcoin payments for the business risk free.
 
 Now to test the system on production, it was time for the first ever coffee in eastern Canada to be bought with Bitcoin (Figure ~\ref{fig:firsttransaction}).
 

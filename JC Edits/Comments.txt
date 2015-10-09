@@ -1,46 +1,80 @@
 Notation:
 [#] comment on content on page #
+-[#] Done
+*[#] --> reply with a comment
+**[#] --> question
+
 Highlight on PDF = something grammatically wrong (if you unsure, you can ask)
 Expand all contractions (it’s -> it is, etc)
 
-[2] “Obvious” is a strong word
-[3] The company filed for bankruptcy not Chaum (he had left by then)
-[4] I’d say unregulated use instead of illegal use for e-gold
-[4] Expand on the idea that Bitcoin is its own currency, not a digital version of an existing currency like the USD (ecash) or commodity like Gold (e-gold)
-[4] any *published* work on the usability
-[5] as long as -> to the extent that it fits...
-[5] first ever -> first published
-[6] eastern canada: unclear what this means, just say Quebec even if it is broader
-[6] robust system: system for what? Be more specific
-[7] hold, use and accept -> holding, using and accepting
-[8] every transaction -> every standard transaction (also add a footnote saying that from now on, the word transaction refers to a standard transaction unless otherwise specified) (you can also define standard transaction if you want in no more than a sentence or two)
-[8] I think details of the conensus model are relevant to the PoS terminal because you need to think about double spending and confirmation times, which cannot be done without understanding the model.
-[9] SPV also has integrity risks: semi-trusted nodes can omit reports of relevant transactions (but cannot forge transactions or convince a user that a transaction was added when it was not)
-[11] Don’t use other peoples images. Create your own!
-[12] Satoshi -> As bitcoin creator Satoshi…
-[13] Create your own figures
-[13] BIP32 also allows a dumb terminal that does not know the private key to generate new Bitcoin addresses (for use in PoS terminals)
-[14] misused -> conflated
-[14] Isn’t Bitcoin QT now called Bitcoin Core?
-[14] miners are computational devices, not necessarily computers (ASICs, FPGAs, GPUs aren’t computers)
-[14] should have -> should form… also explain *why*
-[14] don’t use words like “really”
-[15] Yes, explain double spend. Also explain why miners go along with valid blocks instead of forking. For details on this, you can look at the Princeton course on Bitcoin (which includes some textbook chapters)
-[16] Usability in title?
-[16] Don’t use Dr. in names (otherwise you’ll have to use it every time you refer to one: David Barrera, David Chaum, etc)
-[16—61] I skipped this as it is the paper, which I have obviously already read. Is it the full version of the paper? If this is the case, in the introduction of the chapter, say that this chapter is a longer version than the published paper. Also, is there anything outside of the conclusions that you changed? If so, let me know and I’ll read it in detail.
-[33] Rotate the chart so it fills the page in landscape
-[56] Make sure you understand section 3.7 as well as you would if you had written it. Or alternatively, you could add a footnote that notes the section is largely the work of your co-authors but is included for completeness. The point is, the committee can ask you detailed questions about this and you are expected to be able to answer them.
-[62] Don’t like the title, it is too vague. “Bitcoin Point of Sale Terminals: evaluation and deployment”
-[62] bitcoin and use -> Bitcoin. We will use the SCRAM [citation!]
-[62] “Point of sale” needs a word like “terminal” at the end. Define PoS to be “point of sale terminal” then use PoS everywhere is the easiest fix.
-[62] “best suitable” this is vague and nothing is the “best” -> say something more specific, one that receives full points in our evaluation method or something like
-[62] One interesting aspect: I don’t understand this sentence 
-[63] Give your system a name and then refer to it by that name. It will make everything easier.
-[63] “going through” -> eliciting; “browsed” -> researched; “and if” -> to see if; meet -> met
+
+-[2] “Obvious” is a strong word
+-[3] The company filed for bankruptcy not Chaum (he had left by then)
+
+**[3] thesis statement, highlighted word "system"
+--> what word to use instead of system?
+
+-[4] I’d say unregulated use instead of illegal use for e-gold
+-[4] Expand on the idea that Bitcoin is its own currency, not a digital version of an existing currency like the USD (ecash) or commodity like Gold (e-gold)
+-[4] any *published* work on the usability
+-[5] as long as -> to the extent that it fits...
+-[5] first ever -> first published
+-[6] eastern canada: unclear what this means, just say Quebec even if it is broader
+-[6] robust system: system for what? Be more specific
+-[7] hold, use and accept -> holding, using and accepting
+-[8] every transaction -> every standard transaction (also add a footnote saying that from now on, the word transaction refers to a standard transaction unless otherwise specified) (you can also define standard transaction if you want in no more than a sentence or two)
+
+*[8] I think details of the conensus model are relevant to the PoS terminal because you need to think about double spending and confirmation times, which cannot be done without understanding the model.
+--> added double spend and confirmation time details to clarify the consensus model
+
+-[9] SPV also has integrity risks: semi-trusted nodes can omit reports of relevant transactions (but cannot forge transactions or convince a user that a transaction was added when it was not)
+
+*[11] Don’t use other peoples images. Create your own!
+--> all images in this thesis was created by me!
+
+-[12] Satoshi -> As bitcoin creator Satoshi…
+
+*[13] Create your own figures
+--> see figures graffle directory for raw files (open with Omni graffle)
+
+-[13] BIP32 also allows a dumb terminal that does not know the private key to generate new Bitcoin addresses (for use in PoS terminals)
+-[14] misused -> conflated
+-[14] Isn’t Bitcoin QT now called Bitcoin Core?
+-[14] miners are computational devices, not necessarily computers (ASICs, FPGAs, GPUs aren’t computers)
+-[14] should have -> should form… also explain *why*
+-[14] don’t use words like “really”
+-[15] Yes, explain double spend. Also explain why miners go along with valid blocks instead of forking. For details on this, you can look at the Princeton course on Bitcoin (which includes some textbook chapters)
+-[16] Usability in title?
+-[16] Don’t use Dr. in names (otherwise you’ll have to use it every time you refer to one: David Barrera, David Chaum, etc)
+
+*[16—61] I skipped this as it is the paper, which I have obviously already read. Is it the full version of the paper? If this is the case, in the introduction of the chapter, say that this chapter is a longer version than the published paper. Also, is there anything outside of the conclusions that you changed? If so, let me know and I’ll read it in detail.
+--> not that much was changed, mostly were moved to the other parts of the thesis.
+
+**[33] Rotate the chart so it fills the page in landscape
+--> How? Tried and failed miserably!
+
+*[56] Make sure you understand section 3.7 as well as you would if you had written it. Or alternatively, you could add a footnote that notes the section is largely the work of your co-authors but is included for completeness. The point is, the committee can ask you detailed questions about this and you are expected to be able to answer them.
+--> duly noted
+
+-[62] Don’t like the title, it is too vague. “Bitcoin Point of Sale Terminals: evaluation and deployment”
+-[62] bitcoin and use -> Bitcoin. We will use the SCRAM [citation!]
+
+**[62] “Point of sale” needs a word like “terminal” at the end. Define PoS to be “point of sale terminal” then use PoS everywhere is the easiest fix.
+--> what do you mean by "define"? just mentioning that PoS means point of sale terminal and we would use PoS from now on is enough?
+
+-[62] “best suitable” this is vague and nothing is the “best” -> say something more specific, one that receives full points in our evaluation method or something like
+
+*[62] One interesting aspect: I don’t understand this sentence 
+--> I changed it, if it's still vague let me know and will probably get rid of it.
+
+*[63] Give your system a name and then refer to it by that name. It will make everything easier.
+--> Aunja PoS
+
+-[63] “going through” -> eliciting; “browsed” -> researched; “and if” -> to see if; meet -> met
 
 
-[63] Stopping here for now…
+*[63] Stopping here for now…
+--> Thanks a lot :)
 
 
 
