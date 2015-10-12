@@ -51,7 +51,7 @@ Expand all contractions (it’s -> it is, etc)
 
 **[3] thesis statement, highlighted word "system"
 --> what word to use instead of system?
-% systems
+- % systems
 
 -[4] I’d say unregulated use instead of illegal use for e-gold
 -[4] Expand on the idea that Bitcoin is its own currency, not a digital version of an existing currency like the USD (ecash) or commodity like Gold (e-gold)
@@ -91,7 +91,7 @@ Expand all contractions (it’s -> it is, etc)
 
 **[33] Rotate the chart so it fills the page in landscape
 --> How? Tried and failed miserably!
-% Try this: http://tex.stackexchange.com/questions/101645/how-to-turn-latex-figure-by-90-degrees-along-with-the-caption
+- % Try this: http://tex.stackexchange.com/questions/101645/how-to-turn-latex-figure-by-90-degrees-along-with-the-caption
 Or google a bit and see. I don’t know off hand but know it can be done with the right package.
 
 *[56] Make sure you understand section 3.7 as well as you would if you had written it. Or alternatively, you could add a footnote that notes the section is largely the work of your co-authors but is included for completeness. The point is, the committee can ask you detailed questions about this and you are expected to be able to answer them.
