@@ -5,19 +5,19 @@
 
 \section{Introductory Remarks}
 
-In previous chapter we evaluated all the existing Bitcoin wallet clients for the user. In this chapter we survey and evaluate the existing Bitcoin payments for a business to accept Bitcoin and use SCRAM~\cite{REScenario}  requirement engineering method to develop the most suitable Point of Sale (PoS) for a small business based on our evaluation framework.
+In previous chapter we evaluated all the existing Bitcoin wallet clients for the user. In this chapter we survey and evaluate the existing Bitcoin payments for a business to accept Bitcoin and use SCRAM~\cite{REScenario}  requirement engineering method to develop the most suitable Point of Sale (PoS) for a small business based on our evaluation framework. We would use PoS for point of sale terminal through out this chapter.
 
-One aspect of Bitcoin is that there is no specific entity backing up the currency but whoever that is using it gives value to Bitcoin. As a Bitcoin enthusiast one of the goals is to have more places to accept Bitcoin, however this has been an issue for the business owners to implement a simple, yet fully functional Point of Sale (PoS) to be able to accept Bitcoin as a method of payment.
+One aspect of Bitcoin is that there is no specific entity backing up the currency but whoever that is using it gives value to Bitcoin. As a Bitcoin enthusiast one of the goals is to have more places to accept Bitcoin, however this has been an issue for the business owners to implement a simple, yet fully functional PoS to be able to accept Bitcoin as a method of payment.
 In this chapter, I discuss my approach to come up with a solution and implement the Bitcoin PoS in a Cafe in Montreal\footnote{ Cafe Aunja \url{http://aunja.com}}.
 
 In order to do so, I started by eliciting the requirements of a payment system for a small business, and then researched the available options to see if they meet our requirements. Then I came up with a framework to compare these PoS with different aspects in Security, Privacy, Usability and Deployability categories. In the end, we implemented a Aunja PoS for this small business that could be used in any other similar businesses as the payment method to accept Bitcoin.
 
 %==================== Requirement ======================
 \section {Requirments Engineering}
-Requirement engineering is the process of defining, documenting and maintaining requirements and is a subfield of software and system engineering, the term was first used in 1979 ~\cite{alford1979software} and then became a general term in with the publication of an IEEE Computer Society tutorial ~\cite{dorfman1990system}.
-Requirements Engineering is the first phase of waterfall software development process ~\cite{rocye1970managing}. Depending on the type of the system being developed, the methods differ.
+Requirement engineering is the process of defining, documenting and maintaining requirements and is a subfield of software and system engineering. The term was first used in 1979 ~\cite{alford1979software} and then became a general term with the publication of an IEEE Computer Society tutorial ~\cite{dorfman1990system}.
+Requirements Engineering is the first phase in waterfall software development process ~\cite{rocye1970managing}. Depending on the type of the system being developed, the methods differ.
 
-Probably the base way to analyze the requirements of a small business is to model real world descriptions and stories in scenarios. Scenarios are basically examples of real world experiences that we could use to model what is needed in the system. That is why we chose a scenario-based requirements engineering method named SCRAM.
+Probably the best way to analyze the requirements of a small business is to model real world descriptions and stories in scenarios. Scenarios are examples of real world experiences that we could use to model what is needed in the system. That is why we chose a scenario-based requirements engineering method named SCRAM.
 
 \subsection{SCRAM}
 We used SCRAM (Scenario-based Requirements Analysis Method) as our framework to gather the requirements of this system.
@@ -35,13 +35,13 @@ SCRAM defines four phases of requirement engineering and has been shown to be a 
 This method consists of four phases:
 \begin{itemize}
 
-\item \textbf{Initial requirements capture and domain familiarisation: } This is done by interviewing and fact-finding techniques to have a full understanding of how the business works.
+\item \textbf{Initial requirements capture and domain familiarisation: } This is done by interviewing and fact-finding methods to have a full understanding of how the business works.
 
-\item \textbf{Storyboarding and design visioning: } This is done by making storyboards and walkthroughs to show to the client and get feedbacks on feasibility.
+\item \textbf{Storyboarding and design visioning: } This is done by making storyboards and walkthroughs to show to the business and get feedback on feasibility.
 
-\item \textbf{Requirement exploration: } This uses the early prototypes  and designs to get critiques from the client and validate the requirements.
+\item \textbf{Requirement exploration: } This uses the early prototypes  and designs to get critiques from the business and validate the requirements.
 
-\item \textbf{Prototyping and requirement validation: } This is done by developing fully functional prototypes and continues refining the requirements until the product is acceptable by the client
+\item \textbf{Prototyping and requirement validation: } This is done by developing fully functional prototypes and continues refining the requirements until the product is acceptable by the business.
 
 \end{itemize}
 
@@ -49,8 +49,8 @@ This method consists of four phases:
 \textit{Phase 1: Initial requirements capture and domain familiarisation.} We asked the cafe owner, two employees and two customers for a scenario involving Bitcoin payment in the cafe to create the common "normal use case". The differences between the scenarios were insignificant thus the exceptions to this normal use case are not valid. One exception was power failure, and because even the current accepted payment methods such as Visa would fail we would not consider such a scenarios, that being said, there are methods to mitigate this that will be discussed, such as browser based PoS)
 
 
-As the cafe already have other payment systems in place, there is no need to go through the cafe's business plan or any other specification to check for conflicts. The only difference is implementation of another payment system at cashier \ref{fig:phase1}.
-However, there are requirements in the PoS system that needs to be met, such as realtime bitcoin to fiat money exchange rate and obvious alert of successful or failed payments.
+As the cafe already have other payment systems in place, there is no need to go through the cafe's business plan or any other specification to check for conflicts. The only change is to implement another payment system at cashier's desk (see figure \ref{fig:phase1}).
+However, there are requirements in the PoS system that need to be met, such as realtime Bitcoin to fiat money exchange and obvious alert of successful or failed payments.
 
 \begin{figure}[htb!p]
 \centering
@@ -62,7 +62,7 @@ However, there are requirements in the PoS system that needs to be met, such as 
 %-------------------------- Storyboarding and design visioning --------------------------
 
 \textit{Phase 2: Storyboarding and design visioning.}
-Based on the information gathered from Phase 1 and further analysis such as user survey on the design, we can develop the storyboard, see figure \ref{fig:storyboard}. More technical requirements will be explained later [section XX].
+Based on the information gathered from Phase 1 and further analysis, such as user survey on the design, we can develop the storyboard, see figure \ref{fig:storyboard}.% More technical requirements will be explained later ~/ref{section}.
 
 %FIXME: wrapfigure package ! size
 \begin{figure}[htb!p]
@@ -75,62 +75,62 @@ Based on the information gathered from Phase 1 and further analysis such as user
 
 %-------------------------- Requirements exploration. --------------------------
 \textit{Phase 3: Requirements exploration.}
-We developed a concept demonstrator, capable of doing a simple bitcoin payment. The bitcoin exchange rate and amount of transaction were hard coded and the transaction would be executed manually. We asked the employees to run a mock purchase with the demonstrator to see how they would interact with the system and got the feedback. As the bitcoin concepts might be ambiguous for the new user, there should not be any interactions for them with bitcoin concepts and terminology. After the transaction was done, the owner pointed that there is the need for a central logging system that could be checked from time to time for the daily transactions.\\
+We developed a proof of concept\footnote{concept demonstrator~\cite{REScenario}} , capable of doing a simple Bitcoin payment. The Bitcoin exchange rate and the amount of transactions were hard coded and the transaction would be executed manually. We asked the employees to run a mock purchase with the demonstrator to see how they would interact with the system and received feedback. As Bitcoin concepts might be ambiguous for the new user, there should not be any interactions with Bitcoin concepts and terminology. After the transaction was done, the owner pointed that there is the need for a central logging system that could be checked from time to time for the daily transactions.\\
 
 
 %-------------------------- Prototyping and requirements validation. --------------------------
 \textit{Phase 4: Prototyping and requirements validation.}
-We used the feedbacks gathered from phase 3 to make the first prototype. This had the bitcoin exchange rate retrieval automatically and the employee only had to input the dollar amount in the PoS, this made it possible to keep the bitcoin terminology out of the scope of the training for the employees. However on the first prototype, to show the success payments, the system was showing the transaction a blockchain explorer\footnote{\url{http://blockchain.info}}, using web-based APIs. This was not clear for a novice user about the state of the system. On the second round of prototyping we designed an interface to show that the transaction has been broadcasted to the bitcoin network and would use that knowledge to inform the employee of the state of the payment.\\
+We used the feedback gathered from phase 3 to make the first prototype. The prototype retrieved the Bitcoin exchange rate in realtime and the employee only had to input the dollar amount in the PoS. This made it possible to keep the Bitcoin terminology out of the scope of the training for the employees. However on the first prototype, to show the successful payments, the system was showing the transaction on a Blockchain explorer\footnote{\url{http://blockchain.info}}, using web-based APIs. This was not clear for a novice user on what the state of the system is. On the second round of prototyping, we designed an interface to show that the transaction has been broadcasted to the Bitcoin network and would use that knowledge to inform the employee of the state of the payment.\\
 
 \section{Decision Framework}
 We propose a framework specialized for Bitcoin point of sale systems to score the system with a set of requirements based on usability, deployability, privacy and security. These are not a final set of requirements for a general purpose system, however in the case of Bitcoin payments for a small business these will suffice.\\
-We start by using our scenario based requirement engineering approach and adding the required non-functional requirements (\eg payee's privacy, data encryption). Then we will use these requirements to score each systems described in this section and gather the result in Table ~\ref{tab:method-comp}. For simplifying the figure we use three score indicators,  (\full) for a complete score on the requirement, (\prt) if the requirements has not met completely and empty space if it is not satisfying the need. For some of the requirements the scoring system might be confusing (\eg cost to run) that will be explained later.
+We start by using our scenario based requirement engineering approach and adding the required non-functional requirements (\eg maintaining payee's privacy, data encryption). Then we will use these requirements to score each system described in this section and gather the result in Table ~\ref{tab:method-comp}. For simplifying the figure, we use three score indicators. (\full) for a complete score on the requirement, (\prt) if the requirements has not met completely and empty space if it is not satisfying the need. For some of the requirements the scoring system might be confusing (\eg low cost to run) which will be explained later.
 
 %-------------------------- Usability --------------------------
 \subsection{Usability} There are different aspects of usability that should be considered. One is how the PoS is accessible for the employees and the other is technical matters of the implementation.
 \begin{itemize}
 
-\item \textbf{User Friendly: }The payment process should not be technical or complex for a cafe employee, or just a simple training for the employee would be enough for them to be able to accept Bitcoin. Also, There should be a clear, mutual understanding when the payment is finalized.
+\item \textbf{User Friendly: }The payment process should not be technical or complex for a cafe employee, a simple training for the employee would be enough for them to be able to accept Bitcoin. Also there should be a clear, mutual understanding when the payment is finalized.
 
 \item \textbf{Time-Efficient: }the process of payment should not take significant amount of time more than the common payment systems such as Visa payments.
 
-\item \textbf{Fair Exchange Rate: }there should be a easy and fair approach for the payer and payee to have a deal on fiat currency to bitcoin exchange rate.
+\item \textbf{Fair Exchange Rate: }there should be a easy and fair approach for the payer and payee to have a consensus on fiat currency to Bitcoin exchange rate.
 
-\item \textbf{Availability: }all employees should be able to do the bitcoin payment process without the need to know any credentials
+\item \textbf{Availability: }all employees should be able to do the Bitcoin payment process without the need to know any credentials
 
 \end{itemize}
 %-------------------------- Deployability --------------------------
 \subsection{Deployability} We use this category to state the requirements regarding the implementation of the system and branching. In the case of small businesses, the ability to manage multiple branch systems might not be a really important aspect. That being said, we will score the systems for future work and hence to have a more complete framework.
 \begin{itemize}
 
-\item \textbf{Cost to Run: }PoS should be implemented in a way that is accessible with one of the currently owned devices of the cafe such as the cashier computer, the PoS terminal\footnote{The common PoS that accepts Visa/Debit Cards} or mobile devices. There should not be the need of buying new hardware or an expensive software. For this requirement, we would score a (\full) score to a free of monetary cost system, and a (\prt) score to a moderate amount of spendings.
+\item \textbf{Low Cost to Run: }PoS should be implemented in a way that is accessible with one of the currently owned devices of the cafe such as the cashier computer, the PoS terminal\footnote{The common PoS that accepts Visa/Debit Cards} or mobile devices. There should not be a need for buying new hardware or expensive software. For this requirement, we would score a (\full) score to a free of monetary cost system, and a (\prt) score to a moderate amount of spendings.
 
-\item \textbf{Branching} The ability to install the point of sale on multiple branches or modify the existing systems.
+\item \textbf{Enables Branching} The ability to install the point of sale on multiple branches, meaning the installation process for another branch of the business should not require modification on the PoS. Configuration might be needed to differentiate two branches in the system.
 
 \end{itemize}
  
 %-------------------------- Privacy --------------------------
-\subsection{Privacy} Privacy is important in the payment system in the sense that no information should be leaked from any of the payers nor payee to the other party, This should be one of the fundamental requirements for any payment system.
+\subsection{Privacy} Privacy is important in the payment system in the sense that no information should be leaked from any of the payers nor payee to the other party. This should be one of the fundamental requirements for any payment system.
 \begin{itemize}
 
-\item \textbf{No Information leakage: }There should not be any sensitive information available to the customer when she wants to pay with Bitcoin.
+\item \textbf{No Information leakage: }There should not be any sensitive information available to the customer when she wants to pay with Bitcoin. These information could be the infrastructure of the business's network or a private domain used for accounting purposes.
 
-\item \textbf{Payee's Privacy: }The payer should not be able to see how much the payee has received prior or after her payment but just her own amount of payment.
+\item \textbf{Maintains Payee's Privacy: }The payer should not be able to see how much the payee has received prior or after her payment but just her own amount of payment.
 
-\item \textbf{Payer's Privacy: }The payee should not be able to see how much the payer owns. This is one of the challenges that has not been fully solved ~\cite{androulaki2013evaluating}, it is the payer's responsibility to manage her funds and addresses in a sense that there is no privacy leak.
+\item \textbf{Maintains Payer's Privacy: }The payee should not be able to see how much the payer owns. This is one of the challenges that has not been fully solved ~\cite{androulaki2013evaluating}. It is the payer's responsibility to manage her funds and addresses in a sense that there is no privacy leak.
 
-\item \textbf{Authenticiation: }The ability to see the payments list only available for the manager via a password protected panel.
+\item \textbf{Confidential Payments list: }The ability to see the payments list, only available for the manager by an authentication method, such as a password-protected panel. 
 
 \end{itemize}
 %-------------------------- Security --------------------------
-\subsection{Security} Security might not be the cafe owners priority as he might not have a deep understanding of this concept in payment systems nor Bitcoin sphere. Anyhow it is one of the most important aspects in any financial payment systems and also usable bitcoin applications. Security of the system represents more than just the PoS code, it includes the environment that PoS is being used, the people using the software and the operating environment of the software \cite{securityreq}.
+\subsection{Security} Security might not be the cafe owner's priority as he might not have a deep understanding of this concept in payment systems nor in Bitcoin sphere. Anyhow it is one of the most important aspects in any financial payment system and also usable Bitcoin applications. Security of the system represents more than just the PoS code, it includes the environment that PoS is being used, the people using the software and the operating environment of the software \cite{securityreq}.
 \begin{itemize}
 
-\item \textbf{No 3rd-Party Trust: }There should be as less 3rd party trust as possible to accept and hold the bitcoins.
+\item \textbf{No 3rd-Party Trust: }There should be as little 3rd party trust as possible to accept and hold Bitcoin.
 
-\item \textbf{Data Ecnryption: }In the case of any attacks on the service there should be security measures that makes sure the attacker will not be able to have access to the private keys and transfer of the bitcoins.
+\item \textbf{Data Encryption: }In the case of any attacks on the service, there should be security measures that makes sure the attacker will not be able to have access to the private keys and transfer Bitcoin.
 
-\item \textbf{No Software dependency: }The system should use as less dependencies as possible to minimize the attack vector on the server. This also falls under deployability category as more dependencies could lead to the need of having a more complex system for implementation. %no bitcoind or command access , just php and mysql
+\item \textbf{No Software Dependency: }The system should use as little dependencies as possible to minimize the attack vector on the server. This also falls into the deployability category as more dependencies could lead to the need of having a more complex system for implementation. %no bitcoind or command access , just php and mysql
 
 \end{itemize}
 
@@ -138,11 +138,11 @@ We start by using our scenario based requirement engineering approach and adding
 \section{Evolution of PoS proposals}
 I will first go through the available options and why we chose to develop a custom PoS for this purpose.
 
-There exist multiple payment systems that most of the suit the online markets (\eg e-commerece) and not a physical point of sale \footnote{\url{https://en.bitcoin.it/wiki/How_to_accept_Bitcoin,_for_small_businesses}}. We list all the available approaches to accept Bitcoin payments for a physical business, and not as an e-commerce business.
+There exist multiple payment systems which mostly suit the online markets (\eg e-commerece) and not a physical point of sale \footnote{\url{https://en.bitcoin.it/wiki/How_to_accept_Bitcoin,_for_small_businesses}}. We list all the available approaches to accept Bitcoin payments for a physical business, and not as an e-commerce business.
 
 %-------------------------- QR on Cash register --------------------------
 \subsection{One Bitcoin address - QR Code} 
-One of the introduced ways for small businesses to accept bitcoin is to hold one bitcoin address and print out the QR code of that address near the cash register. In this way, the customer could scan the QR code and input the dollar value on his bitcoin wallet and pay the business with the equivalent bitcoins. \\
+One of the suggested ways for small businesses to accept bitcoin is to hold one bitcoin address and print out the QR code of that address near the cash register. In this way, the customer could scan the QR code and input the dollar value on his bitcoin wallet and pay the business with the equivalent bitcoins. \\
 
 \textbf{Usability} It is not user friendly as it puts the employee in a position that she needs to know how bitcoin transactions work and she needs to prepare,receive and checks the payment manually. This makes the time spent on the payment longer than normal payment systems, same goes for the fair exchange rate, She should come to an agreed exchange price with the customer and this needs a deeper understanding of bitcoin and finance. Thus a technical training is required for each employee responsible for handling bitcoin payments.
 
@@ -246,11 +246,11 @@ As you can see on table \ref{tab:method-comp} there is no perfect solution out o
 \headrow{Time-Efficient} &  
 \headrow{Fair Exchange Rate} &
 \headrow{Availability} &
-\headrow{Cost to Run} &
-\headrow{Branching} & 
-\headrow{Payee's Privacy} &
+\headrow{Low Cost to Run} &
+\headrow{Enables Branching} & 
+\headrow{Maintains Payee's Privacy} &
 \headrow{Payer's Privacy} &
-\headrow{Authenticiation} &
+\headrow{Confidential Payments list} &
 \headrow{No 3rd-Party Trust} & 
 \headrow{Data Ecnryption} & 
 \headrow{No Software Dependency} & 
@@ -301,9 +301,9 @@ As for the user facing interface, it should be simple, showing all the required 
 \subsubsection{Deployability}
 \begin{itemize}
 
-\item \textbf{Cost to Run: } The only costs associated with this implementation would be the annual cost of the shared hosting that nowadays is less than 100 dollars for an unlimited web host. For the sake of this research, there would be no other implementation and development costs. 
+\item \textbf{Low Cost to Run: } The only costs associated with this implementation would be the annual cost of the shared hosting that nowadays is less than 100 dollars for an unlimited web host. For the sake of this research, there would be no other implementation and development costs. 
 
-\item \textbf{Branching} For now there's no plan to have more branches for this business, but depending on the implementation, to have another branch it would be as easy as running another instance of the application on the server.
+\item \textbf{Enables Branching} For now there's no plan to have more branches for this business, but depending on the implementation, to have another branch it would be as easy as running another instance of the application on the server.
 
 \end{itemize}
  
@@ -313,11 +313,11 @@ As for the user facing interface, it should be simple, showing all the required 
 
 \item \textbf{No Information leakage: } The payment interface should not reveal any information about the backend nor the business' internal detail.
 
-\item \textbf{Payee's Privacy: } There should be a new address generated for each transaction request so no one could see how much the business had received in Bitcoin prior or after each transaction.
+\item \textbf{Maintains Payee's Privacy: } There should be a new address generated for each transaction request so no one could see how much the business had received in Bitcoin prior or after each transaction.
 
-\item \textbf{Payer's Privacy: } This would be the payers Bitcoin wallet client responsibility and it would be out of the scope of this PoS system.
+\item \textbf{Maintains Payer's Privacy: } This would be the payers Bitcoin wallet client responsibility and it would be out of the scope of this PoS system.
 
-\item \textbf{Authenticiation: } There should be a reporting and administration interface designed that is protected by password and only accessible to the business owner.
+\item \textbf{Confidential Payments list: } There should be a reporting and administration interface designed that is protected by password and only accessible to the business owner.
 
 \end{itemize}
 %-------------------------- Security --------------------------

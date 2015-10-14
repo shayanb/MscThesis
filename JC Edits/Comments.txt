@@ -117,15 +117,26 @@ Or google a bit and see. I don’t know off hand but know it can be done with th
 *[63] Stopping here for now…
 --> Thanks a lot :)
 
-[64] Never copy figures. Make your own (citing where you got it from still) and only put in the details that are relevant to what you are going to use. 
-[65] What is a “client”? Do you mean the business? Should be distinguished from software clients in the previous section. 
-[66] “concept demonstrator” proof of concept?
-[70-1] Phrase all requirements positively: low cost to run, enables branching, maintains X’s privacy, provides authentication.
-[70] Branching is unclear. Do you mean install without modification?
-[71] Information leakage is unclear. How is it not captured by the other properties? Can you give some examples of such leakage?
-[71] Authentication is unclear. I think the requirement is a confidential payments list, while authentication is one means to achieve that (requirements should describe what i to be achieved not how you achieve it: “descriptive not proscriptive”). 
+-[64] Never copy figures. Make your own (citing where you got it from still) and only put in the details that are relevant to what you are going to use. 
+-[65] What is a “client”? Do you mean the business? Should be distinguished from software clients in the previous section. 
+-[66] “concept demonstrator” proof of concept?
+
+
+
+
+
+
+~[70-1] Phrase all requirements positively: low cost to run, enables branching, maintains X’s privacy, provides authentication.
+-[70] Branching is unclear. Do you mean install without modification?
+-[71] Information leakage is unclear. How is it not captured by the other properties? Can you give some examples of such leakage?
+-[71] Authentication is unclear. I think the requirement is a confidential payments list, while authentication is one means to achieve that (requirements should describe what i to be achieved not how you achieve it: “descriptive not proscriptive”). 
+
+
 [68-72] You need to say for each column in the table what it means to score a full dot, a half dot, and no dot.
+
 [73+] You have to relate what you are saying in English to why you give a certain score (full dot, half dot, no dot)  under each criteria. See for example my SSL SoK paper or [BHvOS12] for what this looks like. 
+
+
 [78] Define “BIP32 path”
 [79] Anytime you run code, you are trusting a third party: the developer. But this is true of everything (OS, Bitcoin itself, etc). However you should clarify this somewhere.
 [82] Note quickly that propagating the transaction is not the same as confirming it but that this is an accepted risk.
@@ -136,6 +147,9 @@ Or google a bit and see. I don’t know off hand but know it can be done with th
 [92] I don’t understand the riskless transactions part. It seems you just added a number of a database… are you also giving the ability to do the exchange right away?
 [92] if the transaction… -> sentence does not seem to end
 [96] First coffee to the best of our knowlege
+
+
+
 [98] What does universal framework mean?
 [98] they are necessary first steps.
 -[98] What does universal framework mean?
