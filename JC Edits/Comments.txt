@@ -132,12 +132,13 @@ Or google a bit and see. I don’t know off hand but know it can be done with th
 -[71] Authentication is unclear. I think the requirement is a confidential payments list, while authentication is one means to achieve that (requirements should describe what i to be achieved not how you achieve it: “descriptive not proscriptive”). 
 
 
-[68-72] You need to say for each column in the table what it means to score a full dot, a half dot, and no dot.
-
-[73+] You have to relate what you are saying in English to why you give a certain score (full dot, half dot, no dot)  under each criteria. See for example my SSL SoK paper or [BHvOS12] for what this looks like. 
-
 
 72!
+
+[68-72] You need to say for each column in the table what it means to score a full dot, a half dot, and no dot.
+
+**[73+] You have to relate what you are saying in English to why you give a certain score (full dot, half dot, no dot)  under each criteria. See for example my SSL SoK paper or [BHvOS12] for what this looks like. 
+--> This is the automated naming that turned it to [BHvOS12], should I change this?
 
 [78] Define “BIP32 path”
 [79] Anytime you run code, you are trusting a third party: the developer. But this is true of everything (OS, Bitcoin itself, etc). However you should clarify this somewhere.
