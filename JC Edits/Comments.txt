@@ -137,21 +137,28 @@ Or google a bit and see. I don’t know off hand but know it can be done with th
 [73+] You have to relate what you are saying in English to why you give a certain score (full dot, half dot, no dot)  under each criteria. See for example my SSL SoK paper or [BHvOS12] for what this looks like. 
 
 
+72!
+
 [78] Define “BIP32 path”
 [79] Anytime you run code, you are trusting a third party: the developer. But this is true of everything (OS, Bitcoin itself, etc). However you should clarify this somewhere.
-[82] Note quickly that propagating the transaction is not the same as confirming it but that this is an accepted risk.
-[83] “should not” ->  does not ?
-[83] drop “that is protected by password and”
-[84] Software dependencies: just a browser is required?
-[87] Is bitcoinaverage not a trusted third party now in your system?
-[92] I don’t understand the riskless transactions part. It seems you just added a number of a database… are you also giving the ability to do the exchange right away?
-[92] if the transaction… -> sentence does not seem to end
-[96] First coffee to the best of our knowlege
+
+79!
 
 
+-[82] Note quickly that propagating the transaction is not the same as confirming it but that this is an accepted risk.
+-[83] “should not” ->  does not ?
+-[83] drop “that is protected by password and”
+-[84] Software dependencies: just a browser is required?
 
-[98] What does universal framework mean?
-[98] they are necessary first steps.
+**[87] Is bitcoinaverage not a trusted third party now in your system?
+-->bitcoinaverage would get the average of the price of all the exchanges considering their traded volume, it's more of a API integration. Although this could be malicous and give wrong price, it is not a risky trust, also the price is visible on the main page of the PoS. If you think this is a trust in 3rd party I can add some details regarding this to the thesis
+
+*[92] I don’t understand the riskless transactions part. It seems you just added a number of a database… are you also giving the ability to do the exchange right away?
+-> This is realtime exchange, However as an agreement, cashing out the Bitcoins would happen in monthly basis or within a threshold (\eg when reached 100 dollars).
+
+-[92] if the transaction… -> sentence does not seem to end
+-[96] First coffee to the best of our knowlege
+
 -[98] What does universal framework mean?
 -[98] they are necessary first steps.
 
