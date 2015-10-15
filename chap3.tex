@@ -142,57 +142,57 @@ There exist multiple payment systems which mostly suit the online markets (\eg e
 
 %-------------------------- QR on Cash register --------------------------
 \subsection{One Bitcoin address - QR Code} 
-One of the suggested ways for small businesses to accept bitcoin is to hold one bitcoin address and print out the QR code of that address near the cash register. In this way, the customer could scan the QR code and input the dollar value on his bitcoin wallet and pay the business with the equivalent bitcoins. \\
+One of the suggested ways for small businesses to accept Bitcoin is to hold one Bitcoin address and print out the QR code of that address near the cash register. In this way, the customer could scan the QR code and input the dollar value on his Bitcoin wallet and pay the business with the equivalent Bitcoins. \\
 
-\textbf{Usability} It is not user friendly as it puts the employee in a position that she needs to know how bitcoin transactions work and she needs to prepare,receive and checks the payment manually. This makes the time spent on the payment longer than normal payment systems, same goes for the fair exchange rate, She should come to an agreed exchange price with the customer and this needs a deeper understanding of bitcoin and finance. Thus a technical training is required for each employee responsible for handling bitcoin payments.
+\textbf{Usability} It is not user friendly as it puts the employee in a position that she needs to know how Bitcoin transactions work and she needs to prepare,receive and check  the payment manually. This makes the time spent on the payment longer than normal payment systems. Same goes for the fair exchange rate, She should come to an agreed exchange price with the customer and this needs a deeper understanding of Bitcoin and finance. Thus technical training is required for each employee responsible for handling Bitcoin payments.
 
 \textbf{Deployability} The cost to implement this method is almost zero, in monetary and time value. However, as mentioned in usability section, the time spent on each transaction fails for regular use. In case there are multiple branches, more print outs suffice to have multiple point of sales.
 
-\textbf{Privacy} This method provides no privacy for the seller. As all the bitcoin transactions are publicly available in the Blockchain, anyone with the knowledge of the receiving bitcoin address could see all the received payments, thus anyone could have access to the reporting page that is the payments received by the printed address.
+\textbf{Privacy} This method provides no privacy for the seller. As all the Bitcoin transactions are publicly available in the Blockchain, anyone with the knowledge of the receiving Bitcoin address could see all the received payments, thus anyone could have access to the reporting page that is the payments received by the printed address.
 
-\textbf{Security} Other than the system holding the private key, not much of security concern is applicable to this approach. The private key should be kept in a secure place, preferably a cold storage unless the funds should be transferred to another address (\eg to exchange for cash).
+\textbf{Security} Other than the system holding the private key, not much security concern is applicable to this approach. The private key should be kept in a secure place, preferably a cold storage unless the funds should be transferred to another address (\eg to exchange for cash).
 
 %-------------------------- Hardware Terminal --------------------------
 \subsection{Hardware Terminals}
-There are multiple hardware terminals available for accepting bitcoin, however due to the high cost to run (\eg coinkite\footnote{\url{https://coinkite.com/store/products/all}} PoS are for sale at starting price of 970USD), they have not been used in most of the small businesses and have not been reviewed a lot. Also the fast changing technology made most of the terminal provider companies to move to mobile or web-based solutions.
+There are multiple hardware terminals available for accepting Bitcoin, however due to the high cost to run (\eg Coinkite\footnote{\url{https://coinkite.com/store/products/all}} PoS are for sale at the starting price of 970USD), they have not been used in most of small businesses and have not been reviewed before. Also the fast changing technology made most of the terminal provider companies move to mobile or web-based solutions.
 
 \textbf{Usability}
-The interfaces of each of the provided terminals are different, the most popular ones mimic the look and behaviour of a normal point of sale terminal used by credit card companies. However adding a new device to the payment routine, would make it less user friendly and rises the need for a training for the employees. The time and availability of the payment through a hardware terminal should be the same as the credit card payments if not any lower. The customer, nor the payee have any control over the exchange rate and it is provided by the PoS terminal operator.
+The interfaces of each of the provided terminals are different. The most popular ones mimic the look and behaviour of a normal point of sale terminal used by credit card companies. However adding a new device to the payment routine would make it less user friendly and arises the need for training the employees. The time and availability of the payment through a hardware terminal should be the same as credit card payments if not lower. The customer, nor the payee has any control over the exchange rate and it is provided by the PoS terminal operator.
 
 \textbf{Deployability}
-Due to the high costs these devices have, they would score low on our framework. Also in case there are multiple branches of the business, there should be one devices bought for each branch, this makes the costs even higher.
+Due to the high costs these devices have, they score low in our framework. Also in case there are multiple branches of the business, there should be one devices bought for each branch this makes the costs even higher.
 
 \textbf{Privacy}
-Accepting bitcoin with a hardware terminal should persevere the privacy the same as the regular credit card terminals, however the payees privacy depends on the implementation of the Bitcoin payment system. 
+Accepting Bitcoin with a hardware terminal should persevere the privacy the same as the regular credit card terminals, however the payees privacy depends on the implementation of the Bitcoin payment system. 
 
 \textbf{Security}
-The payee has no control over the private keys nor holds the funds, thus he needs to trust a third-party company that provided the terminals to keep the funds safe, and will receive the payments upon the agreed time frame with the probably small transaction fees. As for other aspects of the security, we assume the back-end implementation keeps the private keys encrypted and secure. There are security risks involved in adding a new hardware or software to the cashier's computer that will fall out of the scope of this chapter.
+The payee has no control over his private keys nor holds the funds, thus he needs to trust the third-party company that provided the terminals to keep the funds safe, and will receive the payments upon the agreed time frame with probably small transaction fees. As for other aspects of security, we assume the back-end implementation keeps the private keys encrypted and secure. There are security risks involved in adding new hardware or software to the cashier's computer that will fall out of the scope of this chapter.
 
 %-------------------------- Online Merchant Services--------------------------
 \subsection{Online Merchant Services}
-Most of these services are focused for online businesses and don't have implicit implementation for a physical payment system. 
-One of the most famous ones, by the time of writing, is Bitpay\footnote{\url{https://bitpay.com}} that takes 0\% fees unlike some others competing companies, but they all have their own advantages. One other similar company is Coinbase\footnote{\url{http://coinbase.com}} that charges 1\% on exchanging Bitcoins to fiat currency.
+Most of these services are focused for online businesses and don't have any implicit implementation for a physical payment system. 
+One of the most famous ones, on the time of writing, is Bitpay\footnote{\url{https://bitpay.com}} that takes 0\% fees unlike some others competing companies, but they all have their own advantages. One other similar company is Coinbase\footnote{\url{http://coinbase.com}} that charges 1\% on exchanging Bitcoins to fiat currency.
 
  \textbf{Usability}
-Implementing a Bitpay payment is straightforward and easy to implement. There are not many jargons or technical options for the employee. They have their own exchange rate that the business owner could set to exchange to cash as soon as he receives payments, this will remove the possible effects that Bitcoin price volatility could have on the payments.
+Implementing a Bitpay payment is straightforward and easy to implement. There are not many jargon or technical options for the employee. They have their own exchange rate that the business owner could set to exchange to cash as soon as he receives payments, this will remove the possible effect that Bitcoin price volatility could have on the payments.
 
  \textbf{Deployability}
-The only thing required by this approach, is a smart phone or a small computer that users could interact with and browse to Bitpay payment page, preferably with a touchscreen for easier price input and user interaction, as the interface is designed for touchscreen devices (Mobile interface)
+The only thing required by this approach is a smart phone or a small computer that users could interact with and browse to the Bitpay payment page, preferably with a touchscreen for easier price input and user interaction, as the interface is designed for touchscreen devices (Mobile interface)
 
  \textbf{Privacy}
-Bitpay has taken the privacy too serious. As they generate a new address for each transaction, the payees privacy is safe, however there has been reports on account suspensions because the payments were coming from a flagged Bitcoin addresses (\eg black markets\footnote{Darknet Blackmarkets\url{https://en.wikipedia.org/wiki/Darknet_market}} or Localbitcoins \footnote{Peer to peer bitcoin trading site \url{http://localbitcoins.com}}), in the sense that there was malicious activities on that Bitcoin address such as money laundry or buying drugs from online site. In this case the privacy, as the sense that we are evaluating, is being held but maybe not in he aspects needed in a payment system.
+Bitpay has taken the privacy with using another approach. As they generate a new address for each transaction, the payee's privacy is safe, however there has been reports of account suspensions because the payments were coming from flagged Bitcoin addresses (\eg black markets\footnote{Darknet Blackmarkets\url{https://en.wikipedia.org/wiki/Darknet_market}} or Localbitcoins \footnote{Peer to peer bitcoin trading site \url{http://localbitcoins.com}}), meaning that there was malicious activities on that Bitcoin address such as money laundry or buying drugs from online site. In this case, the privacy, as the sense that we are evaluating, is being held but maybe not in he aspects needed in a payment system.
 
  \textbf{Security}
-Every aspect of the payment system is implemented by Bitpay, they offered one of the most secure payment systems so far and there has been no big hacks reported. However, user has no control over his private keys and all the keys are being stored on Bitpay servers, this means complete trust to a third party.
+Every aspect of the payment system is implemented by Bitpay, they offered one of the most secure payment systems so far and there has been no big hacks reported. However, user has no control over his private keys and all the keys are being stored on Bitpay servers which means complete trust to a third party.
 
 
 %-------------------------- self hosting PoS--------------------------
-\subsection{self hosting wallet}
-Another option is to run a customized wallet as the point of sale service. There are multiple options for this case and it depends on the features needed for managing the Bitcoin addresses. it's still possible to use a 3rd party for some of the functionalities like address generation or PoS interface. For the sake of simplicity I cover two popular methods, one using Mycelium Gear and the other a full custom self-hosting wallet using available open source softwares.
+\subsection{Self Hosting PoS}
+Another option is to run a customized wallet as the point of sale service. There are multiple options for this case and it depends on the features needed for managing the Bitcoin addresses. It is still possible to use a 3rd party for some of the functionalities like address generation or PoS interface. For the sake of simplicity I cover two popular methods, one using Mycelium Gear and another is a full custom self-hosting wallet using available open source software.
 
 
 \subsection{Mycelium Gear}
-Mycelium Gear \footnote{\url{https://gear.mycelium.com/}} is a service offered by Mycelium group that offers a widget as an interface to the user and a service that would use the BIP32 public key provided on the Admin panel to generate new addresses securely. This means that they don't hold any private keys, but still uses the same path for address generation as their Mycelium Mobile wallet uses \fixme{more detials about this}.
+Mycelium Gear \footnote{\url{https://gear.mycelium.com/}} is a service offered by ''Mycelium'' group that offers a widget as an interface to the user and a service that would use the BIP32 public key provided on the Admin panel to generate new addresses securely. This means that they don't hold any private keys, but still uses the same set of paths for address generation as their Mycelium Mobile wallet uses.
 
 \begin{figure}[htb!p]
 \centering
@@ -203,7 +203,7 @@ Mycelium Gear \footnote{\url{https://gear.mycelium.com/}} is a service offered b
 
 
 \textbf{Usability}
-Mycelium Gear is designed in a way to suit e-commerce businesses needs and needs to be customized to suit a physical business PoS. There are no fees related to using this service, the only usability issue is that the BIP32 path that is generated by the PoS widget sometimes is different that the ones being checked by the mobile wallet client, so there might be some payments missing from the available credits in the application that is actually hard to retrieve if the path is unknown.
+Mycelium Gear is designed in a way to suit e-commerce business needs and needs to be customized to suit a physical business PoS. There are no fees related to using this service, the only usability issue is that the BIP32 path that is generated by the PoS widget, sometimes is different with the ones being checked by the mobile wallet client, so there might be some payments missing from the available credits in the application that is actually hard to retrieve if the path is unknown.
 
 \textbf{Deployability}
 This method would be simple to implement but somehow more complicated to customize as there's not that much access to the code to be able to customize for business needs. Although the cost-to-run depending on the implementation could be almost zero. The only deployability downside is that the payee is forced to use Mycelium Mobile wallet to manage his payments.
@@ -212,10 +212,10 @@ This method would be simple to implement but somehow more complicated to customi
 As Mycelium Gear uses BIP32 to generate a new address for each transaction request the payees privacy is held. However, there is no user management for the report page, If the customer closes the successful payment page, the employee would not be able to check if the payment was received or not unless he has the administrator password to check the transaction list.
 
  \textbf{Security}
-Nothing related to the PoS holds any private information or keys that might be in danger of getting hacked, so there's no trust in any 3rd party in this sense. Although all the private keys would be in the Mycelium Mobile wallet that is not prone to mobile malwares or hardware failure. Also this would be the weak point that if the hacker steals the phone, he has full access to all the available funds and also the future payments if stays unnoticed.
+Nothing related to the PoS holds any private information or keys that might be in danger of getting hacked, so there's no trust in any 3rd party in this sense. Although all the private keys would be in the Mycelium Mobile wallet that is not prone to mobile malwares or hardware failure. Also this would be the weak point that if the hacker steals the phone, he has full access to all the available funds and also the future payments if stay unnoticed.
 
-\subsection{Custom PoS}
-Depending on the requirements, it's possible to use integration of some open source softwares to build a fully custom self-managed Bitcoin PoS. The details of this custom wallet would be discussed in section \fixme{technical details for the custom PoS}.
+\subsection{Aunja PoS}
+Depending on the requirements, it's possible to use integration of some open source software to build a fully custom self-managed Bitcoin PoS. The details of this custom PoS will be discussed in section ~\ref{Design and Implementation}.
 
  \textbf{Usability}
 As this is a fully customized PoS we could use the scenario based requirement engineering method to implement a system that meets the business needs.
@@ -227,7 +227,7 @@ cost-to-run this system depends on the requirements and how it is implemented. T
 We could implement the system with all the privacy measurements that needs to be satisfy for the business owner. New address generation for each transaction would be basic need to have a good private PoS.
 
  \textbf{Security}
-Same as Privacy, It's possible to keep in mind all the security features when implementing this system. One of the basic needs is that the private keys should not be easily accessible, either to be kept offline or encrypted if they are stored on the online server and also there should not be any trust in any 3rd party as it's not needed on such a system.
+Same as Privacy, it is possible to keep in mind all the security features when implementing this system. One of the basic needs is that the private keys should not be easily accessible, either kept offline or encrypted if they are stored on the online server and also there should not be any trust in any 3rd party as it's not needed on such a system.
 
 \subsection{Desicion result}
 As you can see in table \ref{tab:method-comp} there is no perfect solution out of the box for a small business to start accepting Bitcoin. After discussing the advantages and disadvantages of each method with the business owner, we decided to implement our own custom PoS using available open source software. This way it would be easy to incrementally change the PoS system with the customer and employees feedback to meet the needs of the business.
@@ -278,6 +278,7 @@ Aunja PoS			&\full	&\full	&\full	&\full	&\prt	&\prt	&\full	&\prt	&\full	&\full	&
 
 %==================== Implementation ======================
 \section{Design and Implementation}
+\label{Design and Implementation}
 
 There were multiple approaches for implementing Aunja PoS. We first have to see what programming language we want to use and under which environment. One of the lower cost methods would be to use a computer on the cafe's network as the web server but the maintenance and support would be really hard as the network might go down, or overwhelmed by the high number of connected devices and would not function properly. Uptime is one of the most important aspects for a payment system. The next low cost solution is to use shared hosting to host the wallet server and design a web based payment interface for the employees and also a reporting page for the business owner to track the Bitcoin payments. This made our decision easier to chose a programming language, the most common programming language supported by most shared hostings is PHP\footnote{PHP originally stood for Personal Home Page, it now stands for PHP: Hypertext Preprocessor\url{https://secure.php.net/manual/en/history.php.php}}. 
 \\ \textbf{PHP} is a server-side scripting language designed for web development and can be mixed with HTML to have more tools for interface design. Also can be used with MySQL\footnote{Structured Query Language} as the database backend.
