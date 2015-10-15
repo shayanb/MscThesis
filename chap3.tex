@@ -90,22 +90,22 @@ We start by using our scenario based requirement engineering approach and adding
 \subsection{Usability} There are different aspects of usability that should be considered. One is how the PoS is accessible for the employees and the other is technical matters of the implementation.
 \begin{itemize}
 
-\item \textbf{User Friendly: }The payment process should not be technical or complex for a cafe employee, a simple training for the employee would be enough for them to be able to accept Bitcoin. Also there should be a clear, mutual understanding when the payment is finalized.
+\item \textbf{User Friendly: }The payment process should not be technical or complex for a cafe employee, a simple training for the employee would be enough for them to be able to accept Bitcoin. Also there should be a clear, mutual understanding when the payment is finalized. A PoS that has all of these features would score (\full), having some would result in scoring (\prt).
 
-\item \textbf{Time-Efficient: }the process of payment should not take significant amount of time more than the common payment systems such as Visa payments.
+\item \textbf{Time-Efficient: }the process of payment should not take significant amount of time more than the common payment systems such as Visa payments. If the process takes the same time as credit card payments it would score (\full), anything less than that would be (\prt) or none.
 
-\item \textbf{Fair Exchange Rate: }there should be a easy and fair approach for the payer and payee to have a consensus on fiat currency to Bitcoin exchange rate.
+\item \textbf{Fair Exchange Rate: }there should be a easy and fair approach for the payer and payee to have a consensus on fiat currency to Bitcoin exchange rate. If the price is retrieved from commonly accepted sources it would score (\full).
 
-\item \textbf{Availability: }all employees should be able to do the Bitcoin payment process without the need to know any credentials
+\item \textbf{Availability: }all employees should be able to do the Bitcoin payment process without the need to know any credentials. If it's on a public domain for anyone to access it will score (\full), if it needs some private information it will score (\prt) and if it needs credentials it will score none.
 
 \end{itemize}
 %-------------------------- Deployability --------------------------
 \subsection{Deployability} We use this category to state the requirements regarding the implementation of the system and branching. In the case of small businesses, the ability to manage multiple branch systems might not be a really important aspect. That being said, we will score the systems for future work and hence to have a more complete framework.
 \begin{itemize}
 
-\item \textbf{Low Cost to Run: }PoS should be implemented in a way that is accessible with one of the currently owned devices of the cafe such as the cashier computer, the PoS terminal\footnote{The common PoS that accepts Visa/Debit Cards} or mobile devices. There should not be a need for buying new hardware or expensive software. For this requirement, we would score a (\full) score to a free of monetary cost system, and a (\prt) score to a moderate amount of spendings.
+\item \textbf{Low Cost to Run: }PoS should be implemented in a way that is accessible with one of the currently owned devices of the cafe such as the cashier computer, the PoS terminal\footnote{The common PoS that accepts Visa/Debit Cards} or mobile devices. There should not be a need for buying new hardware or expensive software. For this requirement, we would score a (\full) to a free of monetary cost system, and a (\prt) score to a moderate amount of spendings.
 
-\item \textbf{Enables Branching} The ability to install the point of sale on multiple branches, meaning the installation process for another branch of the business should not require modification on the PoS. Configuration might be needed to differentiate two branches in the system.
+\item \textbf{Enables Branching} The ability to install the point of sale on multiple branches, meaning the installation process for another branch of the business should not require modification on the PoS. Configuration might be needed to differentiate two branches in the system. If the PoS is packaged and easy to install on the second branch of the business it will score (\full), if needs some modification (\prt) and if it is the same procedure to install it as the first one it will score none.
 
 \end{itemize}
  
@@ -113,24 +113,25 @@ We start by using our scenario based requirement engineering approach and adding
 \subsection{Privacy} Privacy is important in the payment system in the sense that no information should be leaked from any of the payers nor payee to the other party. This should be one of the fundamental requirements for any payment system.
 \begin{itemize}
 
-\item \textbf{No Information leakage: }There should not be any sensitive information available to the customer when she wants to pay with Bitcoin. These information could be the infrastructure of the business's network or a private domain used for accounting purposes.
+\item \textbf{No Information leakage: }There should not be any sensitive information available to the customer when she wants to pay with Bitcoin. These information could be the infrastructure of the business's network or a private domain used for accounting purposes. If it leaks any sensitive information it will score none and if it leaks some non-sensitive information it will score (\prt). 
 
-\item \textbf{Maintains Payee's Privacy: }The payer should not be able to see how much the payee has received prior or after her payment but just her own amount of payment.
+\item \textbf{Maintains Payee's Privacy: }The payer should not be able to see how much the payee has received prior or after her payment but just her own amount of payment. If there is no link between the payments visible to the payer the PoS will score (\full).
 
-\item \textbf{Maintains Payer's Privacy: }The payee should not be able to see how much the payer owns. This is one of the challenges that has not been fully solved ~\cite{androulaki2013evaluating}. It is the payer's responsibility to manage her funds and addresses in a sense that there is no privacy leak.
+\item \textbf{Maintains Payer's Privacy: }The payee should not be able to see how much the payer owns. This is one of the challenges that has not been fully solved ~\cite{androulaki2013evaluating}. It is the payer's responsibility to manage her funds and addresses in a sense that there is no privacy leak. All the PoS' in this evaluation scored (\prt) as this is outside the scope of the payee's PoS. This property is included to have a complete framework to evaluate future software.
 
-\item \textbf{Confidential Payments list: }The ability to see the payments list, only available for the manager by an authentication method, such as a password-protected panel. 
+\item \textbf{Confidential Payments list: }The ability to see the payments list, only available for the manager by an authentication method, such as a password-protected panel. If the PoS offers a report page for the manager it will score (\prt), if the report page could have hierarchal authentication for employees with limited access it will score (\full). 
 
 \end{itemize}
 %-------------------------- Security --------------------------
 \subsection{Security} Security might not be the cafe owner's priority as he might not have a deep understanding of this concept in payment systems nor in Bitcoin sphere. Anyhow it is one of the most important aspects in any financial payment system and also usable Bitcoin applications. Security of the system represents more than just the PoS code, it includes the environment that PoS is being used, the people using the software and the operating environment of the software \cite{securityreq}.
 \begin{itemize}
 
-\item \textbf{No 3rd-Party Trust: }There should be as little 3rd party trust as possible to accept and hold Bitcoin.
+\item \textbf{No 3rd-Party Trust: }There should be as little 3rd party trust as possible to accept and hold Bitcoin. Full trust to a third party will result in scoring none, some trust on the main functionality of the PoS result in (\prt) and no trust will result in (\full)  score.
 
-\item \textbf{Data Encryption: }In the case of any attacks on the service, there should be security measures that makes sure the attacker will not be able to have access to the private keys and transfer Bitcoin.
+\item \textbf{Data Encryption: }In the case of any attacks on the service, there should be security measures that makes sure the attacker will not be able to have access to the private keys and transfer Bitcoin. Only if all the sensitive data is encrypted the PoS will score (\full).
 
-\item \textbf{No Software Dependency: }The system should use as little dependencies as possible to minimize the attack vector on the server. This also falls into the deployability category as more dependencies could lead to the need of having a more complex system for implementation. %no bitcoind or command access , just php and mysql
+\item \textbf{No Software Dependency: }The system should use as little dependencies as possible to minimize the attack vector on the server. This also falls into the deployability category as more dependencies could lead to the need of having a more complex system for implementation. If the PoS needs complex set of software or hardware to work it will score none, and if it could be executed in a browser\footnote{In order to use a software PoS a mobile device or a computer is needed and we assume a web browser is by default installed on these devces} without the need to run any other software it will score (\full).
+%no bitcoind or command access , just php and mysql
 
 \end{itemize}
 
@@ -144,29 +145,29 @@ There exist multiple payment systems which mostly suit the online markets (\eg e
 \subsection{One Bitcoin address - QR Code} 
 One of the suggested ways for small businesses to accept Bitcoin is to hold one Bitcoin address and print out the QR code of that address near the cash register. In this way, the customer could scan the QR code and input the dollar value on his Bitcoin wallet and pay the business with the equivalent Bitcoins. \\
 
-\textbf{Usability} It is not user friendly as it puts the employee in a position that she needs to know how Bitcoin transactions work and she needs to prepare,receive and check  the payment manually. This makes the time spent on the payment longer than normal payment systems. Same goes for the fair exchange rate, She should come to an agreed exchange price with the customer and this needs a deeper understanding of Bitcoin and finance. Thus technical training is required for each employee responsible for handling Bitcoin payments.
+\textbf{Usability} It is not user friendly as it puts the employee in a position that she needs to know how Bitcoin transactions work and she needs to prepare,receive and check  the payment manually (User friendly: none). This makes the time spent on the payment longer than normal payment systems (Time-efficient: none) . Same goes for the fair exchange rate, She should come to an agreed exchange price with the customer and this needs a deeper understanding of Bitcoin and finance (Fair exchange rate: \prt, because the payee and payer should reach a consensus on the price). Thus technical training is required for each employee responsible for handling Bitcoin payments. As long as the QR-code print is visible to the payer, it is available to pay (availability: \full).
 
-\textbf{Deployability} The cost to implement this method is almost zero, in monetary and time value. However, as mentioned in usability section, the time spent on each transaction fails for regular use. In case there are multiple branches, more print outs suffice to have multiple point of sales.
+\textbf{Deployability} The cost to implement this method is almost zero (Low cost to run: \full), in monetary and time value. However, as mentioned in usability section, the time spent on each transaction fails for regular use. In case there are multiple branches, more print outs suffice to have multiple point of sales (Enables branching: \prt).
 
-\textbf{Privacy} This method provides no privacy for the seller. As all the Bitcoin transactions are publicly available in the Blockchain, anyone with the knowledge of the receiving Bitcoin address could see all the received payments, thus anyone could have access to the reporting page that is the payments received by the printed address.
+\textbf{Privacy} This method provides no privacy for the seller (Payee's privacy: none). As all the Bitcoin transactions are publicly available in the Blockchain, anyone with the knowledge of the receiving Bitcoin address could see all the received payments, thus anyone could have access to the reporting page that is the payments received by the printed address (Confidential Payments list: none).
 
-\textbf{Security} Other than the system holding the private key, not much security concern is applicable to this approach. The private key should be kept in a secure place, preferably a cold storage unless the funds should be transferred to another address (\eg to exchange for cash).
+\textbf{Security} Other than the system holding the private key, not much security concern is applicable to this approach (No 3rd-party trust: \full). The private key should be kept in a secure place, preferably a cold storage unless the funds should be transferred to another address (\eg to exchange for cash). There are no software or data involved thus there is no software dependency (Data Encryption: none, No software dependency: \full).
 
 %-------------------------- Hardware Terminal --------------------------
 \subsection{Hardware Terminals}
 There are multiple hardware terminals available for accepting Bitcoin, however due to the high cost to run (\eg Coinkite\footnote{\url{https://coinkite.com/store/products/all}} PoS are for sale at the starting price of 970USD), they have not been used in most of small businesses and have not been reviewed before. Also the fast changing technology made most of the terminal provider companies move to mobile or web-based solutions.
 
 \textbf{Usability}
-The interfaces of each of the provided terminals are different. The most popular ones mimic the look and behaviour of a normal point of sale terminal used by credit card companies. However adding a new device to the payment routine would make it less user friendly and arises the need for training the employees. The time and availability of the payment through a hardware terminal should be the same as credit card payments if not lower. The customer, nor the payee has any control over the exchange rate and it is provided by the PoS terminal operator.
+The interfaces of each of the provided terminals are different. The most popular ones mimic the look and behaviour of a normal point of sale terminal used by credit card companies. However adding a new device to the payment routine would make it less user friendly and arises the need for training the employees (User friendly: \prt). The time and availability of the payment through a hardware terminal should be the same as credit card payments if not lower (Time-efficient: \full) . The customer, nor the payee has any control over the exchange rate and it is provided by the PoS terminal operator (Fair exchange rate: \prt). The device is accessible to anyone who has access to the other payment terminals (Availability: \full).
 
 \textbf{Deployability}
-Due to the high costs these devices have, they score low in our framework. Also in case there are multiple branches of the business, there should be one devices bought for each branch this makes the costs even higher.
+Due to the high costs these devices have, they score low in our framework (Low cost to run: none). Also in case there are multiple branches of the business, there should be one devices bought for each branch this makes the costs even higher (Enables branching: none).
 
 \textbf{Privacy}
-Accepting Bitcoin with a hardware terminal should persevere the privacy the same as the regular credit card terminals, however the payees privacy depends on the implementation of the Bitcoin payment system. 
+Accepting Bitcoin with a hardware terminal should persevere the privacy the same as the regular credit card terminals, however the payees privacy depends on the implementation of the Bitcoin payment system (Payee's privacy: \full). The terminal providers also offer similar interface to credit card terminals to list the payments (Confidential Payments list: \full).
 
 \textbf{Security}
-The payee has no control over his private keys nor holds the funds, thus he needs to trust the third-party company that provided the terminals to keep the funds safe, and will receive the payments upon the agreed time frame with probably small transaction fees. As for other aspects of security, we assume the back-end implementation keeps the private keys encrypted and secure. There are security risks involved in adding new hardware or software to the cashier's computer that will fall out of the scope of this chapter.
+The payee has no control over his private keys nor holds the funds (No 3rd-party trust: none), thus he needs to trust the third-party company that provided the terminals to keep the funds safe, and will receive the payments upon the agreed time frame with probably small transaction fees. As for other aspects of security, we assume the back-end implementation keeps the private keys encrypted and secure (Data encryption: \full). There are security risks involved in adding new hardware or software to the cashier's computer that will fall out of the scope of this chapter (No software dependency: none).
 
 %-------------------------- Online Merchant Services--------------------------
 \subsection{Online Merchant Services}
@@ -174,16 +175,16 @@ Most of these services are focused for online businesses and don't have any impl
 One of the most famous ones, on the time of writing, is Bitpay\footnote{\url{https://bitpay.com}} that takes 0\% fees unlike some others competing companies, but they all have their own advantages. One other similar company is Coinbase\footnote{\url{http://coinbase.com}} that charges 1\% on exchanging Bitcoins to fiat currency.
 
  \textbf{Usability}
-Implementing a Bitpay payment is straightforward and easy to implement. There are not many jargon or technical options for the employee. They have their own exchange rate that the business owner could set to exchange to cash as soon as he receives payments, this will remove the possible effect that Bitcoin price volatility could have on the payments.
+Implementing a Bitpay payment is straightforward and easy to implement. There are not many jargon or technical options for the employee (User friendly: \full). They have their own exchange rate (Fair exchange rate: \prt) that the business owner could set to exchange to cash as soon as he receives payments, this will remove the possible effect that Bitcoin price volatility could have on the payments. It requires some credentials to access the PoS page (Availability: \prt).
 
  \textbf{Deployability}
-The only thing required by this approach is a smart phone or a small computer that users could interact with and browse to the Bitpay payment page, preferably with a touchscreen for easier price input and user interaction, as the interface is designed for touchscreen devices (Mobile interface)
+The only thing required by this approach is a smart phone or a small computer that users could interact with and browse to the Bitpay payment page, preferably with a touchscreen for easier price input and user interaction, as the interface is designed for touchscreen devices (Low cost to run: \full). It is easy to add more branches to the original account or even make a new account for the second branch (Enables branching: \full).
 
  \textbf{Privacy}
-Bitpay has taken the privacy with using another approach. As they generate a new address for each transaction, the payee's privacy is safe, however there has been reports of account suspensions because the payments were coming from flagged Bitcoin addresses (\eg black markets\footnote{Darknet Blackmarkets\url{https://en.wikipedia.org/wiki/Darknet_market}} or Localbitcoins \footnote{Peer to peer bitcoin trading site \url{http://localbitcoins.com}}), meaning that there was malicious activities on that Bitcoin address such as money laundry or buying drugs from online site. In this case, the privacy, as the sense that we are evaluating, is being held but maybe not in he aspects needed in a payment system.
+Bitpay another approach for preserving the privacy. As they generate a new address for each transaction, the payee's privacy is safe(Payee's privacy: \full). However there has been reports of account suspensions because the payments were coming from flagged Bitcoin addresses (\eg black markets\footnote{Darknet Blackmarkets\url{https://en.wikipedia.org/wiki/Darknet_market}} or Localbitcoins \footnote{Peer to peer bitcoin trading site \url{http://localbitcoins.com}}), meaning that there was malicious activities on that Bitcoin address such as money laundry or buying drugs from online site. In this case, the privacy, as the sense that we are evaluating, is being held but maybe not in he aspects needed in a payment system. In order to view the payments, business owner should log in to his account and view the payments but other employees cannot see the list using any other accounts (Confidential Payments list: \prt)
 
  \textbf{Security}
-Every aspect of the payment system is implemented by Bitpay, they offered one of the most secure payment systems so far and there has been no big hacks reported. However, user has no control over his private keys and all the keys are being stored on Bitpay servers which means complete trust to a third party.
+Every aspect of the payment system is implemented by Bitpay, they offered one of the most secure payment systems so far and there has been no big hacks reported (Data encryption: \prt) . However, user has no control over his private keys and all the keys are being stored on Bitpay servers (No 3rd-party trust: none) which means complete trust to a third party. As they are a web-based solution, a device with a browser is enough to use their PoS (No software dependency: \full)
 
 
 %-------------------------- self hosting PoS--------------------------
@@ -203,19 +204,19 @@ Mycelium Gear \footnote{\url{https://gear.mycelium.com/}} is a service offered b
 
 
 \textbf{Usability}
-Mycelium Gear is designed in a way to suit e-commerce business needs and needs to be customized to suit a physical business PoS. There are no fees related to using this service, the only usability issue is that the BIP32 path\footnote{see ~\ref{BIP32}} that is generated by the PoS widget, sometimes is different with the ones being checked by the mobile wallet client, so there might be some payments missing from the available credits in the application that is actually hard to retrieve if the path is unknown.
+Mycelium Gear is designed in a way to suit e-commerce business needs and needs to be customized to suit a physical business PoS (User friendly: \prt) . There are no fees related to using this service, the only usability issue is that the BIP32 path\footnote{see ~\ref{BIP32}} that is generated by the PoS widget, sometimes is different with the ones being checked by the mobile wallet client, so there might be some payments missing from the available credits in the application that is actually hard to retrieve if the path is unknown. They offer fast verifications on 0-confirmation transactions (Time-efficient: \full) and it's possible to chose from a list of supported exchanges to retrieve the Bitcoin exchange rate from (Fair exchange rate: \prt). A unique URL is needed to access the payment page and the employees should be aware of this link (Availability: \prt).
 
 \textbf{Deployability}
-This method would be simple to implement but somehow more complicated to customize as there's not that much access to the code to be able to customize for business needs. Although the cost-to-run depending on the implementation could be almost zero. The only deployability downside is that the payee is forced to use Mycelium Mobile wallet to manage his payments.
+This method would be simple to implement but somehow more complicated to customize as there's not that much access to the code to be able to customize for business needs. Although the cost-to-run depending on the implementation could be almost zero (Low cost to run: \prt). The only deployability downside is that the payee is forced to use Mycelium Mobile wallet to manage his payments, however doing so makes it easy to use the PoS in other branches and dedicate different accounts to each branch (Enables branching: \full).
 
  \textbf{Privacy}
-As Mycelium Gear uses BIP32 to generate a new address for each transaction request the payees privacy is held. However, there is no user management for the report page, If the customer closes the successful payment page, the employee would not be able to check if the payment was received or not unless he has the administrator password to check the transaction list.
+As Mycelium Gear uses BIP32 to generate a new address for each transaction request the payees privacy is held (Payee's privacy: \full). However, there is no user management for the report page, If the customer closes the successful payment page, the employee would not be able to check if the payment was received or not unless he has the administrator password to check the transaction list (Confidential Payments list: \prt).
 
  \textbf{Security}
-Nothing related to the PoS holds any private information or keys that might be in danger of getting hacked, so there's no trust in any 3rd party in this sense. Although all the private keys would be in the Mycelium Mobile wallet that is not prone to mobile malwares or hardware failure. Also this would be the weak point that if the hacker steals the phone, he has full access to all the available funds and also the future payments if stay unnoticed.
+Nothing related to the PoS holds any private information or keys that might be in danger of getting hacked, so there's no trust in any 3rd party in this sense. Although all the private keys would be in the Mycelium mobile wallet that is not prone to mobile malwares or hardware failure (No 3rd-party trust: \prt ,Data Encryption: \prt) . Also this would be the weak point that if the hacker steals the phone, he has full access to all the available funds and also the future payments if stay unnoticed. The only software dependency is that the user is forced to use Mycelium mobile wallet (No software dependency: \prt)
 
 \subsection{Aunja PoS}
-Depending on the requirements, it's possible to use integration of some open source software to build a fully custom self-managed Bitcoin PoS. The details of this custom PoS will be discussed in section ~\ref{Design and Implementation}.
+Depending on the requirements, it's possible to use integration of some open source software to build a fully custom self-managed Bitcoin PoS. The details of this custom PoS will be discussed in section ~\ref{Design and Implementation} and the scoring is discussed in ~\ref{Implementation measurements}.
 
  \textbf{Usability}
 As this is a fully customized PoS we could use the scenario based requirement engineering method to implement a system that meets the business needs.
@@ -227,7 +228,7 @@ cost-to-run this system depends on the requirements and how it is implemented. T
 We could implement the system with all the privacy measurements that needs to be satisfy for the business owner. New address generation for each transaction would be basic need to have a good private PoS.
 
  \textbf{Security}
-Same as Privacy, it is possible to keep in mind all the security features when implementing this system. One of the basic needs is that the private keys should not be easily accessible, either kept offline or encrypted if they are stored on the online server and also there should not be any trust in any 3rd party as it's not needed on such a system.
+Same as Privacy, it is possible to keep in mind all the security features when implementing this system. One of the basic needs is that the private keys should not be easily accessible, either kept offline or encrypted if they are stored on the online server and also there should not be any trust in any 3rd party as it's not needed on such a system. Although it should be mentioned that anytime that a third party code is being executed, we are basically trusting the developer for that software, However in this case all the code used are open source and reviewed.
 
 \subsection{Desicion result}
 As you can see in table \ref{tab:method-comp} there is no perfect solution out of the box for a small business to start accepting Bitcoin. After discussing the advantages and disadvantages of each method with the business owner, we decided to implement our own custom PoS using available open source software. This way it would be easy to incrementally change the PoS system with the customer and employees feedback to meet the needs of the business.
@@ -257,11 +258,11 @@ As you can see in table \ref{tab:method-comp} there is no perfect solution out o
 \headrow{ } & % Something about format decay
 \headrow{ } \\ \hline 
 
-QRCode 	 					&	&	&\prt	&\full	&\full	&\prt	&	&\prt	&	&\full	&	&\full&&\\
-Hardware Terminal 				&\prt	&\full	&\prt	&\full	&	&	&\full	&\prt	&\full	&	&\full	&	&&\\
-Online Merchant Services			&\prt	&\full&\prt	&\prt	&\prt	&\full	&\full	&\prt	&\prt	&	&\prt	&\full	&&\\ 
-Mycelium Gear				&\prt	&\full	&\prt	&\prt	&\prt	&\full	&\full	&\prt	&\prt	&\prt	&	&\prt	&&\\ 
-Aunja PoS			&\full	&\full	&\full	&\full	&\prt	&\prt	&\full	&\prt	&\full	&\full	&\full	&\prt	&&\\  \hline 
+QRCode 	 				&	&	&\prt	&\full	&\full	&\prt	&	&\prt	&	&\full	&	&\full&&\\
+Hardware Terminal 			&\prt	&\full	&\prt	&\full	&	&	&\full	&\prt	&\full	&	&\full	&	&&\\
+Online Merchant Services	&\full	&\full&\prt	&\prt	&\prt	&\full	&\full	&\prt	&\prt	&	&\prt	&\full	&&\\ 
+Mycelium Gear				&\prt	&\full	&\prt	&\prt	&\prt	&\full	&\full	&\prt	&\prt	&\prt	&\prt&\prt	&&\\ 
+Aunja PoS				&\full	&\full	&\full	&\full	&\prt	&\prt	&\full	&\prt	&\full	&\full	&\full	&\prt	&&\\  \hline 
 
 
 \\
@@ -284,27 +285,28 @@ There were multiple approaches for implementing Aunja PoS. We first have to see 
 \\ \textbf{PHP} is a server-side scripting language designed for web development and can be mixed with HTML to have more tools for interface design. Also can be used with MySQL\footnote{Structured Query Language} as the database backend.
 
 \subsection{Implementation measurements}
+\label{Implementation measurements}
 After multiple rounds of surveying employees and customers to understand their needs and also researching the subject, here is the break down of the results.
 \subsubsection{Usability} 
 \begin{itemize}
 
-\item \textbf{User Friendly: } The interface should be minimal and simple, with the ability to show the exchange price of Bitcoin to fiat currency, input box for the price in dollars, estimation of Bitcoin amount equivalent to the price and a note section to jot down the details of the transaction.
+\item \textbf{User Friendly (\full): } The interface should be minimal and simple, with the ability to show the exchange price of Bitcoin to fiat currency, input box for the price in dollars, estimation of Bitcoin amount equivalent to the price and a note section to jot down the details of the transaction.
 As for the user facing interface, it should be simple, showing all the required information such as Bitcoin amount, the exchange rate and the QRCode for the deposit Bitcoin address. Both interfaces should indicate when the transaction is complete.
 
-\item \textbf{Time-Efficient: } It should not take more than normal payment system to initiate the payment. A web based interface would have the advantage that it can be loaded from any device with good speed, depending on the internet speed. Also to verify the payment it should not take a long time. It also need to use fast verification methods to indicate that the payment is propagated (broadcasted to the Bitcoin network). Knowing that a propagated transaction is not same as confirmed transaction but is an accepted risk for low volume transactions.
+\item \textbf{Time-Efficient (\full): } It should not take more than normal payment system to initiate the payment. A web based interface would have the advantage that it can be loaded from any device with good speed, depending on the internet speed. Also to verify the payment it should not take a long time. It also need to use fast verification methods to indicate that the payment is propagated (broadcasted to the Bitcoin network). Knowing that a propagated transaction is not same as confirmed transaction but is an accepted risk for low volume transactions.
 
-\item \textbf{Fair Exchange Rate: } After doing our research on this we found the website called bitcoinaverage\footnote{"BitcoinAverage.com is the first aggregated bitcon price index that was initially launched in August 2013 with a goal to aggregate rates from all available Bitcoin exchanges around the world and provide a weighted average bitcoin price." \url{https://bitcoinaverage.com}} that offers a good combination of all the exchange prices to come up with an average daily price to be used as the fair exchange rate.
+\item \textbf{Fair Exchange Rate (\full): } After doing our research on this we found the website called bitcoinaverage\footnote{"BitcoinAverage.com is the first aggregated bitcon price index that was initially launched in August 2013 with a goal to aggregate rates from all available Bitcoin exchanges around the world and provide a weighted average bitcoin price." \url{https://bitcoinaverage.com}} that offers a good combination of all the exchange prices to come up with an average daily price to be used as the fair exchange rate. 
 
-\item \textbf{Availability: } The payment interface should be open to public in the sense that it could be loaded on any device. 
+\item \textbf{Availability (\full): } The payment interface should be open to public in the sense that it could be loaded on any device.
 
 \end{itemize}
 %-------------------------- Deployability --------------------------
 \subsubsection{Deployability}
 \begin{itemize}
 
-\item \textbf{Low Cost to Run: } The only costs associated with this implementation would be the annual cost of the shared hosting that nowadays is less than 100 dollars for an unlimited web host. For the sake of this research, there would be no other implementation and development costs. 
+\item \textbf{Low Cost to Run (\prt): } The only costs associated with this implementation would be the annual cost of the shared hosting that nowadays is less than 100 dollars for an unlimited web host. For the sake of this research, there would be no other implementation and development costs.
 
-\item \textbf{Enables Branching} For now there's no plan to have more branches for this business, but depending on the implementation, to have another branch it would be as easy as running another instance of the application on the server.
+\item \textbf{Enables Branching (\prt): } For now there's no plan to have more branches for this business, but depending on the implementation, to have another branch it would be as easy as running another instance of the application on the server.
 
 \end{itemize}
  
@@ -314,22 +316,22 @@ As for the user facing interface, it should be simple, showing all the required 
 
 \item \textbf{No Information leakage: } The payment interface does not reveal any information about the backend nor the business' internal detail.
 
-\item \textbf{Maintains Payee's Privacy: } There should be a new address generated for each transaction request so no one can see how much the business have received in Bitcoin prior or after each transaction.
+\item \textbf{Maintains Payee's Privacy (\full): } There should be a new address generated for each transaction request so no one can see how much the business have received in Bitcoin prior or after each transaction.
 
-\item \textbf{Maintains Payer's Privacy: } This would be the payers Bitcoin wallet client responsibility and it would be out of the scope of this PoS system.
+\item \textbf{Maintains Payer's Privacy (\prt) : } This would be the payers Bitcoin wallet client responsibility and it would be out of the scope of this PoS system.
 
-\item \textbf{Confidential Payments list: } There should be a reporting and administration interface designed, only accessible to the business owner or designated personels.
+\item \textbf{Confidential Payments list (\full): } There should be a reporting and administration interface designed, only accessible to the business owner or designated personals.
 
 \end{itemize}
 %-------------------------- Security --------------------------
 \subsubsection{Security} 
 \begin{itemize}
 
-\item \textbf{No 3rd-Party Trust: } There should not be any sensitive usage of 3rd parties in the system, it should work as a stand alone system.
+\item \textbf{No 3rd-Party Trust (\full): } There should not be any sensitive usage of 3rd parties in the system, it should work as a stand alone system.
 
-\item \textbf{Data Encryption: } All the private keys should be encrypted and then stored on the server. 
+\item \textbf{Data Encryption (\full): } All the private keys should be encrypted and then stored on the server. 
 
-\item \textbf{No Software dependency: } There should not be any software dependency on the payment page for the business. The software dependencies on the server side should all be included in the package as open source software. The only piece of software required to use a PoS on a mobile device should be a web browser and we don't consider this as a software dependency.
+\item \textbf{No Software dependency (\prt): } There should not be any software dependency on the payment page for the business. The software dependencies on the server side should all be included in the package as open source software. The only piece of software required to use a PoS on a mobile device should be a web browser and we don't consider this as a software dependency.
 
 \end{itemize}
 

@@ -7,45 +7,6 @@ Notation:
 Highlight on PDF = something grammatically wrong (if you unsure, you can ask)
 Expand all contractions (it’s -> it is, etc)
 
-[2] “Obvious” is a strong word
-[3] The company filed for bankruptcy not Chaum (he had left by then)
-[4] I’d say unregulated use instead of illegal use for e-gold
-[4] Expand on the idea that Bitcoin is its own currency, not a digital version of an existing currency like the USD (ecash) or commodity like Gold (e-gold)
-[4] any *published* work on the usability
-[5] as long as -> to the extent that it fits...
-[5] first ever -> first published
-[6] eastern canada: unclear what this means, just say Quebec even if it is broader
-[6] robust system: system for what? Be more specific
-[7] hold, use and accept -> holding, using and accepting
-[8] every transaction -> every standard transaction (also add a footnote saying that from now on, the word transaction refers to a standard transaction unless otherwise specified) (you can also define standard transaction if you want in no more than a sentence or two)
-[8] I think details of the conensus model are relevant to the PoS terminal because you need to think about double spending and confirmation times, which cannot be done without understanding the model.
-[9] SPV also has integrity risks: semi-trusted nodes can omit reports of relevant transactions (but cannot forge transactions or convince a user that a transaction was added when it was not)
-[11] Don’t use other peoples images. Create your own!
-[12] Satoshi -> As bitcoin creator Satoshi…
-[13] Create your own figures
-[13] BIP32 also allows a dumb terminal that does not know the private key to generate new Bitcoin addresses (for use in PoS terminals)
-[14] misused -> conflated
-[14] Isn’t Bitcoin QT now called Bitcoin Core?
-[14] miners are computational devices, not necessarily computers (ASICs, FPGAs, GPUs aren’t computers)
-[14] should have -> should form… also explain *why*
-[14] don’t use words like “really”
-[15] Yes, explain double spend. Also explain why miners go along with valid blocks instead of forking. For details on this, you can look at the Princeton course on Bitcoin (which includes some textbook chapters)
-[16] Usability in title?
-[16] Don’t use Dr. in names (otherwise you’ll have to use it every time you refer to one: David Barrera, David Chaum, etc)
-[16—61] I skipped this as it is the paper, which I have obviously already read. Is it the full version of the paper? If this is the case, in the introduction of the chapter, say that this chapter is a longer version than the published paper. Also, is there anything outside of the conclusions that you changed? If so, let me know and I’ll read it in detail.
-[33] Rotate the chart so it fills the page in landscape
-[56] Make sure you understand section 3.7 as well as you would if you had written it. Or alternatively, you could add a footnote that notes the section is largely the work of your co-authors but is included for completeness. The point is, the committee can ask you detailed questions about this and you are expected to be able to answer them.
-[62] Don’t like the title, it is too vague. “Bitcoin Point of Sale Terminals: evaluation and deployment”
-[62] bitcoin and use -> Bitcoin. We will use the SCRAM [citation!]
-[62] “Point of sale” needs a word like “terminal” at the end. Define PoS to be “point of sale terminal” then use PoS everywhere is the easiest fix.
-[62] “best suitable” this is vague and nothing is the “best” -> say something more specific, one that receives full points in our evaluation method or something like
-[62] One interesting aspect: I don’t understand this sentence 
-[63] Give your system a name and then refer to it by that name. It will make everything easier.
-[63] “going through” -> eliciting; “browsed” -> researched; “and if” -> to see if; meet -> met
-
-
-=======
-
 -[2] “Obvious” is a strong word
 -[3] The company filed for bankruptcy not Chaum (he had left by then)
 
@@ -116,36 +77,22 @@ Or google a bit and see. I don’t know off hand but know it can be done with th
 
 *[63] Stopping here for now…
 --> Thanks a lot :)
+=========================================================================================================================
 
 -[64] Never copy figures. Make your own (citing where you got it from still) and only put in the details that are relevant to what you are going to use. 
 -[65] What is a “client”? Do you mean the business? Should be distinguished from software clients in the previous section. 
 -[66] “concept demonstrator” proof of concept?
-
-
-
-
-
-
 ~[70-1] Phrase all requirements positively: low cost to run, enables branching, maintains X’s privacy, provides authentication.
 -[70] Branching is unclear. Do you mean install without modification?
 -[71] Information leakage is unclear. How is it not captured by the other properties? Can you give some examples of such leakage?
 -[71] Authentication is unclear. I think the requirement is a confidential payments list, while authentication is one means to achieve that (requirements should describe what i to be achieved not how you achieve it: “descriptive not proscriptive”). 
+-[68-72] You need to say for each column in the table what it means to score a full dot, a half dot, and no dot.
 
-
-
-72!
-
-[68-72] You need to say for each column in the table what it means to score a full dot, a half dot, and no dot.
-
-**[73+] You have to relate what you are saying in English to why you give a certain score (full dot, half dot, no dot)  under each criteria. See for example my SSL SoK paper or [BHvOS12] for what this looks like. 
+*-[73+] You have to relate what you are saying in English to why you give a certain score (full dot, half dot, no dot)  under each criteria. See for example my SSL SoK paper or [BHvOS12] for what this looks like. 
 --> This is the automated naming that turned it to [BHvOS12], should I change this?
 
-[78] Define “BIP32 path”
-[79] Anytime you run code, you are trusting a third party: the developer. But this is true of everything (OS, Bitcoin itself, etc). However you should clarify this somewhere.
-
-79!
-
-
+-[78] Define “BIP32 path”
+-[79] Anytime you run code, you are trusting a third party: the developer. But this is true of everything (OS, Bitcoin itself, etc). However you should clarify this somewhere.
 -[82] Note quickly that propagating the transaction is not the same as confirming it but that this is an accepted risk.
 -[83] “should not” ->  does not ?
 -[83] drop “that is protected by password and”
@@ -164,6 +111,13 @@ Or google a bit and see. I don’t know off hand but know it can be done with th
 -[98] they are necessary first steps.
 
 
++++++++++++++++++++++++++++
+List of Bugs:
+	 - List of Figures is shows on the table of contents as in page I (correct one is V) and also the hyperlink jumps to the title page!
+	 - Names on the titles page are shown under the line?
+	 - The whole text is a bit to the right of the page?
+	 
+	 
 
 
 
