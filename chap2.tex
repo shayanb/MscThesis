@@ -3,7 +3,7 @@
 
 \chapter{A First Look at the Usability of Bitcoin Key Management}
 
-\setchapterpreamble{\begin{quote} This chapter is adapted from published work supervised by Jeremy Clark and co-authored by David Barrera and Elizabeth Stobert ~\cite{eskandari2015first} \end{quote}}
+\setchapterpreamble{\begin{quote} This chapter is adapted from published work by Shayan Eskandari, supervised by Jeremy Clark and co-authored by David Barrera and Elizabeth Stobert ~\cite{eskandari2015first} \end{quote}}
 % = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 \section{Introductory Remarks}
@@ -114,10 +114,11 @@ To further protect Bitcoin private keys from malware-based threats, wallets can 
 \begin{figure}[htb]
   \includegraphics[width=\linewidth]{fig/paperwallet.png}
   %\caption{Bitcoin paper wallet generated using \url{https://Bitcoinpaperwallet.com}. The printout is designed to be folded such that the private key (right) remains hidden while the public component (left) remains visible.}
-  \label{fig:paperwallet}
+  \caption{Offline storage - Paper Wallet} 
+ \label{fig:paperwallet}
 \end{figure}
 
-An interesting case of offline key storage is paper wallets (see ~\autoref{fig:paperwallet})
+An interesting case of offline key storage is paper wallets (see~\ref{fig:paperwallet})
 %\footnote{\url {https://Bitcoinpaperwallet.com}}\
 where private keys are printed onto paper typically in the form of a 2D barcode (\eg a QR code) or as a long sequence of characters. Barcodes facilitate reading the key back into a Bitcoin client by, for example, scanning the code with a smartphone camera. Securing a paper wallet is similar to securing cash, which most users should be comfortable with. However, funds can be stolen from a paper wallet by simply observing the QR code (\eg on live television\footnote{``A Bloomberg TV Host Gifted Bitcoin On Air And It Immediately Got Stolen,'' \textit{Business Insider}, 10/23/2013.}), which is not possible with physical money. Thus transporting a paper wallet securely requires that the printed contents remain unobservable at all times.  Users must remember that a paper wallet does not contain the funds itself, but rather enables signing authority over a set of Bitcoins. For example, if a paper wallet is discarded after funds are spent, the paper wallet still provides access to any future funds that may be sent to that address.\footnote{``Five Ways to Lose Money with Bitcoin Change Addresses,'' \textit{Bitzuma} (Blog), 17/03/2014.} 
 
