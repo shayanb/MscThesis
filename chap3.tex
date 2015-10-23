@@ -131,7 +131,7 @@ We start by using our scenario based requirement engineering approach and adding
 \item \textbf{Data Encryption: }In the case of any attacks on the service, there should be security measures that makes sure the attacker will not be able to have access to the private keys and transfer Bitcoin. Only if all the sensitive data is encrypted the PoS will score (\full).
 
 \item \textbf{No Software Dependency: }The system should use as little dependencies as possible to minimize the attack vector on the server. This also falls into the deployability category as more dependencies could lead to the need of having a more complex system for implementation. If the PoS needs complex set of software or hardware to work it will score none, and if it could be executed in a browser\footnote{In order to use a software PoS a mobile device or a computer is needed and we assume a web browser is by default installed on these devces} without the need to run any other software it will score (\full).
-%no bitcoind or command access , just php and mysql
+%no Bitcoind or command access , just php and mysql
 
 \end{itemize}
 
@@ -139,7 +139,7 @@ We start by using our scenario based requirement engineering approach and adding
 \section{Evolution of PoS proposals}
 I will first go through the available options and why we chose to develop a custom PoS for this purpose.
 
-There exist multiple payment systems which mostly suit the online markets (\eg e-commerece) and not a physical point of sale \footnote{\url{https://en.bitcoin.it/wiki/How_to_accept_Bitcoin,_for_small_businesses}}. We list all the available approaches to accept Bitcoin payments for a physical business, and not as an e-commerce business.
+There exist multiple payment systems which mostly suit the online markets (\eg e-commerece) and not a physical point of sale \footnote{\url{https://en.Bitcoin.it/wiki/How_to_accept_Bitcoin,_for_small_businesses}}. We list all the available approaches to accept Bitcoin payments for a physical business, and not as an e-commerce business.
 
 %-------------------------- QR on Cash register --------------------------
 \subsection{One Bitcoin address - QR Code} 
@@ -181,7 +181,7 @@ Implementing a Bitpay payment is straightforward and easy to implement. There ar
 The only thing required by this approach is a smart phone or a small computer that users could interact with and browse to the Bitpay payment page, preferably with a touchscreen for easier price input and user interaction, as the interface is designed for touchscreen devices (Low cost to run: \full). It is easy to add more branches to the original account or even make a new account for the second branch (Enables branching: \full).
 
  \textbf{Privacy}
-Bitpay another approach for preserving the privacy. As they generate a new address for each transaction, the payee's privacy is safe(Payee's privacy: \full). However there has been reports of account suspensions because the payments were coming from flagged Bitcoin addresses (\eg black markets\footnote{Darknet Blackmarkets\url{https://en.wikipedia.org/wiki/Darknet_market}} or Localbitcoins \footnote{Peer to peer bitcoin trading site \url{http://localbitcoins.com}}), meaning that there was malicious activities on that Bitcoin address such as money laundry or buying drugs from online site. In this case, the privacy, as the sense that we are evaluating, is being held but maybe not in he aspects needed in a payment system. In order to view the payments, business owner should log in to his account and view the payments but other employees cannot see the list using any other accounts (Confidential Payments list: \prt)
+Bitpay another approach for preserving the privacy. As they generate a new address for each transaction, the payee's privacy is safe(Payee's privacy: \full). However there has been reports of account suspensions because the payments were coming from flagged Bitcoin addresses (\eg black markets\footnote{Darknet Blackmarkets\url{https://en.wikipedia.org/wiki/Darknet_market}} or LocalBitcoins \footnote{Peer to peer Bitcoin trading site \url{http://localBitcoins.com}}), meaning that there was malicious activities on that Bitcoin address such as money laundry or buying drugs from online site. In this case, the privacy, as the sense that we are evaluating, is being held but maybe not in he aspects needed in a payment system. In order to view the payments, business owner should log in to his account and view the payments but other employees cannot see the list using any other accounts (Confidential Payments list: \prt)
 
  \textbf{Security}
 Every aspect of the payment system is implemented by Bitpay, they offered one of the most secure payment systems so far and there has been no big hacks reported (Data encryption: \prt) . However, user has no control over his private keys and all the keys are being stored on Bitpay servers (No 3rd-party trust: none) which means complete trust to a third party. As they are a web-based solution, a device with a browser is enough to use their PoS (No software dependency: \full)
@@ -293,9 +293,9 @@ After multiple rounds of surveying employees and customers to understand their n
 \item \textbf{User Friendly (\full): } The interface should be minimal and simple, with the ability to show the exchange price of Bitcoin to fiat currency, input box for the price in dollars, estimation of Bitcoin amount equivalent to the price and a note section to jot down the details of the transaction.
 As for the user facing interface, it should be simple, showing all the required information such as Bitcoin amount, the exchange rate and the QRCode for the deposit Bitcoin address. Both interfaces should indicate when the transaction is complete.
 
-\item \textbf{Time-Efficient (\full): } It should not take more than normal payment system to initiate the payment. A web based interface would have the advantage that it can be loaded from any device with good speed, depending on the internet speed. Also to verify the payment it should not take a long time. It also need to use fast verification methods to indicate that the payment is propagated (broadcasted to the Bitcoin network). Knowing that a propagated transaction is not same as confirmed transaction but is an accepted risk for low volume transactions.
+\item \textbf{Time-Efficient (\full): } It should not take more than normal payment system to initiate the payment. A web based interface would have the advantage that it can be loaded from any device with good speed, depending on the Internet speed. Also to verify the payment it should not take a long time. It also need to use fast verification methods to indicate that the payment is propagated (broadcasted to the Bitcoin network). Knowing that a propagated transaction is not same as confirmed transaction but is an accepted risk for low volume transactions.
 
-\item \textbf{Fair Exchange Rate (\full): } After doing our research on this we found the website called bitcoinaverage\footnote{"BitcoinAverage.com is the first aggregated bitcon price index that was initially launched in August 2013 with a goal to aggregate rates from all available Bitcoin exchanges around the world and provide a weighted average bitcoin price." \url{https://bitcoinaverage.com}} that offers a good combination of all the exchange prices to come up with an average daily price to be used as the fair exchange rate. 
+\item \textbf{Fair Exchange Rate (\full): } After doing our research on this we found the website called Bitcoinaverage\footnote{"BitcoinAverage.com is the first aggregated bitcon price index that was initially launched in August 2013 with a goal to aggregate rates from all available Bitcoin exchanges around the world and provide a weighted average Bitcoin price." \url{https://Bitcoinaverage.com}} that offers a good combination of all the exchange prices to come up with an average daily price to be used as the fair exchange rate. 
 
 \item \textbf{Availability (\full): } The payment interface should be open to public in the sense that it could be loaded on any device.
 
@@ -347,11 +347,11 @@ As we examined different PHP Bitcoin projects, we chose the following as the bas
 
 \item \textbf{Bitcoin SCI: }Bitcoin Shopping Card Interface
 \item \textbf{PHP Elliptic Curve library\footnote{\url{http://matejdanter.com}}: } Used as a dependency to Bitcoin SCI to generate Bitcoin addresses.
-\item \textbf{bitcoin-prices\footnote{\url{https://github.com/miohtama/bitcoin-prices}}: } Display bitcoin prices in human-friendly manner in fiat currency using bitcoinaverage.com market data
+\item \textbf{Bitcoin-prices\footnote{\url{https://github.com/miohtama/Bitcoin-prices}}: } Display Bitcoin prices in human-friendly manner in fiat currency using Bitcoinaverage.com market data
 
 \end{itemize}
 
-After searching the internet, we decided to use ''Bitcoin SCI: process Bitcoin transactions with PHP'' as the software to use as our Bitcoin core. It is originally designed to be integrated in e-commerce websites but it could be easily modified to meet our needs. 
+After searching the Internet, we decided to use ''Bitcoin SCI: process Bitcoin transactions with PHP'' as the software to use as our Bitcoin core. It is originally designed to be integrated in e-commerce websites but it could be easily modified to meet our needs. 
 
 
 \textbf{Bitcoin SCI } (Bitcoin Shopping Cart Interface \footnote{\url{http://bitfreak.info/?page=tools&t=bitsci}}): is a set of libraries and tools that enables the user to process Bitcoin transactions with only PHP. 
@@ -360,7 +360,7 @@ After searching the internet, we decided to use ''Bitcoin SCI: process Bitcoin t
 \centering
 \includegraphics[scale=0.5]{fig/bitsci_screen.jpg}
   \caption{Bitcoin SCI (Bitcoin Shopping Cart Interface)}
-\label{fig:bitcoin-sci}
+\label{fig:Bitcoin-sci}
 \end{figure}
 
 
@@ -385,7 +385,7 @@ However it lacks some other features that should be added:
 \item \textbf {Cash out option: } As all the private keys are stored encrypted in the server, we need a way to cash out the available Bitcoins and send them to another Bitcoin address. It's possible to retrieve the private keys of each Bitcoin address separately from the tool, but it's not scalable to multiple weekly transactions.
 \end{itemize}
 
-\textbf{bitcoin-prices} This library allows us to use bitcoinaverage.com prices as our main source of price conversion, and it gives nice tools for interface design, such as the ability to switch between different currencies by just clicking on the price. This allows us to reach a fair exchange rate that is also shown in different currencies in case it was needed.
+\textbf{Bitcoin-prices} This library allows us to use Bitcoinaverage.com prices as our main source of price conversion, and it gives nice tools for interface design, such as the ability to switch between different currencies by just clicking on the price. This allows us to reach a fair exchange rate that is also shown in different currencies in case it was needed.
 
 \subsubsection{Encryption libraries}
 \begin{itemize}
@@ -417,7 +417,7 @@ I designed three tables (first prototype had two) for the purpose of this PoS. O
 \begin{figure}[htb!p]
 \centering
 \includegraphics[scale=0.5]{fig/wifkeys_table.png}
-  \caption{Structure for wifkeys table that holds the bitcoin key pairs}
+  \caption{Structure for wifkeys table that holds the Bitcoin key pairs}
 \label{fig:wifkeys}
 \end{figure}
 
@@ -439,7 +439,7 @@ Other tasks were involved in integrating the above mentioned open source project
 \label{fig:First_View}
 \end{figure}
 
-One of the features that were added on the second round of prototyping was the ability to show the Bitcoin price in USD other than the default CAD, this was added with the usage of bitcoin-prices library. The other was to add the "Notes" field to be able to add invoice ID or the items that the customer bought. It was possible to implement a drop down menu with all the cafe's menu options to be added to the list but as we discussed this solution with the cafe owner, he mentioned that the items in the menu might not stay the same during the year and also there might be price changes, so that approach was not suitable for this business, although it might be a good option for an e-commerce site.
+One of the features that were added on the second round of prototyping was the ability to show the Bitcoin price in USD other than the default CAD, this was added with the usage of Bitcoin-prices library. The other was to add the "Notes" field to be able to add invoice ID or the items that the customer bought. It was possible to implement a drop down menu with all the cafe's menu options to be added to the list but as we discussed this solution with the cafe owner, he mentioned that the items in the menu might not stay the same during the year and also there might be price changes, so that approach was not suitable for this business, although it might be a good option for an e-commerce site.
 
 \begin{figure}[htb!p]
 \centering
@@ -458,14 +458,14 @@ One other aspect of the requirements was a reporting page, this was based on the
 \label{fig:report_page}
 \end{figure}
 
-One of the important fields added later to the report page was the ''Sale Dollar Amount''. The reason was that Bitcoin price is really volatile compared to other currencies and the cafe owner did not want to risk losing money by accepting Bitcoin. As you can see in (Figure~\ref{fig:report_page}) the Sale Dollar amount is less than the Bitcoin amount. In this period of time, the owner could have had more profit on the sales because of the increase in bitcoin prices, but this would be risk that he did not want to take. So as an agreement, we decided to lock the price of each sale on the sale time and he would get paid the same amount as if he was selling his products with cash\footnote{this method is actually one of the common methods recently used by bitcoin payment processors.}, Thus on the second prototype of the report page, I added this field for accounting purposes. This is realtime exchange, However as an agreement, cashing out the Bitcoins would happen in monthly basis or within a threshold (\eg when reached 100 dollars).
+One of the important fields added later to the report page was the ''Sale Dollar Amount''. The reason was that Bitcoin price is really volatile compared to other currencies and the cafe owner did not want to risk losing money by accepting Bitcoin. As you can see in (Figure~\ref{fig:report_page}) the Sale Dollar amount is less than the Bitcoin amount. In this period of time, the owner could have had more profit on the sales because of the increase in Bitcoin prices, but this would be risk that he did not want to take. So as an agreement, we decided to lock the price of each sale on the sale time and he would get paid the same amount as if he was selling his products with cash\footnote{this method is actually one of the common methods recently used by Bitcoin payment processors.}, Thus on the second prototype of the report page, I added this field for accounting purposes. This is realtime exchange, However as an agreement, cashing out the Bitcoins would happen in monthly basis or within a threshold (\eg when reached 100 dollars).
 
 Other added feature was the ability to check each transaction on the blockchain. If the cafe owner clicks on any of the Bitcoin addresses related to each sale, he would be redirected to a blockchain explorer site and he can see if the transaction went through or not.
 
 \begin{figure}[htb!p]
 \centering
 \includegraphics[width=\linewidth]{fig/canceled_sale.png}
-  \caption{A canceled sale - this means that the request was made on the Aunja PoS interface to generate an address, but the customer never sent the bitcoins. Probably a customer changed his mind and paid via another payment method}
+  \caption{A canceled sale - this means that the request was made on the Aunja PoS interface to generate an address, but the customer never sent the Bitcoins. Probably a customer changed his mind and paid via another payment method}
 \label{fig:canceled_sale}
 \end{figure}
 
@@ -521,7 +521,7 @@ Now to test the system on production, it was time for the first coffee, to the b
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{fig/cafeaunja.png}
-  \caption{Cafe Aunja Started to accept bitcoin on Oct 23, 2014 }
+  \caption{Cafe Aunja Started to accept Bitcoin on Oct 23, 2014 }
 \label{fig:cafeaunja}
 \end{figure}
 

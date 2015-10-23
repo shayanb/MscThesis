@@ -27,13 +27,13 @@ This introduction is not an introduction to Bitcoin, but the details of Bitcoin 
 
 
 \subsection{Bitcoin Address}
-A Bitcoin address is a random string of 26-35 alphanumeric characters that starts with "1" or "3", that contains digits, uppercase and lowercase letters with the exception of "O", "I" (Uppercase i) , "l" (Lower case L) and the number 0 to prevent visual ambiguity. Bitcoin addresses are commonly shared via QR-Code as it is easier to read with QR-code mobile scanners and it is also implemented in almost all Bitcoin wallets (see figure ~\ref{fig:bitcoinqr} that is a representation of the bitcoin address 1shaYanre36PBhspFL9zG7nt6tfDhxQ4u). Bitcoin addresses are derived from the equivalent ECDSA public key that is explained later.
+A Bitcoin address is a random string of 26-35 alphanumeric characters that starts with "1" or "3", that contains digits, uppercase and lowercase letters with the exception of "O", "I" (Uppercase i) , "l" (Lower case L) and the number 0 to prevent visual ambiguity. Bitcoin addresses are commonly shared via QR-Code as it is easier to read with QR-code mobile scanners and it is also implemented in almost all Bitcoin wallets (see figure ~\ref{fig:Bitcoinqr} that is a representation of the Bitcoin address 1shaYanre36PBhspFL9zG7nt6tfDhxQ4u). Bitcoin addresses are derived from the equivalent ECDSA public key that is explained later.
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.8]{fig/bitcoinqr.png}
-  \caption{QR-Code representing a bitcoin address}
-\label{fig:bitcoinqr}
+\includegraphics[scale=0.8]{fig/Bitcoinqr.png}
+  \caption{QR-Code representing a Bitcoin address}
+\label{fig:Bitcoinqr}
 \end{figure}
 
 \subsubsection{Public Key}
@@ -48,14 +48,14 @@ A Bitcoin address is a random string of 26-35 alphanumeric characters that start
 
 
 \subsubsection{Private Key}
-A private key can be any 256 bit number from 0x1 to 0xFFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFE BAAE DCE6 AF48 A03B BFD2 5E8C D036 4140. Basically any number in this range would be valid as the input for secp256k1\footnote{Standards for Efficient Cryptography (SEC) \url{https://en.bitcoin.it/wiki/Secp256k1}} ECDSA standard. This is the secret part of the bitcoin address that should be kept secure and there are already different methods of securing the private key as discussed in Chapter 3. Anyone with the private key has the ability to sign a transaction and spend the bitcoins that are signed with the relevant public key (or bitcoin address). 
+A private key can be any 256 bit number from 0x1 to 0xFFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFE BAAE DCE6 AF48 A03B BFD2 5E8C D036 4140. Basically any number in this range would be valid as the input for secp256k1\footnote{Standards for Efficient Cryptography (SEC) \url{https://en.Bitcoin.it/wiki/Secp256k1}} ECDSA standard. This is the secret part of the Bitcoin address that should be kept secure and there are already different methods of securing the private key as discussed in Chapter 3. Anyone with the private key has the ability to sign a transaction and spend the Bitcoins that are signed with the relevant public key (or Bitcoin address). 
 Same as the Bitcoin addresses and the public keys, private keys have a shorter format called wallet import format (wif) that is used commonly by most Bitcoin wallet clients. It contains error checking bits and also some information about the public key associated to the private key. An example of a private key in wif format would be 5Kb8kLf9zgWQnogidDA76MzPL6TsZZY36hWXMssSzNydYXYB9KF which would result in 1CC3X2gu58d6wXUWMffpuzN9JAfTUWu4Kj as the associated Bitcoin address.
 
 To better understand how Bitcoin address is derived from the private key see Figure  ~\ref{fig:pubkeytoaddr}
 
 \subsubsection{BIP32} \label{BIP32}
-As Bitcoin creator, Satoshi Nakamoto ~\cite{Nak08} also points out, it's better to generate a new address for each transaction and receive the changes in a new change address (The concept of change addresses is explained more in chapter 3) to use the pseudonymity of bitcoin. This brought a challenge to Bitcoin wallet client designs as keeping track of all the addresses in the wallet file, and also the ability to back up the private keys, could get complicated when there are hundreds of keys in the wallet (more in chapter 3). \\
-Bitcoin is an open source project, and to make improvements to the protocol there are Bitcoin Improvement Proposals (BIP) introduced by developers to be implemented in the core code. One important one is BIP32 also known as Hierarchical Deterministic Wallets or HD wallets ~\cite{bip32}. BIP32 introduces the ability to generate a tree of addresses from a single seed known as ''Master Seed''. A master node would be generated from the master seed and it is possible to branch it to multiple nodes shown as m/0, m/1, ... . m/i , and then from each multiple addresses could be derived such as m/0/1, m/0/2, \etc. Each of these derivation has a path in the tree that is called ''BIP32 Path'' and is shown as ''m/0/1'' for second branch of the first branch of master seed m. Commonly the first branch would be used on different accounts and the second depth of nodes on the tree would be used as the addresses of each account. BIP32 simplifies the backing up process as there is just a seed to be backed up and it's easier to keep track of the addresses. BIP32 also allows a simple terminal that does not contain the private keys to generate new bitcoin addresses (for use in point of sale terminals).A visualization of how BIP32 is design can be seen in figure ~\ref{fig:bip32}.
+As Bitcoin creator, Satoshi Nakamoto ~\cite{Nak08} also points out, it's better to generate a new address for each transaction and receive the changes in a new change address (The concept of change addresses is explained more in chapter 3) to use the pseudonymity of Bitcoin. This brought a challenge to Bitcoin wallet client designs as keeping track of all the addresses in the wallet file, and also the ability to back up the private keys, could get complicated when there are hundreds of keys in the wallet (more in chapter 3). \\
+Bitcoin is an open source project, and to make improvements to the protocol there are Bitcoin Improvement Proposals (BIP) introduced by developers to be implemented in the core code. One important one is BIP32 also known as Hierarchical Deterministic Wallets or HD wallets ~\cite{bip32}. BIP32 introduces the ability to generate a tree of addresses from a single seed known as ''Master Seed''. A master node would be generated from the master seed and it is possible to branch it to multiple nodes shown as m/0, m/1, ... . m/i , and then from each multiple addresses could be derived such as m/0/1, m/0/2, \etc. Each of these derivation has a path in the tree that is called ''BIP32 Path'' and is shown as ''m/0/1'' for second branch of the first branch of master seed m. Commonly the first branch would be used on different accounts and the second depth of nodes on the tree would be used as the addresses of each account. BIP32 simplifies the backing up process as there is just a seed to be backed up and it's easier to keep track of the addresses. BIP32 also allows a simple terminal that does not contain the private keys to generate new Bitcoin addresses (for use in point of sale terminals).A visualization of how BIP32 is design can be seen in figure ~\ref{fig:bip32}.
 
 \begin{figure}
 \centering
@@ -76,15 +76,15 @@ It is possible for a miner to fork the blockchain and start to mine blocks on hi
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{fig/bitcoinblocks.png}
+\includegraphics[width=\linewidth]{fig/Bitcoinblocks.png}
   \caption{Bitcoin Blocks in the blockchain ~\cite{Nak08}}
-\label{fig:bitcoinblocks}
+\label{fig:Bitcoinblocks}
 \end{figure}
 
 This is important to understand that it is possible for a 0-confirmation transaction to stay unconfirmed for a while, depending on how much miner's fee is included in the transaction. Miner's tend to chose the transactions with a higher miner's fee to be included in the new block first, but this is not a universal fact since the miner is in control to chose which transactions should be included in the block he mined\footnote{This is why 51\% attack becomes noticable, as the miner that has 51\% of the hashing power would be in control to reject transactions specific to some addresses or whitelist some others to be included in new blocks. however he will not be able to forge transactions.}.
 
 \subsection{Double Spend}
-One of the major innovations of Bitcoin was to solve a problem known as double spending. For any digital data it is possible to duplicate the data and send it to two different entities, this could be a problem when this digital data has monetary value. Details of the solution would rely on a cryptographic description of how Bitcoin protocol works. However to put it in simple words, when spending some bitcoins as an input to a transaction, the Bitcoin wallet should use the hash of those inputs that are already in the blockchain, when it broadcasts that transaction it will be stored on the memory of all the Bitcoin nodes as an unconfirmed transaction until it gets included in a block by a miner. Now it's possible to use the same input in another transaction and broadcast it to the network, mainly because that input was not spent in any blocks in the blockchain yet. Although only one of these transaction could be included in a new block and the other one would be invalid and erased from the memory. This makes it complicated for Bitcoin payment processors to accept 0-confirmation transactions as they could not be fully trusted. 
+One of the major innovations of Bitcoin was to solve a problem known as double spending. For any digital data it is possible to duplicate the data and send it to two different entities, this could be a problem when this digital data has monetary value. Details of the solution would rely on a cryptographic description of how Bitcoin protocol works. However to put it in simple words, when spending some Bitcoins as an input to a transaction, the Bitcoin wallet should use the hash of those inputs that are already in the blockchain, when it broadcasts that transaction it will be stored on the memory of all the Bitcoin nodes as an unconfirmed transaction until it gets included in a block by a miner. Now it's possible to use the same input in another transaction and broadcast it to the network, mainly because that input was not spent in any blocks in the blockchain yet. Although only one of these transaction could be included in a new block and the other one would be invalid and erased from the memory. This makes it complicated for Bitcoin payment processors to accept 0-confirmation transactions as they could not be fully trusted. 
 
 
 
