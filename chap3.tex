@@ -5,12 +5,12 @@
 
 \section{Introductory Remarks}
 
-In previous chapter we evaluated all the existing Bitcoin wallet clients for the user. In this chapter we survey and evaluate the existing Bitcoin payments for a business to accept Bitcoin and use SCRAM~\cite{REScenario}  requirement engineering method to develop the most suitable Point of Sale (PoS) for a small business based on our evaluation framework. We would use PoS for point of sale terminal through out this chapter.
+In previous chapter we evaluated all the existing Bitcoin wallet clients for the user. In this chapter we survey and evaluate the existing Bitcoin payments for a business to accept Bitcoin and use SCRAM~\cite{REScenario}  requirement engineering method to develop the most suitable Point of Sale (PoS) for a small business based on our evaluation framework. We would use PoS for point of sale terminal through out this chapter. Even though we borrowed some concepts used in the previous chapter, we introduce new concepts and build a new framework to evaluate Bitcoin point of sales.
 
 One aspect of Bitcoin is that there is no specific entity backing up the currency but whoever that is using it gives value to Bitcoin. As a Bitcoin enthusiast one of the goals is to have more places to accept Bitcoin, however this has been an issue for the business owners to implement a simple, yet fully functional PoS to be able to accept Bitcoin as a method of payment.
 In this chapter, I discuss my approach to come up with a solution and implement the Bitcoin PoS in a Cafe in Montreal\footnote{ Cafe Aunja \url{http://aunja.com}}.
 
-In order to do so, I started by eliciting the requirements of a payment system for a small business, and then researched the available options to see if they meet our requirements. Then I came up with a framework to compare these PoS with different aspects in Security, Privacy, Usability and Deployability categories. In the end, we implemented a Aunja PoS for this small business that could be used in any other similar businesses as the payment method to accept Bitcoin.
+In order to do so, I started by eliciting the requirements of a payment system for a small business, and then researched the available options to see if they meet our requirements. Then I came up with a framework to compare these PoS with different aspects in Security, Privacy, Usability and Deployability categories. In the end, we implemented Aunja PoS for this small business that could be used in any other similar businesses as the payment method to accept Bitcoin.
 
 %==================== Requirement ======================
 \section {Requirments Engineering}
@@ -83,7 +83,8 @@ We developed a proof of concept\footnote{concept demonstrator~\cite{REScenario}}
 We used the feedback gathered from phase 3 to make the first prototype. The prototype retrieved the Bitcoin exchange rate in realtime and the employee only had to input the dollar amount in the PoS. This made it possible to keep the Bitcoin terminology out of the scope of the training for the employees. However on the first prototype, to show the successful payments, the system was showing the transaction on a Blockchain explorer\footnote{\url{http://blockchain.info}}, using web-based APIs. This was not clear for a novice user on what the state of the system is. On the second round of prototyping, we designed an interface to show that the transaction has been broadcasted to the Bitcoin network and would use that knowledge to inform the employee of the state of the payment.\\
 
 \section{Decision Framework}
-We propose a framework specialized for Bitcoin point of sale systems to score the system with a set of requirements based on usability, deployability, privacy and security. These are not a final set of requirements for a general purpose system, however in the case of Bitcoin payments for a small business these will suffice.\\
+We propose a framework specialized for Bitcoin point of sale systems to score the system with a set of requirements based on usability, deployability, privacy and security. These are not a final set of requirements for a general purpose system, however in the case of Bitcoin payments for a small business these will suffice. It worths mentioning that these requirements are a subset of Systems and Software Quality Requirements known as ISO/IEC 25010:2011 ~\cite{iso25010}. \\
+
 We start by using our scenario based requirement engineering approach and adding the required non-functional requirements (\eg maintaining payee's privacy, data encryption). Then we will use these requirements to score each system described in this section and gather the result in Table ~\ref{tab:method-comp}. For simplifying the figure, we use three score indicators. (\full) for a complete score on the requirement, (\prt) if the requirements has not met completely and empty space if it is not satisfying the need. For some of the requirements the scoring system might be confusing (\eg low cost to run) which will be explained later.
 
 %-------------------------- Usability --------------------------
@@ -497,11 +498,11 @@ Other than in person training that I did with every employee, I made a manual (F
 
 
 
-\section{Real-world Deployement}
+\section{Real-world Deployment}
 Cafe Aunja started accepting Bitcoin with Aunja PoS on Oct 23, 2014, and was the first cafe in eastern Canada that accepts Bitcoin. During the first month, there was more than 10 Bitcoin payments and it has been working ever since.
 
 \subsection{Lessons learned}
-One of the missing features that should be implemented in such a system is a fast verification method. In early Bitcoin PoS for each payment customer needs to wait for average of 10 minutes for the transaction to get confirmed and included in the blockchain. To remedy this, I solved this issue by flagging the transactions as successful as soon as the transaction is broadcasted to Bitcoin network, also known as, 0-confirmation transaction. This could work for a PoS in a cafe as the volume of each transaction is small and it's not risky to take 0-confirmation transactions, However this is still a open problem to remedy the risk for higher value transactions and prevent double spend attacks ~\cite{karame2012two} ~\cite{bamert2013have}.
+One of the missing features that should be implemented in such a system is a fast verification method. In early Bitcoin PoS for each payment customer needs to wait for average of 10 minutes for the transaction to get confirmed and included in the blockchain. To remedy this, I solved this issue by flagging the transactions as successful as soon as the transaction is broadcasted to Bitcoin network, also known as, 0-confirmation transaction. This could work for a PoS in a cafe as the volume of each transaction is small and it's not risky to take 0-confirmation transactions, Another newly introduced method to overcome the confirmation time is by using the Bitcoin Lightening Network ~\cite{poon2015bitcoin} but the technical details on lightening network goes beyond the scope of this thesis. However this is still a open problem to remedy the risk for higher value transactions and prevent double spend attacks ~\cite{karame2012two} ~\cite{bamert2013have}. 
 
 Bitcoin and Bitcoin transactions are still unfamiliar concepts for most people. We encountered countless number of questions from customers to explain what Bitcoin is and how it works and mostly they got more interested to know more about Bitcoin when they observed a payment done with the Bitcoin PoS, mostly because they would not reveal any personal information with each payment.
 
