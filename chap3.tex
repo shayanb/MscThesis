@@ -7,17 +7,17 @@
 
 In previous chapter we evaluated all the existing Bitcoin wallet clients for the user. In this chapter we survey and evaluate the existing Bitcoin payments for a business to accept Bitcoin and use SCRAM~\cite{REScenario}  requirement engineering method to develop the most suitable Point of Sale (PoS) for a small business based on our evaluation framework. We would use PoS for point of sale terminal through out this chapter. Even though we borrowed some concepts used in the previous chapter, we introduce new concepts and build a new framework to evaluate Bitcoin point of sales.
 
-One aspect of Bitcoin is that there is no specific entity backing up the currency but whoever that is using it gives value to Bitcoin. As a Bitcoin enthusiast one of the goals is to have more places to accept Bitcoin, however this has been an issue for the business owners to implement a simple, yet fully functional PoS to be able to accept Bitcoin as a method of payment.
-In this chapter, I discuss my approach to come up with a solution and implement the Bitcoin PoS in a Cafe in Montreal\footnote{ Cafe Aunja \url{http://aunja.com}}.
+One aspect of Bitcoin is that there is no specific entity backing up the currency, whoever that is using Bitcoin gives value to it. As a Bitcoin enthusiast one of the goals is to have more places to accept Bitcoin, however this has been an issue for the business owners to implement a simple, yet fully functional PoS to be able to accept Bitcoin as a method of payment.
+This chapter discusses the approach to have evaluate existing Bitcoin point of sales and the implementation of Aunja PoS in a Cafe in Montreal\footnote{ Cafe Aunja \url{http://aunja.com}}.
 
-In order to do so, I started by eliciting the requirements of a payment system for a small business, and then researched the available options to see if they meet our requirements. Then I came up with a framework to compare these PoS with different aspects in Security, Privacy, Usability and Deployability categories. In the end, we implemented Aunja PoS for this small business that could be used in any other similar businesses as the payment method to accept Bitcoin.
+In order to do so, we started by eliciting the requirements of a payment system for a small business, and then researched the available options to see if they meet our requirements. Then we put together a framework to compare these PoS with different criteria in Security, Privacy, Usability and Deployability categories. In the end, we implemented Aunja PoS for this small business that could be used in any other similar businesses as the payment method to accept Bitcoin.
 
 %==================== Requirement ======================
 \section {Requirments Engineering}
 Requirement engineering is the process of defining, documenting and maintaining requirements and is a subfield of software and system engineering. The term was first used in 1979 ~\cite{alford1979software} and then became a general term with the publication of an IEEE Computer Society tutorial ~\cite{dorfman1990system}.
 Requirements Engineering is the first phase in waterfall software development process ~\cite{rocye1970managing}. Depending on the type of the system being developed, the methods differ.
 
-Probably the best way to analyze the requirements of a small business is to model real world descriptions and stories in scenarios. Scenarios are examples of real world experiences that we could use to model what is needed in the system. That is why we chose a scenario-based requirements engineering method named SCRAM.
+Probably the best way to analyze the requirements of a small business is to model real world descriptions and stories in scenarios. Scenarios are examples of real world experiences that we could use to model what is needed in the system. That is why scenario-based requirements engineering method named SCRAM was chosen.
 
 \subsection{SCRAM}
 We used SCRAM (Scenario-based Requirements Analysis Method) as our framework to gather the requirements of this system.
@@ -46,7 +46,7 @@ This method consists of four phases:
 \end{itemize}
 
 %-------------------------- Initial requirements capture and domain familiarisation. --------------------------
-\textit{Phase 1: Initial requirements capture and domain familiarisation.} We asked the cafe owner, two employees and two customers for a scenario involving Bitcoin payment in the cafe to create the common "normal use case". The differences between the scenarios were insignificant thus the exceptions to this normal use case are not valid. One exception was power failure, and because even the current accepted payment methods such as Visa would fail we would not consider such a scenarios, that being said, there are methods to mitigate this that will be discussed, such as browser based PoS)
+\textit{Phase 1: Initial requirements capture and domain familiarisation.} We asked the cafe owner, two employees and two customers for a scenario involving Bitcoin payment in the cafe to create the common "normal use case". The differences between the scenarios were insignificant thus the exceptions to this normal use case are not valid. One exception was power failure, and because even the current accepted payment methods such as Visa would fail it was not consider as a valid scenarios, that being said, there are methods to mitigate this that will be discussed, such as browser based PoS).
 
 
 As the cafe already have other payment systems in place, there is no need to go through the cafe's business plan or any other specification to check for conflicts. The only change is to implement another payment system at cashier's desk (see figure \ref{fig:phase1}).
@@ -62,7 +62,7 @@ However, there are requirements in the PoS system that need to be met, such as r
 %-------------------------- Storyboarding and design visioning --------------------------
 
 \textit{Phase 2: Storyboarding and design visioning.}
-Based on the information gathered from Phase 1 and further analysis, such as user survey on the design, we can develop the storyboard, see figure \ref{fig:storyboard}.% More technical requirements will be explained later ~/ref{section}.
+Based on the information gathered from Phase 1 and further analysis, such as user survey on the design, storyboard was developed, see figure \ref{fig:storyboard}.% More technical requirements will be explained later ~/ref{section}.
 
 %FIXME: wrapfigure package ! size
 \begin{figure}[htb!p]
@@ -85,7 +85,7 @@ We used the feedback gathered from phase 3 to make the first prototype. The prot
 \section{Decision Framework}
 We propose a framework specialized for Bitcoin point of sale systems to score the system with a set of requirements based on usability, deployability, privacy and security. These are not a final set of requirements for a general purpose system, however in the case of Bitcoin payments for a small business these will suffice. It worths mentioning that these requirements are a subset of Systems and Software Quality Requirements known as ISO/IEC 25010:2011 ~\cite{iso25010}. \\
 
-We start by using our scenario based requirement engineering approach and adding the required non-functional requirements (\eg maintaining payee's privacy, data encryption). Then we will use these requirements to score each system described in this section and gather the result in Table ~\ref{tab:method-comp}. For simplifying the figure, we use three score indicators. (\full) for a complete score on the requirement, (\prt) if the requirements has not met completely and empty space if it is not satisfying the need. For some of the requirements the scoring system might be confusing (\eg low cost to run) which will be explained later.
+We start by using our scenario based requirement engineering approach and adding the required non-functional requirements (\eg maintaining payee's privacy, data encryption). These requirements will be used to score each system described in this section, gathered in Table ~\ref{tab:method-comp}. For simplifying the figure, we use three score indicators. (\full) for a complete score on the requirement, (\prt) if the requirements has not met completely and empty space if it is not satisfying the need. For some of the requirements the scoring system might be confusing (\eg low cost to run) which will be explained later.
 
 %-------------------------- Usability --------------------------
 \subsection{Usability} There are different aspects of usability that should be considered. One is how the PoS is accessible for the employees and the other is technical matters of the implementation.
@@ -138,7 +138,7 @@ We start by using our scenario based requirement engineering approach and adding
 
 %==================== Design ======================
 \section{Evolution of PoS proposals}
-I will first go through the available options and why we chose to develop a custom PoS for this purpose.
+We will first go through the available options and why we chose to develop a custom PoS for this purpose.
 
 There exist multiple payment systems which mostly suit the online markets (\eg e-commerece) and not a physical point of sale \footnote{\url{https://en.Bitcoin.it/wiki/How_to_accept_Bitcoin,_for_small_businesses}}. We list all the available approaches to accept Bitcoin payments for a physical business, and not as an e-commerce business.
 
@@ -190,7 +190,7 @@ Every aspect of the payment system is implemented by Bitpay, they offered one of
 
 %-------------------------- self hosting PoS--------------------------
 \subsection{Self Hosting PoS}
-Another option is to run a customized wallet as the point of sale service. There are multiple options for this case and it depends on the features needed for managing the Bitcoin addresses. It is still possible to use a 3rd party for some of the functionalities like address generation or PoS interface. For the sake of simplicity I cover two popular methods, one using Mycelium Gear and another is a full custom self-hosting wallet using available open source software.
+Another option is to run a customized wallet as the point of sale service. There are multiple options for this case and it depends on the features needed for managing the Bitcoin addresses. It is still possible to use a 3rd party for some of the functionalities like address generation or PoS interface. For the sake of simplicity we cover two popular methods, one using Mycelium Gear and another is a full custom self-hosting wallet using available open source software.
 
 
 \subsection{Mycelium Gear}
@@ -405,15 +405,15 @@ This is a nice Javascript library that we used to make the interface more user-f
 
 %-------------------------- Prototyping --------------------------
 \subsection{Prototyping}
-With the full knowledge of the requirements and a few sketches of the interface, I started developing the PoS. Although the first prototype was ready to launch within a week, we did 3 prototypes in the month after that, each had bugs fixed and features added as we surveyed and got feedback from the employees on each round of prototyping.
+With the full knowledge of the requirements and a few sketches of the interface, we started developing the PoS. Although the first prototype was ready to launch within a week, we did 3 prototypes in the month after that, each had bugs fixed and features added as we surveyed and got feedback from the employees on each round of prototyping.
 \\
 Here is a short description of the implemented functionalities:
 
 \subsubsection{PoS main functionalities}
 The PoS was hosted on a shared hosting service named Host Monster \footnote{\url{http://hostmonster.com}}. They offer low cost annual plans that offer PHP and MySQL which are the requirements that we need.
-Then I started working with Bitcoin SCI to add the database functionality and defined tables for transaction requests and payments on MySQL.
+Then we started working with Bitcoin SCI to add the database functionality and defined tables for transaction requests and payments on MySQL.
 
-I designed three tables (first prototype had two) for the purpose of this PoS. One table is for the Bitcoin key pairs to be stored and will be used to decrypt and export the private keys when required (see Figure ~\ref{fig:wifkeys}). The other table holds the information regarding each transaction (Figure ~\ref{fig:txhistory}), later on to prevent spam requests and test cases from making the table unnecessary big, I designed a temporary transaction table to hold the data of each transaction before the payment is validated. As soon as the payment is flagged as valid, the relevant data would be moved to the main table and will be removed from the temporary table.
+I designed three tables (first prototype had two) for the purpose of this PoS. One table is for the Bitcoin key pairs to be stored and will be used to decrypt and export the private keys when required (see Figure ~\ref{fig:wifkeys}). The other table holds the information regarding each transaction (Figure ~\ref{fig:txhistory}), later on to prevent spam requests and test cases from making the table unnecessary big, we designed a temporary transaction table to hold the data of each transaction before the payment is validated. As soon as the payment is flagged as valid, the relevant data would be moved to the main table and will be removed from the temporary table.
 
 \begin{figure}[htb!p]
 \centering
@@ -429,7 +429,7 @@ I designed three tables (first prototype had two) for the purpose of this PoS. O
 \label{fig:txhistory}
 \end{figure}
 
-Bitcoin SCI uses a file-based method to store the keys and transaction details, as a backup method I kept that in place and stored the file\_hash detail of each entity for future references.
+Bitcoin SCI uses a file-based method to store the keys and transaction details, as a backup method, we kept that in place and stored the file\_hash detail of each entity for future references.
 
 Other tasks were involved in integrating the above mentioned open source projects into each other to have a complete solution package.
 
@@ -459,7 +459,7 @@ One other aspect of the requirements was a reporting page, this was based on the
 \label{fig:report_page}
 \end{figure}
 
-One of the important fields added later to the report page was the ''Sale Dollar Amount''. The reason was that Bitcoin price is really volatile compared to other currencies and the cafe owner did not want to risk losing money by accepting Bitcoin. As you can see in (Figure~\ref{fig:report_page}) the Sale Dollar amount is less than the Bitcoin amount. In this period of time, the owner could have had more profit on the sales because of the increase in Bitcoin prices, but this would be risk that he did not want to take. So as an agreement, we decided to lock the price of each sale on the sale time and he would get paid the same amount as if he was selling his products with cash\footnote{this method is actually one of the common methods recently used by Bitcoin payment processors.}, Thus on the second prototype of the report page, I added this field for accounting purposes. This is realtime exchange, However as an agreement, cashing out the Bitcoins would happen in monthly basis or within a threshold (\eg when reached 100 dollars).
+One of the important fields added later to the report page was the ''Sale Dollar Amount''. The reason was that Bitcoin price is really volatile compared to other currencies and the cafe owner did not want to risk losing money by accepting Bitcoin. As you can see in (Figure~\ref{fig:report_page}) the Sale Dollar amount is less than the Bitcoin amount. In this period of time, the owner could have had more profit on the sales because of the increase in Bitcoin prices, but this would be risk that he did not want to take. So as an agreement, we decided to lock the price of each sale on the sale time and he would get paid the same amount as if he was selling his products with cash\footnote{this method is actually one of the common methods recently used by Bitcoin payment processors.}, Thus on the second prototype of the report page, this field was added for accounting purposes. This is realtime exchange, However as an agreement, cashing out the Bitcoins would happen in monthly basis or within a threshold (\eg when reached 100 dollars).
 
 Other added feature was the ability to check each transaction on the blockchain. If the cafe owner clicks on any of the Bitcoin addresses related to each sale, he would be redirected to a blockchain explorer site and he can see if the transaction went through or not.
 
@@ -487,7 +487,7 @@ Aunja PoS has been made open source and available to public\footnote{\url{https:
 \subsection{Training}
 
 I tried to make the interface as simple as possible for the employees. There is no jargon or technical requirements to use Aunja PoS, but anyhow some details specific to Bitcoin transactions has to be taught to the employees to be able to recover from human errors while a transaction is processing.
-Other than in person training that I did with every employee, I made a manual (Figure~\ref{fig:payment_manual}) and attached it to the cashier's counter for future reference by all cafe employees.
+Other than in person training that was done with every employee, a manual was made (Figure~\ref{fig:payment_manual}) and was attached to the cashier's counter for future reference by all cafe employees.
 
 \begin{figure}[htb!p]
 \centering
