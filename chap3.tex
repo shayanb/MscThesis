@@ -8,9 +8,9 @@
 In previous chapter we evaluated all the existing Bitcoin wallet clients for the user. In this chapter we survey and evaluate the existing Bitcoin payments for a business to accept Bitcoin and use SCRAM~\cite{REScenario}  requirement engineering method to develop the most suitable Point of Sale (PoS) for a small business based on our evaluation framework. We would use PoS for point of sale terminal through out this chapter. Even though we borrowed some concepts used in the previous chapter, we introduce new concepts and build a new framework to evaluate Bitcoin point of sales.
 
 One aspect of Bitcoin is that there is no specific entity backing up the currency, whoever that is using Bitcoin gives value to it. As a Bitcoin enthusiast one of the goals is to have more places to accept Bitcoin, however this has been an issue for the business owners to implement a simple, yet fully functional PoS to be able to accept Bitcoin as a method of payment.
-This chapter discusses the approach to have evaluate existing Bitcoin point of sales and the implementation of Aunja PoS in a Cafe in Montreal\footnote{ Cafe Aunja \url{http://aunja.com}}.
+This chapter discusses the approach we use to evaluate existing Bitcoin point of sales, our proposed approach, and the implementation of Aunja PoS in a Cafe in Montreal\footnote{ Cafe Aunja \url{http://aunja.com}}.
 
-In order to do so, we started by eliciting the requirements of a payment system for a small business, and then researched the available options to see if they meet our requirements. Then we put together a framework to compare these PoS with different criteria in Security, Privacy, Usability and Deployability categories. In the end, we implemented Aunja PoS for this small business that could be used in any other similar businesses as the payment method to accept Bitcoin.
+In order to do so, we started by eliciting the requirements of a payment system for a small business, and then researched the available options to see if they meet our requirements. Then, we put together a framework to compare these PoS with different criteria in security, privacy, usability and deployability categories. In the end, we implemented Aunja PoS for this small business that could be used in any other similar businesses as the payment method to accept Bitcoin.
 
 %==================== Requirement ======================
 \section {Requirments Engineering}
@@ -46,7 +46,7 @@ This method consists of four phases:
 \end{itemize}
 
 %-------------------------- Initial requirements capture and domain familiarisation. --------------------------
-\textit{Phase 1: Initial requirements capture and domain familiarisation.} We asked the cafe owner, two employees and two customers for a scenario involving Bitcoin payment in the cafe to create the common "normal use case". The differences between the scenarios were insignificant thus the exceptions to this normal use case are not valid. One exception was power failure, and because even the current accepted payment methods such as Visa would fail it was not consider as a valid scenarios, that being said, there are methods to mitigate this that will be discussed, such as browser based PoS).
+\textit{Phase 1: Initial requirements capture and domain familiarisation.} We asked the cafe owner, two employees and two customers for a scenario involving Bitcoin payment in the cafe to create the common "normal use case". The differences between the scenarios were insignificant thus the exceptions to this normal use case are not valid. One exception was power failure, and because even the current accepted payment methods such as Visa would fail, it was not considered as a valid scenario, that being said, there are methods to mitigate this that will be discussed later in the thesis such as browser-based PoS.
 
 
 As the cafe already have other payment systems in place, there is no need to go through the cafe's business plan or any other specification to check for conflicts. The only change is to implement another payment system at cashier's desk (see figure \ref{fig:phase1}).
@@ -405,7 +405,7 @@ This is a nice Javascript library that we used to make the interface more user-f
 
 %-------------------------- Prototyping --------------------------
 \subsection{Prototyping}
-With the full knowledge of the requirements and a few sketches of the interface, we started developing the PoS. Although the first prototype was ready to launch within a week, we did 3 prototypes in the month after that, each had bugs fixed and features added as we surveyed and got feedback from the employees on each round of prototyping.
+With the full knowledge of the requirements and a few sketches of the interface, we started developing the PoS. Although the first prototype was ready to launch within a week, we did 3 prototypes in the month after that, each had bugs fixed and features added as we surveyed and obtained feedback from the employees on each round of prototyping.
 \\
 Here is a short description of the implemented functionalities:
 
@@ -459,9 +459,9 @@ One other aspect of the requirements was a reporting page, this was based on the
 \label{fig:report_page}
 \end{figure}
 
-One of the important fields added later to the report page was the ''Sale Dollar Amount''. The reason was that Bitcoin price is really volatile compared to other currencies and the cafe owner did not want to risk losing money by accepting Bitcoin. As you can see in (Figure~\ref{fig:report_page}) the Sale Dollar amount is less than the Bitcoin amount. In this period of time, the owner could have had more profit on the sales because of the increase in Bitcoin prices, but this would be risk that he did not want to take. So as an agreement, we decided to lock the price of each sale on the sale time and he would get paid the same amount as if he was selling his products with cash\footnote{this method is actually one of the common methods recently used by Bitcoin payment processors.}, Thus on the second prototype of the report page, this field was added for accounting purposes. This is realtime exchange, However as an agreement, cashing out the Bitcoins would happen in monthly basis or within a threshold (\eg when reached 100 dollars).
+One of the important fields added later to the report page was the ''Sale Dollar Amount''. The reason was that Bitcoin price is really volatile compared to other currencies and the cafe owner did not want to risk losing money by accepting Bitcoin. As you can see in (Figure~\ref{fig:report_page}), the Sale Dollar amount is less than the Bitcoin amount. In this period of time, the owner could have had more profit on the sales because of the increase in Bitcoin prices, but this would be considered as a risk that he did not want to take. So as an agreement, we decided to lock the price of each sale on the sale time to be paid the same amount as if he was selling his products with cash\footnote{this method is actually one of the common methods recently used by Bitcoin payment processors.}, Thus on the second prototype of the report page, this field was added for accounting purposes. This is real-time exchange, However as an agreement, cashing out the Bitcoins would happen in monthly basis or within a threshold (\eg when reached 100 dollars).
 
-Other added feature was the ability to check each transaction on the blockchain. If the cafe owner clicks on any of the Bitcoin addresses related to each sale, he would be redirected to a blockchain explorer site and he can see if the transaction went through or not.
+Another added feature was the ability to check each transaction on the blockchain. If the café owner clicks on any of the Bitcoin addresses related to each sale, he would be redirected to a blockchain explorer site and he can see if the transaction went through or not.
 
 \begin{figure}[htb!p]
 \centering
@@ -486,8 +486,8 @@ Aunja PoS has been made open source and available to public\footnote{\url{https:
 %-------------------------- Training --------------------------
 \subsection{Training}
 
-I tried to make the interface as simple as possible for the employees. There is no jargon or technical requirements to use Aunja PoS, but anyhow some details specific to Bitcoin transactions has to be taught to the employees to be able to recover from human errors while a transaction is processing.
-Other than in person training that was done with every employee, a manual was made (Figure~\ref{fig:payment_manual}) and was attached to the cashier's counter for future reference by all cafe employees.
+We tried to make the interface as simple as possible for the employees. There is no jargon or technical requirements to use Aunja PoS, but some details specific to Bitcoin transactions have to be taught to the employees to be able to recover from human errors while a transaction is being processed.
+Other than in-person training that was done with every employee, a manual was made (Figure~\ref{fig:payment_manual}) and was attached to the cashier's counter for future reference by all café employees.
 
 \begin{figure}[htb!p]
 \centering
@@ -499,14 +499,14 @@ Other than in person training that was done with every employee, a manual was ma
 
 
 \section{Real-world Deployment}
-Cafe Aunja started accepting Bitcoin with Aunja PoS on Oct 23, 2014, and was the first cafe in eastern Canada that accepts Bitcoin. During the first month, there was more than 10 Bitcoin payments and it has been working ever since.
+Café Aunja started accepting Bitcoin with Aunja PoS on Oct 23, 2014, and was one of the first cafés in eastern Canada that accepts Bitcoin. During the first month, there was more than 10 Bitcoin payments and it has been working ever since.
 
 \subsection{Lessons learned}
-One of the missing features that should be implemented in such a system is a fast verification method. In early Bitcoin PoS for each payment customer needs to wait for average of 10 minutes for the transaction to get confirmed and included in the blockchain. To remedy this, I solved this issue by flagging the transactions as successful as soon as the transaction is broadcasted to Bitcoin network, also known as, 0-confirmation transaction. This could work for a PoS in a cafe as the volume of each transaction is small and it's not risky to take 0-confirmation transactions, Another newly introduced method to overcome the confirmation time is by using the Bitcoin Lightening Network ~\cite{poon2015bitcoin} but the technical details on lightening network goes beyond the scope of this thesis. However this is still a open problem to remedy the risk for higher value transactions and prevent double spend attacks ~\cite{karame2012two} ~\cite{bamert2013have}. 
+One of the missing features that should be implemented in such a system is a fast verification method. In early Bitcoin PoS, for each payment, the customer needs to wait 10 minutes in average for the transaction to be confirmed and included in the blockchain. To remedy this, we solved this issue by flagging the transactions as successful as soon as the transaction is broadcasted to the Bitcoin network, also known as, 0-confirmation transaction. This could work for a PoS in a cafe as the volume of each transaction is small and it's not risky to take 0-confirmation transactions, Another newly introduced method to overcome the confirmation time is by using the Bitcoin Lightening Network ~\cite{poon2015bitcoin} but the technical details on lightening network goes beyond the scope of this thesis. However this is still an open problem to remedy the risk for higher value transactions and prevent double spend attacks ~\cite{karame2012two} ~\cite{bamert2013have}. 
 
-Bitcoin and Bitcoin transactions are still unfamiliar concepts for most people. We encountered countless number of questions from customers to explain what Bitcoin is and how it works and mostly they got more interested to know more about Bitcoin when they observed a payment done with the Bitcoin PoS, mostly because they would not reveal any personal information with each payment.
+Bitcoin and Bitcoin transactions are still new concepts for most people. We encountered a countless number of questions from customers to explain what Bitcoin is and how it works and mostly they became more interested to know more about Bitcoin when they observed a payment done with the Bitcoin PoS, mostly because they would not reveal any personal information with each payment.
 
-Another interesting lesson, is the concept of locked price, that is the price of Bitcoin for each sale is locked to the exact exchange rate on the time of the transaction. This means if the customer paid 0.01 Bitcoin for a coffee that was 3 dollars in the time of the purchase, the business owner will be paid the exact same amount of 3 dollars and it should not differ if the Bitcoin price has been increasing or decreasing from the time of the purchase to the time he choses to cash out the receiving Bitcoin. This makes the acceptance of Bitcoin payments for the business risk free.
+Another interesting lesson is the concept of locked price that is the price of Bitcoin for each sale is locked to the exact exchange rate at the time of the transaction. This means if the customer paid 0.01 Bitcoin for a coffee that was 3 dollars in the time of the purchase, the business owner will be paid the exact same amount of 3 dollars and it should not differ if the Bitcoin price has been increasing or decreasing from the time of the purchase to the time he chooses to cash out the receiving Bitcoin. This makes the acceptance of Bitcoin payments for the business risk-free.
 
 Now to test the system on production, it was time for the first coffee, to the best of our knowledge, in eastern Canada to be bought with Bitcoin (Figure ~\ref{fig:firsttransaction}).
 

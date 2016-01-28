@@ -51,7 +51,7 @@ This chapter is a longer version of the published paper ~\cite{eskandari2015firs
 
 \section{Background}
 \subsection{Bitcoin}
-One subtlety of Bitcoin's transaction architecture is that in order to spend Bitcoins, the entire value of unspent outputs (\ie from previous transactions) must be spent. To accommodate this, Bitcoin clients automatically spend the full amount of unspent outputs and create multiple components in the transaction: one component will send part of the unspent coins to the intended recipient, and the other component will send the remaining inputs back to the sender as \emph{change}. It is technically possible (and some clients behave this way) to send change back to the sending address. However, to enhance anonymity, the reference client generates fresh addresses (and corresponding private keys) to receive the remaining transaction amount. 
+One subtlety of Bitcoin's transaction architecture is that, in order to spend Bitcoins, the entire value of unspent outputs (\ie from previous transactions) must be spent. To accommodate this, Bitcoin clients automatically spend the full amount of unspent outputs and create multiple components in the transaction: one component will send part of the unspent coins to the intended recipient, and the other component will send the remaining inputs back to the sender as \emph{change}. It is technically possible (and some clients behave this way) to send change back to the sending address. However, to enhance anonymity, the reference client generates fresh addresses (and corresponding private keys) to receive the remaining transaction amount. 
 
 As more transactions are made, Bitcoin clients must keep track of multiple private keys for use in future transactions. Many clients prominently display a Bitcoin balance on the main screen, which represents the sum of all unspent outputs for which private keys are available. 
 
@@ -528,10 +528,10 @@ Bitcoin's usability limitations, particularly those related to key management, p
 %we compared six Bitcoin key management approaches and evaluated the usability of clients that implement these techniques. 
 we found that developers in the Bitcoin ecosystem are making innovative attempts at solving the decades-old problem of usable key management. While some of these techniques seem promising, we find that tasks involving key management can be mired in complex metaphors and confusing abstractions.
 
-Further investigation is needed to better understand and address these issues. A user study would give insight into exactly how these problems are affecting users and it would be interesting to investigate how expert users are (apparently successfully) handling these challenges. Bitcoin presents a new opportunity for public key cryptography to become mainstream, and our evaluation is a first step towards achieving usable key management in decentralized cryptocurrencies. 
+Further investigation is needed to better understand and address these issues. A user study would give insight into exactly how these problems are affecting users and it would be interesting to investigate how expert users are (apparently successfully) handling these challenges. Bitcoin presents a new opportunity for public key cryptography to become mainstream, and our evaluation is a first step towards achieving usable key management in decentralized crypto-currencies. 
 
 We covered All the available Bitcoin Wallet clients in this chapter, in the next chapter, we would try to evaluate all the available point of sale methods for a small business to accept Bitcoin payments.
-It should be mentioned that the framework that was used in this chapter, is being considered a framework to evaluate Bitcoin wallet clients and might not be usable for other Bitcoin related softwares.
+It should be mentioned that the framework that was used in this chapter, is being considered a framework to evaluate Bitcoin wallet clients and might not be usable for other Bitcoin related software systems.
 
 
 
