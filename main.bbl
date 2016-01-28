@@ -1,0 +1,263 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{BvOP{\etalchar{+}}09}
+
+\bibitem[AKR{\etalchar{+}}13]{androulaki2013evaluating}
+Elli Androulaki, Ghassan~O Karame, Marc Roeschlin, Tobias Scherer, and Srdjan
+  Capkun.
+\newblock Evaluating user privacy in bitcoin.
+\newblock In {\em Financial Cryptography and Data Security}, pages 34--51.
+  Springer, 2013.
+
+\bibitem[Alf79]{alford1979software}
+Mack Alford.
+\newblock {\em Software Requirements Engineering Methodology}.
+\newblock Wiley Online Library, 1979.
+
+\bibitem[{Arm}]{Bitcoinarmory}
+{Armory}.
+\newblock {Armory Secure Wallet}.
+\newblock \url{https://bitcoinarmory.com}.
+
+\bibitem[BBSU12]{Barber2012}
+Simon Barber, Xavier Boyen, Elaine Shi, and Ersin Uzun.
+\newblock {Bitter to Better --- How to Make Bitcoin a Better Currency}.
+\newblock In {\em Financial Cryptography}, 2012.
+
+\bibitem[BDE{\etalchar{+}}13]{bamert2013have}
+Tobias Bamert, Christian Decker, Lennart Elsen, Roger Wattenhofer, and Samuel
+  Welten.
+\newblock Have a snack, pay with bitcoins.
+\newblock In {\em Peer-to-Peer Computing (P2P), 2013 IEEE Thirteenth
+  International Conference on}, pages 1--5. IEEE, 2013.
+
+\bibitem[BHvOS12]{BHOS12}
+J~Bonneau, C~Herley, P~C van Oorschot, and F~Stajano.
+\newblock The quest to replace passwords: a framework for comparative
+  evaluation of web authentication schemes.
+\newblock In {\em IEEE Symposium on Security and Privacy}, 2012.
+
+\bibitem[{Bit}]{Bitcoinqt}
+{Bitcoin Core Developers}.
+\newblock {Bitcoin Core}.
+\newblock \url{https://bitcoin.org}.
+
+\bibitem[BKM05]{BKM05}
+Mary Baker, Kimberly Keeton, and Sean Martin.
+\newblock Why traditional storage systems don't help us save stuff forever.
+\newblock In {\em HotDep}, 2005.
+
+\bibitem[{Blo}]{blockchain}
+{Blockchain Team}.
+\newblock {My Wallet Be Your Own Bank}.
+\newblock \url{https://blockchain.info}.
+
+\bibitem[BNM{\etalchar{+}}14]{BNMC+14}
+Joseph Bonneau, Arvind Narayanan, Andrew Miller, Jeremy Clark, Joshua~A. Kroll,
+  and Edward~W. Felten.
+\newblock Mixcoin: Anonymity for bitcoin with accountable mixes.
+\newblock In {\em Financial Cryptography}, 2014.
+
+\bibitem[{bra}]{brainwallet}
+{brainwallet}.
+\newblock {Brainwallet}.
+\newblock \url{https://brainwallet.github.io/}.
+
+\bibitem[BvOP{\etalchar{+}}09]{SSLSobey}
+Robert Biddle, P.~C. van Oorschot, Andrew~S. Patrick, Jennifer Sobey, and Tara
+  Whalen.
+\newblock Browser interfaces and extended validation ssl certificates: An
+  empirical study.
+\newblock In {\em CCSW}, 2009.
+
+\bibitem[Cha82]{Cha82}
+David Chaum.
+\newblock {Blind signatures for untraceable payments}.
+\newblock In {\em {CRYPTO}}, 1982.
+
+\bibitem[Cha83]{chaum1983blind}
+David Chaum.
+\newblock Blind signatures for untraceable payments.
+\newblock In {\em Advances in cryptology}, pages 199--203. Springer, 1983.
+
+\bibitem[CKM87]{metaphorpaper}
+J~Carroll, W~Kellogg, and R~Mack.
+\newblock {\em Interface metaphors and user interface design}.
+\newblock 1987.
+
+\bibitem[CvOA07]{COA07}
+Jeremy Clark, Paul~C. van Oorschot, and Carlisle Adams.
+\newblock Usability of anonymous web browsing: An examination of tor interfaces
+  and deployability.
+\newblock In {\em SOUPS}, 2007.
+
+\bibitem[DCBW12]{DCBW12}
+M.~Dietz, A.~Czeskis, D.~Balfanz, and D.~S. Wallach.
+\newblock Origin-bound certificates: A fresh approach to strong client
+  authentication for the web.
+\newblock In {\em USENIX Security}, 2012.
+
+\bibitem[Dor90]{dorfman1990system}
+Merlin Dorfman.
+\newblock System and software requirements engineering.
+\newblock In {\em IEEE Computer Society Press Tutorial}. Citeseer, 1990.
+
+\bibitem[EBSC15]{eskandari2015first}
+Shayan Eskandari, David Barrera, Elizabeth Stobert, and Jeremy Clark.
+\newblock A first look at the usability of bitcoin key management.
+\newblock In {\em Workshop on Usable Security (USEC)}, 2015.
+
+\bibitem[FH12]{FH12}
+D.~Florencio and C.~Herley.
+\newblock Is everything we know about password stealing wrong?
+\newblock {\em IEEE Security \& Privacy}, 10(6), 2012.
+
+\bibitem[GFFK06]{GFF06}
+Shirley Gaw, Edward~W. Felten, and Patricia Fernandez-Kelly.
+\newblock Secrecy, flagging, and paranoia: Adoption criteria in encrypted
+  email.
+\newblock In {\em CHI}, 2006.
+
+\bibitem[GKGC14]{SPVbugs}
+Arthur Gervais, Ghassan Karame, Damian Gruber, and Srdjan Capkun.
+\newblock On the privacy provisions of bloom filters in lightweight bitcoin
+  clients.
+\newblock In {\em ACSAC}. ACM, 2014.
+
+\bibitem[GM05]{GM05}
+Simson~L. Garfinkel and Robert~C. Miller.
+\newblock {J}ohnny 2: A user test of key continuity management with {S/MIME}
+  and outlook express.
+\newblock In {\em SOUPS}, 2005.
+
+\bibitem[GMS{\etalchar{+}}05]{GMSN+05}
+Simson~L. Garfinkel, David Margrave, Jeffrey~I. Schiller, Erik Nordlander, and
+  Robert~C. Miller.
+\newblock How to make secure email easier to use.
+\newblock In {\em CHI}, 2005.
+
+\bibitem[HK09]{hanke2009measurement}
+Steve~H Hanke and Alex~KF Kwok.
+\newblock On the measurement of zimbabwe's hyperinflation.
+\newblock {\em Cato J.}, 29:353, 2009.
+
+\bibitem[HLMN]{securityreq}
+C~B Haley, R~Laney, J~D Moffett, and B~Nuseibeh.
+\newblock {Security Requirements Engineering: A Framework for Representation
+  and Analysis}.
+\newblock {\em IEEE Transactions on Software Engineering}, 34(1):133--153.
+
+\bibitem[HvO12]{Herley.2012}
+Cormac Herley and Paul~C van Oorschot.
+\newblock {A Research Agenda Acknowledging the Persistence of Passwords}.
+\newblock {\em IEEE Security {\&} Privacy}, 10(1):28--36, 2012.
+
+\bibitem[KAC12]{karame2012two}
+Ghassan Karame, Elli Androulaki, and Srdjan Capkun.
+\newblock Two bitcoins at the price of one? double-spending attacks on fast
+  payments in bitcoin.
+\newblock {\em IACR Cryptology ePrint Archive}, 2012:248, 2012.
+
+\bibitem[MGGR13]{MGGR13}
+Ian Miers, Christina Garman, Matthew Green, and Aviel~D Rubin.
+\newblock {Zerocoin: Anonymous Distributed E-Cash from Bitcoin}.
+\newblock In {\em IEEE Symposium on Security and Privacy}, 2013.
+
+\bibitem[{Mul}]{multibit}
+{MultiBit Team}.
+\newblock {MultiBit}.
+\newblock \url{https://multibit.org}.
+
+\bibitem[Nak08]{Nak08}
+S~Nakamoto.
+\newblock Bitcoin: A peer-to-peer electionic cash system.
+\newblock Unpublished, 2008.
+
+\bibitem[Nie92]{HeuristicEvaluation}
+Jakob Nielsen.
+\newblock Finding usability problems through heuristic evaluation.
+\newblock In {\em CHI}, 1992.
+
+\bibitem[Oec03]{oechslin2003making}
+Philippe Oechslin.
+\newblock Making a faster cryptanalytic time-memory trade-off.
+\newblock In {\em CRYPTO}, 2003.
+
+\bibitem[PD15]{poon2015bitcoin}
+Joseph Poon and Thaddeus Dryja.
+\newblock The bitcoin lightning network: Scalable off-chain instant payments.
+\newblock Technical report, Technical Report (draft). https://lightning.
+  network, 2015.
+
+\bibitem[{Pie}a]{bip32proposal}
+{Pieter Wuille}.
+\newblock {BIP32 Hierarchical Deterministic Wallets}.
+\newblock \url{https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki}.
+
+\bibitem[{Pie}b]{bip32}
+{Pieter Wuille}.
+\newblock {BIP32: Hierarchical Deterministic Wallets}.
+\newblock \url{https://github.com/genjix/bips/blob/master/bip-0032.md}.
+
+\bibitem[{Poi}]{bitaddress}
+{Pointbiz}.
+\newblock {JavaScript Client-Side Bitcoin Wallet Generator}.
+\newblock \url{https://bitaddress.org}.
+
+\bibitem[Roc70]{rocye1970managing}
+WW~Rocye.
+\newblock Managing the development of large software systems: concepts and
+  techniques.
+\newblock In {\em IEEE WESTCON}, 1970.
+
+\bibitem[{RSA}]{pbkdf2}
+{RSA Laboratories}.
+\newblock {PBKDF2 (Password-Based Key Derivation Function 2)}.
+\newblock \url{http://tools.ietf.org/html/rfc2898}.
+
+\bibitem[SBKH06]{SBKH06}
+Steve Sheng, Levi Broderick, Colleen~Alison Koranda, and Jeremy~J. Hyland.
+\newblock Why {J}ohnny still can't encrypt: Evaluating the usability of email
+  encryption software.
+\newblock In {\em SOUPS (Poster)}, 2006.
+
+\bibitem[SQu]{iso25010}
+ISO SQuaRE.
+\newblock {ISO/IEC 25010:2011 Systems and software engineering -- Systems and
+  software Quality Requirements and Evaluation (SQuaRE) -- System and software
+  quality models}.
+\newblock \url{http://www.iso.org/iso/catalogue_detail.htm?csnumber=35733}.
+
+\bibitem[Sut03]{REScenario}
+A.~Sutcliffe.
+\newblock Scenario-based requirements engineering.
+\newblock In {\em Requirements Engineering Conference, 2003. Proceedings. 11th
+  IEEE International}, pages 320--329, Sept 2003.
+
+\bibitem[{Sym}]{coinbit}
+{Symantec}.
+\newblock {Infostealer.Coinbit}.
+\newblock
+  \url{http://www.symantec.com/security_response/writeup.jsp?docid=2011-061615-3651-99}.
+
+\bibitem[Van92]{ecdsa}
+S.~Vanstone.
+\newblock {Responses to NIST's Proposal}.
+\newblock {\em Communications of the ACM}, 35:50--52, 1992.
+
+\bibitem[{Wik}]{techaddress}
+{Wiki}.
+\newblock {Technical background of version 1 Bitcoin addresses}.
+\newblock
+  \url{https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses}.
+
+\bibitem[WRLP94]{WRLP94}
+C.~Wharton, J.~Rieman, C.~Lewis, and P.~Polson.
+\newblock The cognitive walkthrough method: a practitioner's guide.
+\newblock In {\em Usability Inspection}. Wiley \& Sons, 1994.
+
+\bibitem[WT99]{WT99}
+A.~Whitten and J.~D. Tygar.
+\newblock Why {J}ohnny can't encrypt: a usability evaluation of {PGP} 5.0.
+\newblock In {\em USENIX Security}, 1999.
+
+\end{thebibliography}

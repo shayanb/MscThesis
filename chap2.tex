@@ -1,9 +1,8 @@
-
-
+% !TEX root = main.tex
 
 \chapter{A First Look at the Usability of Bitcoin Key Management}
 
-\setchapterpreamble{\begin{quote} This chapter is adapted from published work by Shayan Eskandari, supervised by Jeremy Clark and co-authored by David Barrera and Elizabeth Stobert ~\cite{eskandari2015first} \end{quote}}
+\begin{quote} This chapter is adapted from published work by Shayan Eskandari, supervised by Jeremy Clark and co-authored by David Barrera and Elizabeth Stobert ~\cite{eskandari2015first} \end{quote}
 % = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 \section{Introductory Remarks}
@@ -273,7 +272,7 @@ Based on our analysis, users can be given the concrete advice of treating digita
 
 \subsection{Methodology}
 
-We used a series of cognitive walkthroughs~\cite{WRLP94} to evaluate the usability of six Bitcoin clients. Cognitive walkthrough is a form of expert evaluation where an expert (or group of experts) steps through the design to evaluate aspects of its usability. The focus of the walkthrough is on the novice user and emphasizes \emph{learnability}. We focus on the usability as in how user can learn how to use the application while using it. A better definition of learnability would be best described in ISO/IEC 25010 ``degree to which a product or system can be used by specified users to achieve specified goals of learning to use the product or system with effectiveness, efficiency, freedom from risk and satisfaction in a specified context of use`` ~\cite{iso25010}. At each step, the evaluators ask three questions: Will the user see what to do? Will the user see how to do it? And once it is done, will the user know if they have performed the correct action?
+We used a series of cognitive walkthroughs~\cite{WRLP94} to evaluate the usability of six Bitcoin clients. Cognitive walkthrough is a form of expert evaluation where an expert (or group of experts) steps through the design to evaluate aspects of its usability. The focus of the walkthrough is on the novice user and emphasizes \emph{learnability} which is defined in ISO/IEC 25010 as the ``degree to which a product or system can be used by specified users to achieve specified goals of learning to use the product or system with effectiveness, efficiency, freedom from risk and satisfaction in a specified context of use`` ~\cite{iso25010}. At each step, the evaluators ask three questions: Will the user see what to do? Will the user see how to do it? And once it is done, will the user know if they have performed the correct action? If the answer to any of these is no, the evaluator will record the violation. When using multiple evaluators, the aggregated result will be the union of violations found by each evaluator. 
 
 We chose to use cognitive walkthroughs for several reasons. First, it allowed us to choose and compare standard tasks on disparate tools, and gave us easily compared insight into the common problems and successes of different Bitcoin clients. The cognitive walkthrough also allowed us to keep the focus on the novice user. The goal of our evaluation was to uncover problems specific to key management within Bitcoin software rather than to evaluate the usability of the clients themselves.
 %Gathering novice users of Bitcoin for a user study could potentially be quite difficult; Bitcoin is still comparatively uncommon, and many users are also Bitcoin enthusiasts, often with additional knowledge of cryptography or PKI. Bitcoin is only in the process of developing a base of novice users. \fixme{Elizabeth, can you add something here saying that our intention is not to be thorough, but rather see (1) if there are issues, and (2) if there are any themes in the issues.}
@@ -452,12 +451,11 @@ Hosted wallets are accessible from any web browser, so creating transactions fro
 
 \paragraph{T4: Recovery} To recover from a forgotten password, a wallet recovery mnemonic may be provided on the login page. By clicking the \emph{Recover Wallet} button, the site will ask for the mnemonic phrase and the email address send the new credentials (achieves G1 and G2). Another recovery option is to proactively make backups and import them in case recovery is needed. To do so, in the main wallet page, user has to click \emph{Import/Export} and exporting either an encrypted or unencrypted backup. Unencrypted backups should be kept in a secure storage. There are different options for the unencrypted backup procedure that could confuse the user and might result in an unrecoverable backup (fails G5 and G6)---the back up is shown on a text field that the user has to copy and paste into a text file to be able to save it on her computer (fails G2, G3 and G7). To restore the backups, there is an `Import Wallet' option.
 
-The work for cognitive walkthrough was done by two experts, which the results were consolidated in one. Basically the final list is a union of errors which were seen by either of the experts.
 % = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 % = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-\section[Discussion]{Discussion\footnote{This section is largly the work of the co-authors of the paper but is included for completeness.}}
+\section[Discussion]{Discussion\footnote{This section is largely the work of the co-authors of the paper but is included for completeness.}}
 % discuss more things from above. how do these things make it hard for novice users to get into Bitcoin (bring this into the intro as well)
 
 % consistency across tools, standards can make things fail. be careful. 
@@ -530,8 +528,8 @@ we found that developers in the Bitcoin ecosystem are making innovative attempts
 
 Further investigation is needed to better understand and address these issues. A user study would give insight into exactly how these problems are affecting users and it would be interesting to investigate how expert users are (apparently successfully) handling these challenges. Bitcoin presents a new opportunity for public key cryptography to become mainstream, and our evaluation is a first step towards achieving usable key management in decentralized crypto-currencies. 
 
-We covered All the available Bitcoin Wallet clients in this chapter, in the next chapter, we would try to evaluate all the available point of sale methods for a small business to accept Bitcoin payments.
-It should be mentioned that the framework that was used in this chapter, is being considered a framework to evaluate Bitcoin wallet clients and might not be usable for other Bitcoin related software systems.
+We covered the major categories of Bitcoin Wallet clients in this chapter. In the next chapter, we will try to evaluate each category for point of sale terminals for a small business to accept Bitcoin payments.
+It should be mentioned that the framework that was used in this chapter is specifically tailored for evaluating Bitcoin wallet clients and is not directly usable for other Bitcoin related software systems including point of sale terminals.
 
 
 
