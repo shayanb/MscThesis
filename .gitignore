@@ -6,3 +6,15 @@ Clark_Jeremy.pdf
 TSWLatexianTemp_title.log
 
 TSWLatexianTemp_title.tex
+
+*.lof
+
+*.synctex
+
+*.toc
+
+*.log
+
+*.aux
+
+*.out
