@@ -27,26 +27,19 @@ xxxxxx \= xx \= xx \= xx \= xx \= xx \= \kill}%
 
 \begin{document}
 
-
+%\special{ps: plotfile psfig.pro global}
+%\input psfig
 
 \input{title}
 \include{abstract}
 \include{ack}
 
-
-% ========================
-
-
-%\special{ps: plotfile psfig.pro global}
-%\input psfig
-
-\pagenumbering{Roman}
+%\pagenumbering{Roman}
 %\setcounter{page}{1}
 
 \tableofcontents
 
-\addcontentsline{toc}{chapter}{List of Figures}
-\listoffigures
+\listoffigures \addcontentsline{toc}{chapter}{\listfigurename}
 
 \input{chap0}
 \input{chap1}
@@ -55,11 +48,10 @@ xxxxxx \= xx \= xx \= xx \= xx \= xx \= \kill}%
 \input{chap4}
 
 
-\bibliography{bib}
-\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{bib} \addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{alpha}
 
-\appendix
+%\appendix
 
 %\include{appendix}
 
